@@ -3,14 +3,14 @@
 
 class maku {
   PVector pos, vel; // Position vector and speed vector
-  PVector damy;
+  PVector nextpos;
   int att;
 
   maku(float x, float y, float z) {
-    att=0;
     pos=new PVector(x, y, z);
-    damy=new PVector(x, y, z);
+    nextpos=new PVector(x, y, z);
     vel=PVector.random3D().setMag(v0);
+    att=0;
   }
 
   // Form the initial state
@@ -64,18 +64,7 @@ class maku {
     }
   }
 
-  void book(ArrayList<maku> f0, ArrayList<actin> f1) {   
-    float g=0.0;
 
-    for (maku x : f0) {
-      ArrayList<Integer> bbb=new ArrayList();
-      for (actin y : f1) {
-        g=PVector.dist(x.pos, y.lea);
-        if (g<y_max*.5) bbb.add(f1.indexOf(y));
-      }
-      aal.put(f0.indexOf(x), bbb);
-    }
-  }
 
   //Update the position according to the equation of motion
   void update(ArrayList<maku> P, int j, ArrayList<actin> A) {
@@ -87,7 +76,7 @@ class maku {
 
     f.set(spring(P, j))
       .add(foractin(A, j)); //apply_Force
-    pos.set(damy);
+    pos.set(nextpos);
 
     k1[0]=f(f.x, vel.x)*dt;
     k1[1]=f(f.y, vel.y)*dt;
@@ -120,20 +109,20 @@ class maku {
     vel.x+=( k1[0] + 2.0*k2[0] + 2.0*k3[0] + k4[0] )/6.0;
     vel.y+=( k1[1] + 2.0*k2[1] + 2.0*k3[1] + k4[1] )/6.0;
     vel.z+=( k1[2] + 2.0*k2[2] + 2.0*k3[2] + k4[2] )/6.0;
-    damy.x+=( k1[3] + 2.0*k2[3] + 2.0*k3[3] + k4[3] )/6.0;
-    damy.y+=( k1[4] + 2.0*k2[4] + 2.0*k3[4] + k4[4] )/6.0;
-    damy.z+=( k1[5] + 2.0*k2[5] + 2.0*k3[5] + k4[5] )/6.0;
+    nextpos.x+=( k1[3] + 2.0*k2[3] + 2.0*k3[3] + k4[3] )/6.0;
+    nextpos.y+=( k1[4] + 2.0*k2[4] + 2.0*k3[4] + k4[4] )/6.0;
+    nextpos.z+=( k1[5] + 2.0*k2[5] + 2.0*k3[5] + k4[5] )/6.0;
     //torus-area
-    if (damy.y<0) damy.y=0.0;
-    if (damy.x>as) damy.x-=as*2.0;
-    if (damy.y>as) damy.y-=as*2.0;
-    if (damy.z>as*.5) damy.z-=as;
+    if (nextpos.y<0) nextpos.y=0.0;
+    if (nextpos.x>as) nextpos.x-=as*2.0;
+    if (nextpos.y>as) nextpos.y-=as*2.0;
+    if (nextpos.z>as*.5) nextpos.z-=as;
   }
 
   float f(float f, float v) { //Differense of v
-    float vis=3.5;
-    float m_mass=.5;
-
+    float vis=2.0;
+    float m_mass=.01;  
+    
     return ((f-vis*v)/m_mass);
   }
   float g(float v) { //Differense of x
@@ -144,7 +133,7 @@ class maku {
   PVector spring(ArrayList<maku> M, int q) {
     PVector spr=new PVector();
     ArrayList<Integer> fds=mme.get(q);
-    float k=50.0;
+    float k=100.0;
 
     for (int i=0; i<fds.size(); i++) {
       PVector other=new PVector(M.get(fds.get(i)).pos.x, M.get(fds.get(i)).pos.y, M.get(fds.get(i)).pos.z);
@@ -166,11 +155,11 @@ class maku {
     ArrayList<Integer> mem =aal.get(j);
 
     for (int p=0; p<mem.size(); p++) {
-      PVector other=new PVector(A.get(mem.get(p)).lea.x, A.get(mem.get(p)).lea.y, A.get(mem.get(p)).lea.z);
+      PVector other=new PVector(A.get(mem.get(p)).bar.x, A.get(mem.get(p)).bar.y, A.get(mem.get(p)).bar.z);
       PVector r=new PVector();
       float x;
       float a=m_size/3000;
-      float s=215.0;
+      float s=400.0;
 
       r.set(PVector.sub(pos, other));
       x=r.mag();

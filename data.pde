@@ -23,8 +23,8 @@ void datapush() {
   mfile.println("Total number of membrane molecules:  "+f0.size()+"\n"+"TIME:"+nf(t_total, 1, 2));
   mfile.println("\nIndex [area] || ACTIN  || AAL || MME || Fa || Fm");
   for (int j=0; j<f0.size(); j++) {
-    int a=call(f0.get(j).pos.x, f0.get(j).pos.y, f0.get(j).pos.z);
-    mfile.println(nf(j, 6, 0)+" "+"["+nf(a, 4, 0)+"]||"+"       "+d0[a]+" ||   "+aal.get(j).size()+"||     "+mme.get(j).size()+"|| "+nf(d2[j], 1, 2)+"||"+nf(d1[j], 1, 2));
+    int b=f0.get(j).att;
+    mfile.println(nf(j, 6, 0)+" "+"["+nf(b, 4, 0)+"]||"+"       "+d0[b]+" ||   "+aal.get(j).size()+"||     "+mme.get(j).size()+"|| "+nf(d2[j], 1, 2)+"||"+nf(d1[j], 1, 2));
   }
 
   afile.println("Total number of F-actin :"+f1.size()+"\n");
@@ -32,12 +32,17 @@ void datapush() {
   for (int i=0; i<f1.size(); i++) {
     PVector ac0 =new PVector();
     PVector ac1=new PVector();
+    PVector ac3=new PVector();
+    float ac2=0.0;
     int att=f1.get(i).att;
 
-    ac0=f1.get(i).lea;
-    ac1=f1.get(i).tra;
-    afile.println("actin. "+i+"  area. "+att+"  Number of maku in the vicinity. "+d3[att]);
-    rfile.println("actin."+i+"(area:"+att+"["+nf(map(d0[att], 0, a_num, 0, 100), 1, 2)+"%])"+" LENGTH:"+ac0.sub(ac1).mag()+" direction:"+ac0.sub(ac1).normalize());
+    ac0=f1.get(i).bar;
+    ac1=f1.get(i).poi;
+    ac2=f1.get(i).pol_num;
+    ac3=f1.get(i).dir;
+
+    afile.println("actin. "+i+"  poi="+ac1+"bar="+ac0+"  area. "+att+"  Number of maku in the vicinity. "+d3[att]+"\n"+" poly"+ac2/(t_total/dt)*100+"%");
+    rfile.println("actin."+i+"(area:"+att+"["+nf(map(d0[att], 0, a_num, 0, 100), 1, 2)+"%])"+" LENGTH:"+ac0.sub(ac1).mag()+" direction:"+ac0.sub(ac1).normalize()+"\n"+"  dirL:"+ac3.mag()+"  dirD:"+ac3);
   }
   ffile.println("This file is a text summarizing information for each area.");
   ffile.println("The length of one side of the area  =  "+W/N+".");
