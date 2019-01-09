@@ -15,22 +15,25 @@ class area {
   }
 
   void init() {
-    are_n=N*N*sN;
-    for (int j=0; j<are_n; j++) 
+    for (int s=0; s<N*N*sN; s++) 
       f_list.add(new area(m_list, a_list, f_list));
   }
 
   void count() {
     for (actin x1 : a_list) {
       int index=call(x1.bar.x, x1.bar.y, x1.bar.z);
-      f_list.get(index).acn++;
-      x1.att=index;
+      if (index>0&&index<=f_list.size()) {
+        f_list.get(index).acn++;
+        x1.att=index;
+      }
     }
 
     for (maku x2 : m_list) {
       int index=call(x2.nextpos.x, x2.nextpos.y, x2.nextpos.z);
-      f_list.get(index).mcn++;
-      x2.att=index;
+      if (index>0&&index<=f_list.size()) {
+        f_list.get(index).mcn++;
+        x2.att=index;
+      }
     }
     for (area x3 : f_list) {
       d0[f_list.indexOf(x3)]=x3.acn;

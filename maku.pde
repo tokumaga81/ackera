@@ -1,6 +1,6 @@
 //MME ... membrane molecule neighborlist
 //AAL ... actin-membrane action list
-
+//The actual number of elementary particles is 10 ^ 14.
 class maku {
   PVector pos, vel; // Position vector and speed vector
   PVector nextpos;
@@ -14,11 +14,12 @@ class maku {
   }
 
   // Form the initial state
-  void init(ArrayList<maku> f0, ArrayList<actin> f1) {
+  void init() {
     float z0=0.0;
     float d=0.0;
     float r=m_size*.5;
-
+    // dy=m_size/1.0;
+    // dx=m_size/1.0;
     for (float y=0; y<y_max; y+=dy) {
       for (float x=0; x<m_size; x+=dx) {
         z0=abs(sqrt(r*r-(x-r)*(x-r)));
@@ -39,7 +40,7 @@ class maku {
       ArrayList <Integer> line = new ArrayList();
       for (int q=0; q<m_num; q++) {
         d=PVector.dist(f0.get(p).pos, f0.get(q).pos);
-        if (dx+dx*.3>=d&&d>0) {
+        if (dx*1.25>=d&&d>0) {
           itf.add(q);
           line.add(q);
           if (p>q) {
@@ -63,8 +64,6 @@ class maku {
       }
     }
   }
-
-
 
   //Update the position according to the equation of motion
   void update(ArrayList<maku> P, int j, ArrayList<actin> A) {
@@ -113,16 +112,21 @@ class maku {
     nextpos.y+=( k1[4] + 2.0*k2[4] + 2.0*k3[4] + k4[4] )/6.0;
     nextpos.z+=( k1[5] + 2.0*k2[5] + 2.0*k3[5] + k4[5] )/6.0;
     //torus-area
+
     if (nextpos.y<0) nextpos.y=0.0;
-    if (nextpos.x>as) nextpos.x-=as*2.0;
-    if (nextpos.y>as) nextpos.y-=as*2.0;
-    if (nextpos.z>as*.5) nextpos.z-=as;
+    /*  
+     if (nextpos.x>as) nextpos.x-=as*2.0;
+     if (nextpos.y>as) nextpos.y-=as*2.0;
+     if (nextpos.z>as*.5) nextpos.z-=as;
+     */
+    //   uarf();
   }
 
   float f(float f, float v) { //Differense of v
-    float vis=2.0;
-    float m_mass=.01;  
-    
+    float sca=pow(10, 14)/f0.size();
+    float vis=8.9*pow(10.0, -6);//[kg/(m*s)]
+    float m_mass=12.3*pow(10.0, -19)*sca; //[kg]
+
     return ((f-vis*v)/m_mass);
   }
   float g(float v) { //Differense of x
@@ -133,7 +137,7 @@ class maku {
   PVector spring(ArrayList<maku> M, int q) {
     PVector spr=new PVector();
     ArrayList<Integer> fds=mme.get(q);
-    float k=100.0;
+    float k=1.07*pow(10.0, -3.25);
 
     for (int i=0; i<fds.size(); i++) {
       PVector other=new PVector(M.get(fds.get(i)).pos.x, M.get(fds.get(i)).pos.y, M.get(fds.get(i)).pos.z);
@@ -152,23 +156,21 @@ class maku {
   // Repulsive power with actin //
   PVector foractin(ArrayList<actin> A, int j) {
     PVector ans=new PVector(0, 0, 0);
-    ArrayList<Integer> mem =aal.get(j);
+    ArrayList<Integer> mem=aal.get(j);
 
     for (int p=0; p<mem.size(); p++) {
       PVector other=new PVector(A.get(mem.get(p)).bar.x, A.get(mem.get(p)).bar.y, A.get(mem.get(p)).bar.z);
       PVector r=new PVector();
-      float x;
-      float a=m_size/3000;
-      float s=400.0;
+      float x=0.0;
+      float s=3.05*pow(10.0, -1.2);
 
       r.set(PVector.sub(pos, other));
       x=r.mag();
-      if (x<a) x+=a;
       r.normalize()
-        .mult(s/(x-a));
+        .mult(s/x);
       ans.add(r);
     }
     d2[j]=ans.mag();
-    return ans;
+    return ans.mult(2.0);
   }
 }

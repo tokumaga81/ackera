@@ -12,16 +12,48 @@ class adm extends Kernel {
 
   @Override
     void run() {
+    //MEMBRANE-cal
     lie.count();
-    for (maku x0 : m_list) x0.update(m_list, m_list.indexOf(x0), a_list);
-    for (actin x1 : a_list)   x1.poly(f_list);
+    for (maku x0 : m_list) {
+      if (x0.pos.x<minx) {
+        minx=x0.pos.x;
+        mini=m_list.indexOf(x0);
+      }
+      if (x0.pos.x>maxx) {
+        maxx=x0.pos.x;
+        maxi=m_list.indexOf(x0);
+      }
+      x0.update(m_list, m_list.indexOf(x0), a_list);
+      if (x0.nextpos.y>13.5&&x0.nextpos.y<16.5&x0.nextpos.x>(maxx-minx)/2.0) 
+        ym.add(m_list.indexOf(x0));
+    }
 
+    //F-ACTIN-cal
+    if (dly%5==0) { 
+      for (actin x1 : a_list) {
+        if (x1.bar.x>pm) {
+          dpm=.5*(x1.bar.x-pm);
+          pm=x1.bar.x;
+          m2+=dpm;
+        }
+        x1.poly();
+      }
+    }
+    dly++;
     t_total+=dt;
     specify();
+    dpm=0.0;
+
+    //AREA-cal
     for (area x2 : f_list) {
+      if (maxaa<x2.acn) {
+        maxaa=x2.acn;
+        maxai=f_list.indexOf(x2);
+      }
       x2.mcn=0;
       x2.acn=0;
     }
+    ym.clear();
   }
 
   void specify() {
@@ -54,6 +86,5 @@ class adm extends Kernel {
       strokeWeight(3.0);
       point(a_list.get(u).bar.x, a_list.get(u).bar.y, a_list.get(u).bar.z);
     }
-
   }
 }
