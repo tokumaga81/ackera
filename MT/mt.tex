@@ -1,0 +1,177 @@
+\documentclass[a4paper,12pt]{book}
+\usepackage{bm}
+\usepackage{siunitx}
+\usepackage{cases}
+\usepackage[english]{babel}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{subfig} 
+\columnsep 3zw
+\renewcommand\baselinestretch{0.8} 
+\topmargin -1.5cm        % read Lamport p.163
+\oddsidemargin -0.04cm  % read Lamport p.163
+\evensidemargin -0.04cm  % same as oddsidemargin but for left-hand pages
+\textwidth 16.59cm
+\textheight 23.50cm 
+% \pagestyle{empty}       % Uncomment if don't want page numbers
+\parskip 7.2pt           % sets spacing between paragraphs
+% \renewcommand{\baselinestretch}{1.5} 	% Uncomment for 1.5 spacing between lines
+\hyphenpenalty=2000\relax
+\exhyphenpenalty=2000\relax
+\sloppy
+\title{\Large Graduate School of Sciences and Technology for Innovation, Yamaguchi University\\[1cm]
+Division of Fundamental Sciences\\[3cm]
+\huge A Computational Model of Cell Migration of Keratocytes\\[5cm]
+}
+\author{Yu Tokunaga}
+\date{\Large \today}
+\begin{document}
+\pagenumbering{roman}
+\maketitle
+\setcounter{page}{1}
+\tableofcontents
+\chapter{Introduction}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+\section{Introduction}
+
+Fish epidermal cells called keratocytes have the characteristic of keeping a half-moon shape when migrating. In order to explain how strange this is, we introduce the migration of {\it Amoeba proteus}, which is a common ameba cell. {\it Amoeba proteus} migartes irregularly while repeating complicated morphological changes when migrating. The migration of {\it Amoeba proteus} is completed by the 	pseudopodium made by stretching from the cell membrane landing away from itself. In other words, in general amoeba cells, migration does not occur without causing shape change. However, after the shape changes to a half-moon shape, keratocytes can advance forward without changing its shape. It is not clear why keratocytes form a half moon shape, why keratocytes can migrate without changing its shape.
+
+Keratocytes are about \SI{70}{\mu m} in size and are a cell present on the back side of the fish scales. When a fish bleeds due to trauma, it gathers to cover the wound. At this point, Keratcytes is doing the ameba movement. The most interesting feature of keratocytes is this ameba movement. Ameba Movement of keratocytes  contrasts with the typical Ameba movement and moves straight forward while maintaining a shape like a half-moon shape during migrating.
+
+Humans walk by bending and floating the legs when moving from the spot. As with other organisms, if the form of the organism and its motor function are closely related, what is the effect of the half-moon shape formed by the migration of keratocytes on the motor function of keratocytes? Elucidating this problem is interesting to know the relationship between the form of organism and motor function.
+
+The porpose of this study is to clarify the relationship between keratocytes morphology and motor function in cell migration. Specifically, we will elucidate the intracellular mechanism that makes it possible to go straight while keeping the cell shape half-moon.
+
+The structure of this paper is as follows. In Chapter 2, we explain the specific features of keratinocytes and the outline of cell migration mechanism. In Chapter 3, details of simulation experiment method will be described. Section 4 presents the results of simulation experiments and discusses the considerations. In the last chapter, we explain the improvements and future prospects of the facts and methods obtained from this survey.
+
+\chapter{Keratocytes}
+\section{Characteristics of Cell Migration of Keratocytes}
+\begin{figure}[tbp]
+\centering
+\includegraphics[scale=0.4]{kera.eps}
+\caption{Keratocytes during cell migration.(Source: Takako Tanaka, Iwadate Lab).}
+\label{fig:kera}
+\end{figure}
+
+A photograph of the actual keratocytes are shown in Figure \ref{fig:kera}. Keratocytes are migratory fish epidermal cells. Migrating cells are cells that can freely move around in the same way as lymphocytes and the like. Keratocytes advances by about one body length in one minute. The physiological findings of cell migration will be introduced in the next section.
+
+Studies using keratocytes in the field of biophysics have often revealed facts in cell migration mechanisms. Svitkina et al. showed that the forward translocation of the cell body and retrograde flow in the lamellipodia are both driven by contraction of an actin–myosin network in the lamellipodial/cell body transition zone \cite{svitkina1997analysis}. The importance of both AP and ARF was suggested. Nakata et al. Focused on pulling force against temperament and flow rate gradient of actin retrograde flow(ARF), and reported that stress fiber (SF) plays an important role in morphological control of keratinocytes \cite{nakata2016role}. Asano et al. Showed that movement similar to keratocytes was observed when AmiB gene was deleted from ameba cells of cellular slime mold {\it Dictyostelium discoideum} which performs typical ameba movement \cite{asano2004keratocyte}. Even in other ameboid cells, if some condition is satisfied, there is a possibility of maintaining a half-moon shape, which means that morphogenesis of keratocyte is not unique to keratocyte and is a physical mechanism causing cell migration . Okimura et al. showed that the rotation of these stress fibers plays the role of a “wheel” in crawling migration of keratocytes \cite{okimura2018rotation}. Removal of the stress fibers decreased migration velocity and induced the collapse of the left-right balance of crawling migration. Swaminathan et al.  focused on adhesion receptor integrins that bind cells and their environment \cite{swaminathan2017actin}. Suggesting that regurgitation of actin regulates the orientation of the integrin and may determine the propulsion direction of the cell. From the previous studies above, it is known that both AP and ARF play an important role in cell migration of keratocytes.
+
+\section{Molecular Mechanism of Cell Migration}
+A cell has a structure called a cytoskeleton. The cytoskeleton is like bones for humans, but in contrast to static human bones, the cytoskeleton is dynamic and is an important organelle that maintains the shape of the cell. The main component of the cytoskeleton is the actin molecule. As the actin molecule polymerizes and depolymerizes, the shape of the cell membrane changes. The actin molecule is elongated by polymerization in the cell membrane but retreats in the direction opposite to the elongation direction by the bundle of actomyosin called stress fiber. This phenomenon is called actin retrograde flow, and it is not clear what kind of role it plays in cell migration. The cell membrane extruded by polymerization of the actin molecule becomes the pseudopodia and adheres to the substrate at the advancing position. Thereafter, the adhesion between the substrates of the rear cell membrane is released and dragged forward. By repeating this cycle, cell migration mechanism is formed.
+
+It is a common fact even in keratocytes that the cell membrane is deformed by actin molecule polymerization. In the simulation experiment described in the next chapter, we investigate how the cell membrane forms a half moon shape when actin molecule polymerization acts on the cell membrane.
+
+
+\chapter{Simulation Methods}
+\section{Simulation Methods of Cell Membrane Molecules}
+In the cell membrane model, each cell membrane molecule moves under the resultant of force and velocity from the actin molecule and resistance force proportional to force between the cell membrane molecules. The equation of motion of the cell membrane molecule is as follows.
+\begin{equation}
+m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^m_i +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
+\end{equation}
+where  $\bm{F}^m $ is the elastic force received from the membrane molecule,  $\bm{F}^m $ is the repulsive force received from the actin molecule, $\eta$ is the viscous drag coefficient, which is $8.9\times 10^{-6} \si{kg.s^{-1}}$, and $\bm{x}$ is the position vector of the membrane molecule. As shown in the formula, the membrane molecule has the force  $\bm{F}^m $ received from the membrane molecule and the force  $\bm{F}^a $ received from the actin molecule. That is the force as follows.
+\begin{equation}
+\bm{F}^m = \sum_{\{ \forall j | \| \bm{x}_j - \bm{x}_i \|<D_1\}} -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
+\end{equation}
+where $k$ is a constant , $D_1$ is a distance range to receive a force, and $\bm{l}_{ij}$ is a vector representing the difference between the two points(membrane molecules $i$ and $j$) in the initial state.
+\begin{equation}
+\bm{F}^a = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
+\end{equation}
+where $s$ is a constant, and $D_2$ is a distance range to receive a force.
+
+
+\section{Simulation Methods of Actin Molecules}
+\subsection{Actin Porymerazation}
+The polymerization of actin has directionality, the end where polymerization is carried out is called barbed-end, and the end which is not done is called pointed-end. Since polymerization is carried out well in a region where many actin molecules are present , the polymerization rate is proportional to the actin concentration in the vicinity.  The filament formed by actin polymerization is called F-actin. F-actin on the simulation is treated as a rod. F-actin is defined as the position vector at both ends of the rod. Here, the position vector of pointed-end is $\bm{P}$, and the position vector of barbed-end is $\bm{B}$. $\bm{P}$ and $\bm{B}$ are updated step by step to control polymerization and depolymerization.
+
+As described above, the polymerization direction $\bm{L}$ is determined at the initial stage of cell migration.Therefore, the formula for updating the polymerization is \[\bm{B} \gets \bm{P} + \bm{L}\]. However, considering the surrounding actin concentration and time step, the formula can be rewritten as follows.
+\begin{equation}
+\bm{B} \gets \bm{P} + f^p(c)\bm{L} \cdot dt
+\end{equation}
+where $f^p(c)$ is a function that  proportional to actin concentration $c$ and $dt$ is the time step.
+
+Regarding depolymerization, the update formula is as follows.
+\begin{equation}
+\bm{P} \gets \bm{P} + f^d(c)\bm{L} \cdot dt
+\end{equation}
+where  $f^d(c)$ is a function inversely proportional to $c$. However, these formulas are not done every time, but are done with probability \[p_i(c) = c_i = \frac{a_i}{N}\] where $p_i(c)$ is the probability that depends on the concentration $c_i$ in region $i$, $a_i$ is the number of actin in region i, and $N$ is the total number of actin. In this simulation, the original space was divided into 3600 spaces($i=3600$).
+
+
+
+\subsection{Actin Retrograde Flow}
+Because ARF is often unknown, we simulate with some assumptions. Although the element that causes ARF is a stress fiber, since the cell model of this paper does not introduce a stress fiber, it substitutes the membrane molecule at the end of the cell membrane. Since it is not clear how much the effect on actin molecule also works, it was assumed that the closer to the membrane molecule the stronger the effect.
+
+The cell membrane molecule with the smallest x coordinate is the reference point $\bm{E}$. The calculation formula for implementing ARF is shown below.
+
+\begin{numcases}
+  {}
+  \bm{B} \gets \bm{B} - \alpha \frac{ \bm{B} - \bm{E} }{\| \bm{B} - \bm{E} \|} & \\
+   \bm{P} \gets \bm{P} - \beta \frac{ \bm{P} - \bm{E} }{\| \bm{P} - \bm{E} \|} &
+\end{numcases}
+where the vector $\bm{B}$ is barbed-end, the vector $\bm{P}$ is pointed-end, and $\alpha$ and $\beta$ are constants.
+
+
+\section{Initial Condition and Relocation  Condition}
+The total number of actin is 1742, the number of membrane molecules is 1742. When updating the position of F-actin every step, deformation of the cell membrane can not catch up. Therefore, the position of the cell membrane molecule is updated each time, and the position of actin molecule is updated once every 10 times.
+
+The direction of polymerization is randomly determined. Some actins invade areas where they can not normally invade due to the progress of polymerization. For example, it is outside the cell membrane and in the nucleus. In such a case, relocation processing is applied to the actin. F-actin escaping from the cell membrane disappears and moves to a random place close to the cell membrane. The region to be repositioned is outside of the cell membrane and regions where the concentration of actin molecule is low.
+
+The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} and Fig. \ref{fig:side0}. The actin molecule is indicated by a green line, and the cell membrane is indicated by a white dot. This is the initial placement because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction.
+\begin{figure}[tbp]
+\centering
+\includegraphics[scale=0.25]{top.eps}
+\caption{Top view of keratocyte model at time $t=0$.}
+\label{fig:top0}
+\end{figure}
+\begin{figure}[tbp]
+\centering
+\includegraphics[scale=0.25]{side.eps}
+\caption{Side view of keratocyte model at time $t=0$.}
+\label{fig:side0}
+\end{figure}
+
+
+
+\chapter{Results}
+\section{Simulation Results}
+\begin{figure}[h]
+ \subfloat[t=0.5.]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top05.eps} \\
+   \includegraphics[width=5cm]{side05.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=2.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top20.eps} \\
+   \includegraphics[width=5cm]{side20.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=4.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top40.eps} \\
+   \includegraphics[width=5cm]{side40.eps}
+  \end{tabular}
+ }%
+ \caption{Simulation results. This is a picture of the keratocyte model taken at time $t = 0.5, 2.0, 4.0 [s]$. The top is the top view and the bottom is the side view pictures of the same time zone. A green line indicates a cell membrane, and a red dot indicates F-actin polymerized.}
+ \label{fig:res0}
+\end{figure}
+The results of simulation experiments are shown in Fig \ref{fig:res0}. Actin polymerization progressed as the time progressed, and the cell membrane was compressed. The cell membrane deformed reflecting the action of force from the inside. However, it was only in the region of cell membrane progression direction, the opposite side stuck to the substrate. There was a flaw in this simulation concerning deformation of the cell membrane. Regarding the actin molecule which is the cytoskeleton, it is successfully formed in a crescent shape, but the cell membrane in the posterior portion has not moved.
+
+\section{Discussion}
+The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously. Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule.
+
+\chapter{Conclusion}
+\section{Morphology of Keratosite and Its Motor Function}
+
+\section{Future Prospects}
+
+\chapter*{Acknowledgements}
+We gratefully acknowledge the work of past and present members of our laboratory.
+
+\addcontentsline{toc}{chapter}{Acknowledgements}
+\bibliography{bibtexfile.bib}
+\bibliographystyle{junsrt}
+
+\addcontentsline{toc}{chapter}{\bibname}
+\end{document}
