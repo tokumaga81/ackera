@@ -1,0 +1,44 @@
+%AP
+@article{svitkina1997analysis,
+  title={Analysis of the actin--myosin II system in fish epidermal keratocytes: mechanism of cell body translocation},
+  author={Svitkina, Tatyana M and Verkhovsky, Alexander B and McQuade, Kyle M and Borisy, Gary G},
+  journal={The Journal of cell biology},
+  volume={139},
+  number={2},
+  pages={397--415},
+  year={1997},
+  publisher={Rockefeller University Press}
+}
+%SF
+@article{nakata2016role,
+  title={The role of stress fibers in the shape determination mechanism of fish keratocytes},
+  author={Nakata, Takako and Okimura, Chika and Mizuno, Takafumi and Iwadate, Yoshiaki},
+  journal={Biophysical journal},
+  volume={110},
+  number={2},
+  pages={481--492},
+  year={2016},
+  publisher={Elsevier}
+}
+%nuclrea
+@article{asano2004keratocyte,
+  title={Keratocyte-like locomotion in amiB-null Dictyostelium cells},
+  author={Asano, Yukako and Mizuno, Takafumi and Kon, Takahide and Nagasaki, Akira and Sutoh, Kazuo and Uyeda, Taro QP},
+  journal={Cell motility and the cytoskeleton},
+  volume={59},
+  number={1},
+  pages={17--27},
+  year={2004},
+  publisher={Wiley Online Library}
+}
+%wheel
+@article{okimura2018rotation,
+  title={Rotation of stress fibers as a single wheel in migrating fish keratocytes},
+  author={Okimura, Chika and Taniguchi, Atsushi and Nonaka, Shigenori and Iwadate, Yoshiaki},
+  journal={Scientific reports},
+  volume={8},
+  number={1},
+  pages={10615},
+  year={2018},
+  publisher={Nature Publishing Group}
+}

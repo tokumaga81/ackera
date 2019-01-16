@@ -20,7 +20,7 @@
 \sloppy
 \title{\Large Graduate School of Sciences and Technology for Innovation, Yamaguchi University\\[1cm]
 Division of Fundamental Sciences\\[3cm]
-\huge A Computational Model of Cell Migration of Keratocytes\\[5cm]
+\huge A Computational Model of Cell Migration of Fish Keratocytes\\[5cm]
 }
 \author{Yu Tokunaga}
 \date{\Large \today}
@@ -33,14 +33,17 @@ Division of Fundamental Sciences\\[3cm]
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \section{Introduction}
-
-Fish epidermal cells called keratocytes have the characteristic of keeping a half-moon shape when migrating. In order to explain how strange this is, we introduce the migration of {\it Amoeba proteus}, which is a common ameba cell. {\it Amoeba proteus} migartes irregularly while repeating complicated morphological changes when migrating. The migration of {\it Amoeba proteus} is completed by the 	pseudopodium made by stretching from the cell membrane landing away from itself. In other words, in general amoeba cells, migration does not occur without causing shape change. However, after the shape changes to a half-moon shape, keratocytes can advance forward without changing its shape. It is not clear why keratocytes form a half moon shape, why keratocytes can migrate without changing its shape.
+{\it Amoeba proteus}, a common ameba cell, migrates while repeating complicated morphological changes:
+{\it Amoeba proteus} is completed by the pseudopodium made by stretching from the cell membrane landing away from itself.
+In contrast, keratocytes, a fish epidermal cell, migrates while maintaining its half-moon shape.
+Hence, the migration does not occur without causing shape change.
+However, keratocytes move forward without changing its shape. It is not clear why keratocytes form a half-moon shape, why keratocytes can migrate without changing its shape.
 
 Keratocytes are about \SI{70}{\mu m} in size and are a cell present on the back side of the fish scales. When a fish bleeds due to trauma, it gathers to cover the wound. At this point, Keratcytes is doing the ameba movement. The most interesting feature of keratocytes is this ameba movement. Ameba Movement of keratocytes  contrasts with the typical Ameba movement and moves straight forward while maintaining a shape like a half-moon shape during migrating.
 
 Humans walk by bending and floating the legs when moving from the spot. As with other organisms, if the form of the organism and its motor function are closely related, what is the effect of the half-moon shape formed by the migration of keratocytes on the motor function of keratocytes? Elucidating this problem is interesting to know the relationship between the form of organism and motor function.
 
-The porpose of this study is to clarify the relationship between keratocytes morphology and motor function in cell migration. Specifically, we will elucidate the intracellular mechanism that makes it possible to go straight while keeping the cell shape half-moon.
+The porpose of this study is to clarify the relationship between keratocytes morphology and motor function in cell migration. Specifically, we will elucidate the intracellular mechanism that keeps the cell shape half-moon during cell migration.
 
 The structure of this paper is as follows. In Chapter 2, we explain the specific features of keratinocytes and the outline of cell migration mechanism. In Chapter 3, details of simulation experiment method will be described. Section 4 presents the results of simulation experiments and discusses the considerations. In the last chapter, we explain the improvements and future prospects of the facts and methods obtained from this survey.
 
@@ -67,34 +70,34 @@ It is a common fact even in keratocytes that the cell membrane is deformed by ac
 \section{Simulation Methods of Cell Membrane Molecules}
 In the cell membrane model, each cell membrane molecule moves under the resultant of force and velocity from the actin molecule and resistance force proportional to force between the cell membrane molecules. The equation of motion of the cell membrane molecule is as follows.
 \begin{equation}
-m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^m_i +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
+m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^{m_i} +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
 \end{equation}
-where  $\bm{F}^m $ is the elastic force received from the membrane molecule,  $\bm{F}^m $ is the repulsive force received from the actin molecule, $\eta$ is the viscous drag coefficient, which is $8.9\times 10^{-6} \si{kg.s^{-1}}$, and $\bm{x}$ is the position vector of the membrane molecule. As shown in the formula, the membrane molecule has the force  $\bm{F}^m $ received from the membrane molecule and the force  $\bm{F}^a $ received from the actin molecule. That is the force as follows.
+where  $m$ is the mass, $\eta = 8.9\times 10^{-6} \si{kg.s^{-1}}$ is the viscous coefficient, and $\bm{x}_i$ is the position vector of the membrane molecule. The membrane molecule has the force  $\bm{F}^m_i$ received from the membrane molecule and the force  $\bm{F}^a_i$ received from the actin molecule. It is assumed that the force  $\bm{F}^m_i$ acting between the membrane molecules can be represented by elastic force:
 \begin{equation}
-\bm{F}^m = \sum_{\{ \forall j | \| \bm{x}_j - \bm{x}_i \|<D_1\}} -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
+\bm{F}^m_i = \sum_{\{ \forall j | \| \bm{x}_j - \bm{x}_i \|<D_1\}} -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
 \end{equation}
-where $k$ is a constant , $D_1$ is a distance range to receive a force, and $\bm{l}_{ij}$ is a vector representing the difference between the two points(membrane molecules $i$ and $j$) in the initial state.
+where $k$ is the spring constant , $D_1$ is a distance range to receive a force, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. However, this natural length measures the distance between the membrane molecules in the initial state. The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force as follows.
 \begin{equation}
-\bm{F}^a = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
+\bm{F}^a_i = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
 \end{equation}
-where $s$ is a constant, and $D_2$ is a distance range to receive a force.
+where $s$ is a constant that determines the strength of the repulsive force, and $D_2$ is a distance range to receive a force.
 
 
 \section{Simulation Methods of Actin Molecules}
 \subsection{Actin Porymerazation}
-The polymerization of actin has directionality, the end where polymerization is carried out is called barbed-end, and the end which is not done is called pointed-end. Since polymerization is carried out well in a region where many actin molecules are present , the polymerization rate is proportional to the actin concentration in the vicinity.  The filament formed by actin polymerization is called F-actin. F-actin on the simulation is treated as a rod. F-actin is defined as the position vector at both ends of the rod. Here, the position vector of pointed-end is $\bm{P}$, and the position vector of barbed-end is $\bm{B}$. $\bm{P}$ and $\bm{B}$ are updated step by step to control polymerization and depolymerization.
+The polymerization of actin has polarity, the end where polymerization is carried out is called barbed-end, and the end which is not done is called pointed-end. Since polymerization is carried out well in a region where many actin molecules are present , the polymerization rate is proportional to the actin concentration in the vicinity.  The filament formed by actin polymerization is called F-actin. F-actin on the simulation is treated as a rod. F-actin is defined as the position vector at both ends of the rod. Here, the position vector of pointed-end is $\bm{P}$, and the position vector of barbed-end is $\bm{B}$. $\bm{P}$ and $\bm{B}$ are updated step by step to control polymerization and depolymerization.
 
 As described above, the polymerization direction $\bm{L}$ is determined at the initial stage of cell migration.Therefore, the formula for updating the polymerization is \[\bm{B} \gets \bm{P} + \bm{L}\]. However, considering the surrounding actin concentration and time step, the formula can be rewritten as follows.
 \begin{equation}
-\bm{B} \gets \bm{P} + f^p(c)\bm{L} \cdot dt
+\bm{B}_i \gets \bm{P}_i + f^p(c)\bm{L}_i \cdot dt
 \end{equation}
-where $f^p(c)$ is a function that  proportional to actin concentration $c$ and $dt$ is the time step.
+where $f^p(c) = 5.0 \cdot \exp{\frac{c}{10.0}}$ is a function that  increases exponentially with actin concentration $c$ and $dt$ is the time step.
 
 Regarding depolymerization, the update formula is as follows.
 \begin{equation}
-\bm{P} \gets \bm{P} + f^d(c)\bm{L} \cdot dt
+\bm{P}_i \gets \bm{P}_i + f^d(c)\bm{L}_i \cdot dt
 \end{equation}
-where  $f^d(c)$ is a function inversely proportional to $c$. However, these formulas are not done every time, but are done with probability \[p_i(c) = c_i = \frac{a_i}{N}\] where $p_i(c)$ is the probability that depends on the concentration $c_i$ in region $i$, $a_i$ is the number of actin in region i, and $N$ is the total number of actin. In this simulation, the original space was divided into 3600 spaces($i=3600$).
+where  $f^d(c) = \frac{5.0}{c}$ is a function inversely proportional to $c$. However, these formulas are not done every time, but are done with probability \[p_i(c) = c_i = \frac{a_i}{N}\] where $p_i(c)$ is the probability that depends on the concentration $c_i$ in region $i$, $a_i$ is the number of actin in region i, and $N$ is the total number of actin. In this simulation, the original space was divided into 3600 spaces($i=3600$).
 
 
 
@@ -105,18 +108,18 @@ The cell membrane molecule with the smallest x coordinate is the reference point
 
 \begin{numcases}
   {}
-  \bm{B} \gets \bm{B} - \alpha \frac{ \bm{B} - \bm{E} }{\| \bm{B} - \bm{E} \|} & \\
-   \bm{P} \gets \bm{P} - \beta \frac{ \bm{P} - \bm{E} }{\| \bm{P} - \bm{E} \|} &
+  \bm{B}_i \gets \bm{B}_i - \alpha \frac{ \bm{B}_i - \bm{E} }{{\| \bm{B}_i - \bm{E} \|}^2} & \\
+   \bm{P}_i \gets \bm{P}_i - \beta \frac{ \bm{P}_i - \bm{E} }{{\| \bm{P}_i - \bm{E} \|}^2} &
 \end{numcases}
-where the vector $\bm{B}$ is barbed-end, the vector $\bm{P}$ is pointed-end, and $\alpha$ and $\beta$ are constants.
+where the vector $\bm{B}_i$ is barbed-end, the vector $\bm{P}_i$ is pointed-end, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF.
 
 
 \section{Initial Condition and Relocation  Condition}
-The total number of actin is 1742, the number of membrane molecules is 1742. When updating the position of F-actin every step, deformation of the cell membrane can not catch up. Therefore, the position of the cell membrane molecule is updated each time, and the position of actin molecule is updated once every 10 times.
+The total number of actin is 3000, the number of membrane molecules is 2000. When updating the position of F-actin every step, deformation of the cell membrane can not catch up. Therefore, the position of the cell membrane molecule is updated each time, and the position of actin molecule is updated once every 10 times.
 
 The direction of polymerization is randomly determined. Some actins invade areas where they can not normally invade due to the progress of polymerization. For example, it is outside the cell membrane and in the nucleus. In such a case, relocation processing is applied to the actin. F-actin escaping from the cell membrane disappears and moves to a random place close to the cell membrane. The region to be repositioned is outside of the cell membrane and regions where the concentration of actin molecule is low.
 
-The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} and Fig. \ref{fig:side0}. The actin molecule is indicated by a green line, and the cell membrane is indicated by a white dot. This is the initial placement because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction.
+The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} and Fig. \ref{fig:side0}. The actin molecule is indicated by a green line, and the cell membrane is indicated by a white dot. This is the initial placement of actin molecules because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction. The membrane molecules are arranged in a cylindrical shape as shown in the figure.
 \begin{figure}[tbp]
 \centering
 \includegraphics[scale=0.25]{top.eps}

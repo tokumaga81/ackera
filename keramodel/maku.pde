@@ -40,7 +40,7 @@ class maku {
       ArrayList <Integer> line = new ArrayList();
       for (int q=0; q<m_num; q++) {
         d=PVector.dist(f0.get(p).pos, f0.get(q).pos);
-        if (dx*1.25>=d&&d>0) {
+        if (dx*1.50>=d&&d>0) {
           itf.add(q);
           line.add(q);
           if (p>q) {
@@ -137,8 +137,7 @@ class maku {
   PVector spring(ArrayList<maku> M, int q) {
     PVector spr=new PVector();
     ArrayList<Integer> fds=mme.get(q);
-    float k=1.07*pow(10.0, -3.25);
-
+    float k=1.0*pow(10.0, -4.45);
     for (int i=0; i<fds.size(); i++) {
       PVector other=new PVector(M.get(fds.get(i)).pos.x, M.get(fds.get(i)).pos.y, M.get(fds.get(i)).pos.z);
       PVector l=new PVector();
@@ -162,7 +161,9 @@ class maku {
       PVector other=new PVector(A.get(mem.get(p)).bar.x, A.get(mem.get(p)).bar.y, A.get(mem.get(p)).bar.z);
       PVector r=new PVector();
       float x=0.0;
-      float s=3.05*pow(10.0, -1.2);
+      float s=5.2*pow(10.0, -2.2);
+
+
 
       r.set(PVector.sub(pos, other));
       x=r.mag();
@@ -171,6 +172,6 @@ class maku {
       ans.add(r);
     }
     d2[j]=ans.mag();
-    return ans.mult(2.0);
+    return ans;
   }
 }

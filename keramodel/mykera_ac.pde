@@ -40,6 +40,7 @@ int maxai=310;
 float pm=400.0;
 float dpm=0.0;
 float m2=m_size/2.0;
+float at=0.5;
 
 // diriables related to FILE output //
 PrintWriter mfile;
@@ -52,7 +53,7 @@ PrintWriter tfile;
 float dt=.001;
 
 // diriables on actin polymerization //
-int a_num=1400;
+int a_num=3000;
 float p_spe=20.0;  
 float r_spe=20.0;
 //diriables on priparation
@@ -85,7 +86,7 @@ void draw() {
   preparation();
   kera.run();
   str++;
-  if (str%10==0) saveFrame("./frame/#####.tif");
+  //if (str%10==0) saveFrame("./frame/#####.tif");
 }
 
 void preparation() {

@@ -29,7 +29,7 @@ class adm extends Kernel {
     }
 
     //F-ACTIN-cal
-    if (dly%5==0) { 
+    if (dly%10==0) { 
       for (actin x1 : a_list) {
         if (x1.bar.x>pm) {
           dpm=.5*(x1.bar.x-pm);
@@ -54,6 +54,10 @@ class adm extends Kernel {
       x2.acn=0;
     }
     ym.clear();
+    if(t_total>at){
+      saveFrame("./frame/#####.tif");
+      at*=2.0;
+    }
   }
 
   void specify() {

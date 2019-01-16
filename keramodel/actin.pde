@@ -26,7 +26,7 @@ class actin {
     float p=0.0;
     float fp=5.0;
     float fd=5.0;
-    float rc=2.5;
+    float rc=2.7;
     boolean ft=true;
     boolean fl=true;
     boolean fr=true;
@@ -99,12 +99,17 @@ class actin {
     PVector e2=new PVector(0, 0, 0);
     float d4 =0.0;
     float d8 =0.0;
+    float c =16000.0;
+    float d =16000.0;
     e1.set(PVector.sub(bar, b));
-    d4=e1.mag();
+    d4=e1.mag()*e1.mag();
     e2.set(PVector.sub(poi, b));
-    d8=e2.mag();
-    e1.setMag(36/d4);
-    e2.setMag(36/d8);
+    d8=e2.mag()*e2.mag();
+    e1.setMag(c/d4);
+    e2.setMag(d/d8);
+
+    // e1.setMag(20.0);
+    // e2.setMag(20.0);
     bar.sub(e1);
     poi.sub(e2);
   }
