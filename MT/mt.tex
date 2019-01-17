@@ -70,13 +70,13 @@ It is a common fact even in keratocytes that the cell membrane is deformed by ac
 \section{Simulation Methods of Cell Membrane Molecules}
 In the cell membrane model, each cell membrane molecule moves under the resultant of force and velocity from the actin molecule and resistance force proportional to force between the cell membrane molecules. The equation of motion of the cell membrane molecule is as follows.
 \begin{equation}
-m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^{m_i} +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
+m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^m_i +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
 \end{equation}
 where  $m$ is the mass, $\eta = 8.9\times 10^{-6} \si{kg.s^{-1}}$ is the viscous coefficient, and $\bm{x}_i$ is the position vector of the membrane molecule. The membrane molecule has the force  $\bm{F}^m_i$ received from the membrane molecule and the force  $\bm{F}^a_i$ received from the actin molecule. It is assumed that the force  $\bm{F}^m_i$ acting between the membrane molecules can be represented by elastic force:
 \begin{equation}
 \bm{F}^m_i = \sum_{\{ \forall j | \| \bm{x}_j - \bm{x}_i \|<D_1\}} -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
 \end{equation}
-where $k$ is the spring constant , $D_1$ is a distance range to receive a force, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. However, this natural length measures the distance between the membrane molecules in the initial state. The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force as follows.
+where $k$ is the spring constant , $D_1$ is a distance range to receive a force, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. However, this natural length measures the distance between the membrane molecules in the initial state. The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force:
 \begin{equation}
 \bm{F}^a_i = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
 \end{equation}
@@ -113,7 +113,6 @@ The cell membrane molecule with the smallest x coordinate is the reference point
 \end{numcases}
 where the vector $\bm{B}_i$ is barbed-end, the vector $\bm{P}_i$ is pointed-end, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF.
 
-
 \section{Initial Condition and Relocation  Condition}
 The total number of actin is 3000, the number of membrane molecules is 2000. When updating the position of F-actin every step, deformation of the cell membrane can not catch up. Therefore, the position of the cell membrane molecule is updated each time, and the position of actin molecule is updated once every 10 times.
 
@@ -133,33 +132,84 @@ The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} a
 \label{fig:side0}
 \end{figure}
 
-
-
 \chapter{Results}
 \section{Simulation Results}
+\subsection{Role of ARF}
+
 \begin{figure}[h]
  \subfloat[t=0.5.]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05.eps} \\
-   \includegraphics[width=5cm]{side05.eps}
+   \includegraphics[width=5cm]{top05_arf.eps} \\
+   \includegraphics[width=5cm]{side05_arf.eps}
   \end{tabular}
  }%
  \subfloat[t=2.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20.eps} \\
-   \includegraphics[width=5cm]{side20.eps}
+   \includegraphics[width=5cm]{top20_arf.eps} \\
+   \includegraphics[width=5cm]{side20_arf.eps}
   \end{tabular}
  }%
  \subfloat[t=4.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40.eps} \\
-   \includegraphics[width=5cm]{side40.eps}
+   \includegraphics[width=5cm]{top40_arf.eps} \\
+   \includegraphics[width=5cm]{side40_arf.eps}
   \end{tabular}
  }%
- \caption{Simulation results. This is a picture of the keratocyte model taken at time $t = 0.5, 2.0, 4.0 [s]$. The top is the top view and the bottom is the side view pictures of the same time zone. A green line indicates a cell membrane, and a red dot indicates F-actin polymerized.}
+ \caption{Simulation results. This is a picture of the keratocyte model taken at time $t = 0.5, 2.0, 4.0 [s]$. The top is the top view and the bottom is the side view pictures of the same time zone. A green line indicates a cell membrane, and a red dot indicates F-actin polymerized. Distance dependent ARF is used, and the setting value of relocation condition is 3.0\%.}
  \label{fig:res0}
 \end{figure}
-The results of simulation experiments are shown in Fig \ref{fig:res0}. Actin polymerization progressed as the time progressed, and the cell membrane was compressed. The cell membrane deformed reflecting the action of force from the inside. However, it was only in the region of cell membrane progression direction, the opposite side stuck to the substrate. There was a flaw in this simulation concerning deformation of the cell membrane. Regarding the actin molecule which is the cytoskeleton, it is successfully formed in a crescent shape, but the cell membrane in the posterior portion has not moved.
+
+\begin{figure}[h]
+ \subfloat[t=0.5.]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top05_iarf.eps} \\
+   \includegraphics[width=5cm]{side05_iarf.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=2.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top20_iarf.eps} \\
+   \includegraphics[width=5cm]{side20_iarf.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=4.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top40_iarf.eps} \\
+   \includegraphics[width=5cm]{side40_iarf.eps}
+  \end{tabular}
+ }%
+ \caption{Simulation results for distance independent ARF.}
+ \label{fig:res1}
+\end{figure}
+
+\begin{figure}[h]
+ \subfloat[t=0.5.]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top05_narf.eps} \\
+   \includegraphics[width=5cm]{side05_narf.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=2.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top20_narf.eps} \\
+   \includegraphics[width=5cm]{side20_narf.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=4.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top40_narf.eps} \\
+   \includegraphics[width=5cm]{side40_narf.eps}
+  \end{tabular}
+ }%
+ \caption{Simulation results without ARF.}
+ \label{fig:res2}
+\end{figure}
+
+Experiments were carried out by distinguishing the ARF according to the distance from the distance between the actin molecule and the reference point $\bm{E}$ and the ARF which is distance independent. The results of simulation experiments are shown in Fig \ref{fig:res0}. Actin polymerization progressed as the time progressed, and the cell membrane was compressed. The cell membrane deformed reflecting the action of force from the inside. However, it was only in the region of cell membrane progression direction, the opposite side stuck to the substrate. There was a flaw in this simulation concerning deformation of the cell membrane. Regarding the actin molecule which is the cytoskeleton, it is successfully formed in a crescent shape, but the cell membrane in the posterior portion has not moved.
+
+\subsection{Importance of Relocation Condition}
+
+\subsection{Effect of Initial Placement}
 
 \section{Discussion}
 The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously. Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule.

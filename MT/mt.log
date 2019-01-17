@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  16 JAN 2019 12:00
+This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  17 JAN 2019 14:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -551,9 +551,9 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JT2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 121.
+(Font)              scaled to size 11.54663pt on input line 120.
 LaTeX Font Info:    Font shape `JY2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 121.
+(Font)              scaled to size 11.54663pt on input line 120.
  [6]
 File: top.eps Graphic file (type eps)
  <top.eps>
@@ -562,33 +562,74 @@ File: side.eps Graphic file (type eps)
 
 ]
 Chapter 4.
-File: top05.eps Graphic file (type eps)
-<top05.eps>
-File: side05.eps Graphic file (type eps)
- <side05.eps>
+File: top05_arf.eps Graphic file (type eps)
+<top05_arf.eps>
+File: side05_arf.eps Graphic file (type eps)
+ <side05_arf.eps>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 146.
+(Font)              scaled to size 9.6222pt on input line 145.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 146.
-File: top20.eps Graphic file (type eps)
- <top20.eps>
-File: side20.eps Graphic file (type eps)
- <side20.eps>
-File: top40.eps Graphic file (type eps)
- <top40.eps>
-File: side40.eps Graphic file (type eps)
- <side40.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 146--159
+(Font)              scaled to size 9.6222pt on input line 145.
+File: top20_arf.eps Graphic file (type eps)
+ <top20_arf.eps>
+File: side20_arf.eps Graphic file (type eps)
+ <side20_arf.eps>
+File: top40_arf.eps Graphic file (type eps)
+
+<top40_arf.eps>
+File: side40_arf.eps Graphic file (type eps)
+ <side40_arf.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 145--158
 [][][][] 
  []
 
-[9] [10]
+File: top05_iarf.eps Graphic file (type eps)
+<top05_iarf.eps>
+File: side05_iarf.eps Graphic file (type eps)
+ <side05_iarf.eps>
+File: top20_iarf.eps Graphic file (type eps)
+ <top20_iarf.eps>
+File: side20_iarf.eps Graphic file (type eps)
+ <side20_iarf.eps>
+File: top40_iarf.eps Graphic file (type eps)
+
+<top40_iarf.eps>
+File: side40_iarf.eps Graphic file (type eps)
+ <side40_iarf.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 168--181
+[][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+File: top05_narf.eps Graphic file (type eps)
+<top05_narf.eps>
+File: side05_narf.eps Graphic file (type eps)
+ <side05_narf.eps>
+File: top20_narf.eps Graphic file (type eps)
+ <top20_narf.eps>
+File: side20_narf.eps Graphic file (type eps)
+ <side20_narf.eps>
+File: top40_narf.eps Graphic file (type eps)
+
+<top40_narf.eps>
+File: side40_narf.eps Graphic file (type eps)
+ <side40_narf.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 191--204
+[][][][] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[9] [10] [11] [12
+
+]
 Chapter 5.
-[11
+[13] [14
 
-] [12
-
-] (./mt.bbl [13] [14
+] (./mt.bbl [15] [16
 
 ]
 
@@ -603,18 +644,21 @@ LaTeX Font Info:    Font shape `JT2/gt/m/it' will be
 (Font)              scaled to size 11.54663pt on input line 14.
 LaTeX Font Info:    Font shape `JY2/gt/m/it' will be
 (Font)              scaled to size 11.54663pt on input line 14.
-) [15] (./mt.aux)
+) [17] (./mt.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 12218 strings out of 493649
- 255032 string characters out of 6149068
+ 12244 strings out of 493649
+ 255448 string characters out of 6149068
  282722 words of memory out of 5000000
- 15748 multiletter control sequences out of 15000+600000
+ 15762 multiletter control sequences out of 15000+600000
  24016 words of font info for 103 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  44i,12n,49p,10371b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mt.dvi (18 pages, 28368 bytes).
+Output written on mt.dvi (20 pages, 31396 bytes).
