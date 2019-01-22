@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  22 JAN 2019 13:15
+This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  22 JAN 2019 13:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -756,9 +756,6 @@ LaTeX Font Info:    Font shape `JY2/gt/m/it' will be
 ) [21] (./mt.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
