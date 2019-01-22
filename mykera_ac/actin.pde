@@ -25,8 +25,8 @@ class actin {
     int c=f2.get(att).acn;
     float p=0.0;
     float fp=5.0;
-    float fd=5.0;
-    float rc=2.7;
+    float fd=20.0;
+    float rc=2.5;
     boolean ft=true;
     boolean fl=true;
     boolean fr=true;
@@ -68,7 +68,7 @@ class actin {
       c+=f2.get(att-(N-1)).acn;
 
     p=map(c, 0, a_num, 0, 100);
-    fp*=exp(p*0.1);
+    fp*=exp(p/20);
     if (p<rc) reset();
     else {
       if (random(0.0, 100.0)<p*10) {
@@ -78,7 +78,7 @@ class actin {
         pol_num++;
       }
 
-      if (random(0.0, 100.0)<10/p) {
+      if (random(0.0, 100.0)<10) {
         PVector e =new PVector();
         e.set(PVector.sub(bar, poi));
         float s=r_spe*dt*fd;
@@ -91,6 +91,7 @@ class actin {
       if (bar.y<0.0) reset();
     }
     arf();
+    arf();
   }
 
   void arf() {
@@ -99,19 +100,65 @@ class actin {
     PVector e2=new PVector(0, 0, 0);
     float d4 =0.0;
     float d8 =0.0;
-    float c =16000.0;
-    float d =16000.0;
+    float c =30.0;
+    float d =30.0;
     e1.set(PVector.sub(bar, b));
     d4=e1.mag()*e1.mag();
     e2.set(PVector.sub(poi, b));
     d8=e2.mag()*e2.mag();
-    e1.setMag(c/d4);
-    e2.setMag(d/d8);
 
-    // e1.setMag(20.0);
-    // e2.setMag(20.0);
+    e1.normalize().mult(c/d4);
+    e2.normalize().mult(d/d8);
+
+    // e1.normalize().mult(c);
+    //  e2.normalize().mult(d);
+
     bar.sub(e1);
     poi.sub(e2);
+    dir.set(PVector.sub(bar, poi));
+  }
+
+  void newarf() {
+    PVector b1=new PVector(f0.get(mini).pos.x+(maxx-minx)/5.0, f0.get(mini).pos.y, f0.get(mini).pos.z+135);
+    PVector b2=new PVector(f0.get(mini).pos.x+(maxx-minx)/5.0, f0.get(mini).pos.y, f0.get(mini).pos.z-135);
+    PVector w1=new PVector(0, 0, 0);
+    PVector w2=new PVector(0, 0, 0);
+    PVector e1=new PVector(0, 0, 0);
+    PVector e2=new PVector(0, 0, 0);
+    float d4 =0.0;
+    float d8 =0.0;
+    float c4 =0.0;
+    float c8 =0.0;
+
+    // float c =20.0;
+    //  float d =20.0;
+
+    float c =0.01;
+    float d =0.1;
+    e1.set(PVector.sub(bar, b1));
+    d4=e1.mag()*e1.mag();
+    e2.set(PVector.sub(poi, b1));
+    d8=e2.mag()*e2.mag();
+    w1.set(PVector.sub(bar, b2));
+    c4=w1.mag()*w1.mag();
+    w2.set(PVector.sub(poi, b2));
+    c8=w2.mag()*w2.mag();
+    //  e1.normalize().mult(c/d4);
+    // e2.normalize().mult(d/d8);
+    //  w1.normalize().mult(c/c4);
+    //  w2.normalize().mult(d/c8);
+
+    e1.normalize().mult(c);
+    e2.normalize().mult(d);
+    w1.normalize().mult(c);
+    w2.normalize().mult(d);
+
+    e1.add(w1);
+    e2.add(w2);
+
+    poi.sub(e2);
+    bar.set(PVector.add(poi, dir));
+    dir.set(PVector.sub(bar, poi));
   }
 
   void reset() {
@@ -119,7 +166,7 @@ class actin {
     if (a>0) {
       int b=(int)random(0, a);
       int i =ym.get(b);
-      PVector tar=f0.get(i).nextpos;
+      PVector tar=f0.get(i).pos;
       PVector e=new PVector();
       PVector ne =new PVector();
 

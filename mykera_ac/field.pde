@@ -29,7 +29,7 @@ class area {
     }
 
     for (maku x2 : m_list) {
-      int index=call(x2.nextpos.x, x2.nextpos.y, x2.nextpos.z);
+      int index=call(x2.pos.x, x2.pos.y, x2.pos.z);
       if (index>0&&index<=f_list.size()) {
         f_list.get(index).mcn++;
         x2.att=index;

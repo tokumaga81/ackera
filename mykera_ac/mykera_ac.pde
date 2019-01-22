@@ -11,7 +11,7 @@ actin decoy =new actin(0, 0, 0);
 maku fake = new maku(0, 0, 0);
 area lie =new area(f0, f1, f2);
 adm kera=new adm(f0, f1, f2);
-float v0=pow(10.0, -4);//[m/s]
+float v0=pow(10.0, -3);//[m/s]
 float m_size =500.0; //[mm]
 float y_max =30.0;
 float dx=m_size/30.0;
@@ -21,9 +21,11 @@ float dy=y_max/5.0;
 Map<Integer, ArrayList<Integer>> mme=new HashMap<Integer, ArrayList<Integer>>();
 Map<Integer, ArrayList<Integer>> aal=new HashMap<Integer, ArrayList<Integer>>();
 Map<Integer, ArrayList<Integer>> lin=new HashMap<Integer, ArrayList<Integer>>();
+Map<Integer, ArrayList<Float>> nlm=new HashMap<Integer, ArrayList<Float>>();
+
 float t_total=0.0;
-int sN=4;
-int N =30;
+int sN=2;
+int N =15;
 int W =(int)(m_size*2.0);
 int[] top=new int[(N-2)];
 int[] lef=new int[(N-2)];
@@ -53,9 +55,9 @@ PrintWriter tfile;
 float dt=.001;
 
 // diriables on actin polymerization //
-int a_num=3000;
-float p_spe=20.0;  
-float r_spe=20.0;
+int a_num=2000;
+float p_spe=25.0;
+float r_spe=25.0;
 //diriables on priparation
 float angy=-PI*1.5;
 float angx=0.0;
@@ -131,24 +133,9 @@ void pLine(PVector a, PVector b) {
 
 int call(float x, float y, float z) {
   int i=(int)x/(W/N);
-  int j=(int)y/(int)(y_max*3/sN);
+  int j=(int)y/(int)(y_max/sN);
   int u=(int)(z+W/2)/(W/N);
   return j*N*N+u*N+i;
-}
-
-float[] recall(int d) {
-  float ans[]=new float[3];
-
-  for (int i=0; i<N; i++) {
-    for (int u=0; u<N; u++) {
-      if (u*N+i == d) {
-        ans[0]=i;
-        ans[1]=0;
-        ans[2]=u;
-      }
-    }
-  }
-  return ans;
 }
 
 float[] Sactin() {
@@ -158,9 +145,10 @@ float[] Sactin() {
   ans[0]=-1;
   ans[1]=-1;
   ans[2]=-1;
+  float m3=m_size/3.0;
 
   while ((ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] >=ro*ro|| (ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] <= ri*ri) {
-    ans[0]=random(m2, 2.0*m2*9.5/10);
+    ans[0]=random(m3, m_size);
     ans[1]=random(y_max/15, y_max*1/3);
     ans[2]=random(-2.0*m2*9.5/10, 2.0*m2*9.5/10);
   }
@@ -172,6 +160,7 @@ float[] Ractin() {
   float dr =m_size*3/8;  
   float r1=230;
   float r2=170;
+  //  dr=0.0;
 
   while ((ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] <= r2*r2|| (ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] >= r1*r1) {
     ans[0]=random(dr, m_size);

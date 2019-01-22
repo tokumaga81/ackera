@@ -24,12 +24,12 @@ class adm extends Kernel {
         maxi=m_list.indexOf(x0);
       }
       x0.update(m_list, m_list.indexOf(x0), a_list);
-      if (x0.nextpos.y>13.5&&x0.nextpos.y<16.5&x0.nextpos.x>(maxx-minx)/2.0) 
+      if (x0.pos.y>13.5&&x0.pos.y<16.5&x0.pos.x>(maxx-minx)/2.0) 
         ym.add(m_list.indexOf(x0));
     }
 
     //F-ACTIN-cal
-    if (dly%10==0) { 
+    if (dly%15==0) { 
       for (actin x1 : a_list) {
         if (x1.bar.x>pm) {
           dpm=.5*(x1.bar.x-pm);
@@ -77,7 +77,7 @@ class adm extends Kernel {
       for (int h=0; h<s.size(); h++) {
         PVector other =new PVector();
         other =m_list.get(s.get(h)).pos;
-        pLine(i.nextpos, other);
+        pLine(i.pos, other);
       }
     }
 
