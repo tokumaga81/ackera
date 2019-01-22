@@ -33,11 +33,10 @@ Division of Fundamental Sciences\\[3cm]
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \section{Introduction}
-{\it Amoeba proteus}, a common ameba cell, migrates while repeating complicated morphological changes:
-{\it Amoeba proteus} is completed by the pseudopodium made by stretching from the cell membrane landing away from itself.
-In contrast, keratocytes, a fish epidermal cell, migrates while maintaining its half-moon shape.
+{\it Amoeba proteus}, a common ameba cell, migrates by stretching pseudopodia and its cell shape continuously changes.
+In contrast, keratocyte, a fish epidermal cell, migrates while maintaining its half-moon shape.
 Hence, the migration does not occur without causing shape change.
-However, keratocytes move forward without changing its shape. It is not clear why keratocytes form a half-moon shape, why keratocytes can migrate without changing its shape.
+However, keratocytes move forward without changing its shape. It is not clear why keratocytes form a half-moon shape, and migrate without changing its shape.
 
 For example, humans walk by bending and floating the legs when moving from the spot. 
 Walking is formed by complicated combination of the structures of the leg joints, bones, muscles and the like.
@@ -89,7 +88,7 @@ It is a common fact even in keratocytes that the cell membrane is deformed by ac
 
 \chapter{Simulation Methods}
 \section{Reduction in Calculation Volume}
-Computational complexity becomes huge if calculating the distance between membrane molecules by my step. Therefore, while calculating the cell membrane model, preserve the interparticle distance beforehand and refer to that information. The inter-particle distance in the initial state is $dx$. Particles with interparticle distance $x$ satisfying $x <dx$ are listed respectively. This method can be adopted because the position information adjacent does not change regardless of how much the interparticle distance changes.
+Calculating the distance between membrane molecules in all steps increases the computational complexity. Therefore, while calculating the cell membrane model, preserve the interparticle distance beforehand and refer to that information. The inter-particle distance in the initial state is $dx$. Particles with interparticle distance $x$ satisfying $x <dx$ are listed respectively. This method can be adopted because the position information adjacent does not change regardless of how much the interparticle distance changes.
 
 Next, we introduce the calculation method of actin molecule-membrane intermolecular distance. Even in this case, calculating the distance between all the particles in all the steps leads to a huge amount of calculation, so it must be devised. In the case of the membrane molecule and the actin molecule, both the distance and the position greatly change so that the index preservation method can not be used. Therefore, the whole cell is divided into areas. Area division is done in dice style, and membrane molecules are acted on by actin molecules belonging to the same area. Although the amount of calculation can be drastically reduced, even if the distance between particles is sufficiently close, there is a demerit that there is no influence on the membrane molecule if the respective belonging areas are different.
 
@@ -103,7 +102,7 @@ where  $m$ is the mass, $\eta = 8.9\times 10^{-6} \si{kg.s^{-1}}$ is the viscous
 \begin{equation}
 \bm{F}^m_i = \sum_{i \in I_j}  -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
 \end{equation}
-where $k$ is the spring constant, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. Particle $i$ belongs to the set of index $I$ adjacent to particle $j$. However, this natural length measures the distance between the membrane molecules in the initial state. The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force:
+where $k$ is the spring constant, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. Molecule  $i$ belongs to the set of index $I$ adjacent to molecule $j$. However, this natural length measures the distance between the membrane molecules in the initial state. The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force:
 \begin{equation}
 \bm{F}^a_i = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
 \end{equation}
@@ -136,17 +135,17 @@ The cell membrane molecule with the smallest x coordinate is the reference point
 
 \begin{numcases}
   {}
-  \bm{B}_i \gets \bm{B}_i - \alpha \frac{ \bm{B}_i - \bm{E}_0}{{\| \bm{B}_i - \bm{E}_0 \|}^2} & \\
-   \bm{P}_i \gets \bm{P}_i - \beta \frac{ \bm{P}_i - \bm{E}_0}{{\| \bm{P}_i - \bm{E}_0 \|}^2} &
+  \bm{B}_i \gets \bm{B}_i - \alpha \frac{ \bm{B}_i - \bm{E}_0}{{\| \bm{B}_i - \bm{E}_0 \|}^w} & \\
+   \bm{P}_i \gets \bm{P}_i - \beta \frac{ \bm{P}_i - \bm{E}_0}{{\| \bm{P}_i - \bm{E}_0 \|}^w} &
 \end{numcases}
-where the vector $\bm{B}_i$ is barbed-end, the vector $\bm{P}_i$ is pointed-end, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF.
+where the vector $\bm{B}_i$ is barbed-end, the vector $\bm{P}_i$ is pointed-end, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF. This equation means ARF which does not depend on distance when w = 1 and ARF depending on distance when w = 2.
 
 Since there is a possibility that the shape of the cell membrane may change at the position of the reference point $\bm{E}_0$, another reference points $\bm{E}_1$ and $\bm{E}_2$ are proposed. Hence, two pattern experiments are performed with one and two ARF reference points. As shown in the figure, the reference points A and B are positioned at 1/5 of the cell membrane. The position update formula of ARF when two reference points  $\bm{E}_1$ and $\bm{E}_2$ are used is shown below.
 
 \begin{numcases}
   {}
-  \bm{B}_i \gets \bm{B}_i - \gamma \left( \frac{ \bm{B}_i - \bm{E}_1 }{{\| \bm{B}_i - \bm{E}_1 \|}^2} + \frac{ \bm{B}_i - \bm{E}_2}{{\| \bm{B}_i - \bm{E}_2 \|}^2} \right)& \\
-   \bm{P}_i \gets \bm{P}_i - \delta \left( \frac{ \bm{P}_i - \bm{E}_1 }{{\| \bm{P}_i - \bm{E}_1 \|}^2} + \frac{ \bm{B}_i - \bm{E}_2}{{\| \bm{B}_i - \bm{E}_2 \|}^2}  \right) &
+  \bm{B}_i \gets \bm{B}_i - \gamma \left( \frac{ \bm{B}_i - \bm{E}_1 }{{\| \bm{B}_i - \bm{E}_1 \|}^w} + \frac{ \bm{B}_i - \bm{E}_2}{{\| \bm{B}_i - \bm{E}_2 \|}^w} \right)& \\
+   \bm{P}_i \gets \bm{P}_i - \delta \left( \frac{ \bm{P}_i - \bm{E}_1 }{{\| \bm{P}_i - \bm{E}_1 \|}^w} + \frac{ \bm{P}_i - \bm{E}_2}{{\| \bm{P}_i - \bm{E}_2 \|}^w}  \right) &
 \end{numcases}
 where $\gamma$ and $\delta$ are constants that determines the strength of the ARF.
 
@@ -296,8 +295,77 @@ Fig. \ref{fig:res3} shows the simulation results when using ARF reference points
  \label{fig:res4}
 \end{figure}
 
+\begin{figure}[h]
+ \subfloat[t=0.5.]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top05_25rc.eps} \\
+   \includegraphics[width=5cm]{side05_25rc.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=2.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top20_25rc.eps} \\
+   \includegraphics[width=5cm]{side20_25rc.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=4.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top40_25rc.eps} \\
+   \includegraphics[width=5cm]{side40_25rc.eps}
+  \end{tabular}
+ }%
+ \caption{Simulation results for relocation condition of actin concentration 2.5\%.}
+ \label{fig:res5}
+\end{figure}
+
+
+\begin{figure}[h]
+ \subfloat[t=0.5.]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top05_30rc.eps} \\
+   \includegraphics[width=5cm]{side05_30rc.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=2.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top20_30rc.eps} \\
+   \includegraphics[width=5cm]{side20_30rc.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=4.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top40_30rc.eps} \\
+   \includegraphics[width=5cm]{side40_30rc.eps}
+  \end{tabular}
+ }%
+ \caption{Simulation results for relocation condition of actin concentration 3.0\%.}
+ \label{fig:res6}
+\end{figure}
 
 \subsection{Effect of Initial Placement}
+
+\begin{figure}[h]
+ \subfloat[t=0.5.]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top05_ci.eps} \\
+   \includegraphics[width=5cm]{side05_ci.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=2.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top20_ci.eps} \\
+   \includegraphics[width=5cm]{side20_ci.eps}
+  \end{tabular}
+ }%
+ \subfloat[t=4.0]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top40_ci.eps} \\
+   \includegraphics[width=5cm]{side40_ci.eps}
+  \end{tabular}
+ }%
+ \caption{Simulation results when the initial arrangement of actin molecules is circular.}
+ \label{fig:res7}
+\end{figure}
 
 
 \section{Discussion}
