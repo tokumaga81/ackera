@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  22 JAN 2019 13:58
+This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  30 JAN 2019 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -505,11 +505,11 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 (Font)              scaled to size 16.62714pt on input line 35.
 
 LaTeX Font Warning: Font shape `JT2/mc/m/it' undefined
-(Font)              using `JT2/mc/m/n' instead on input line 36.
+(Font)              using `JT2/mc/m/n' instead on input line 37.
 
 
 LaTeX Font Warning: Font shape `JY2/mc/m/it' undefined
-(Font)              using `JY2/mc/m/n' instead on input line 36.
+(Font)              using `JY2/mc/m/n' instead on input line 37.
 
 [1] [2
 
@@ -518,46 +518,46 @@ Chapter 2.
 File: kera.eps Graphic file (type eps)
 <kera.eps>
 LaTeX Font Info:    Font shape `JT2/mc/m/it' will be
-(Font)              scaled to size 11.54663pt on input line 72.
+(Font)              scaled to size 11.54663pt on input line 78.
 LaTeX Font Info:    Font shape `JY2/mc/m/it' will be
-(Font)              scaled to size 11.54663pt on input line 72.
+(Font)              scaled to size 11.54663pt on input line 78.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [3]
 
 LaTeX Font Warning: Font shape `JT2/mc/m/sl' undefined
-(Font)              using `JT2/mc/m/n' instead on input line 89.
+(Font)              using `JT2/mc/m/n' instead on input line 95.
 
 
 LaTeX Font Warning: Font shape `JY2/mc/m/sl' undefined
-(Font)              using `JY2/mc/m/n' instead on input line 89.
+(Font)              using `JY2/mc/m/n' instead on input line 95.
 
 [4]
 Chapter 3.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 101.
+(Font)              scaled to size 7.69775pt on input line 107.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 101.
+(Font)              scaled to size 7.69775pt on input line 107.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 101.
+(Font)              scaled to size 5.77332pt on input line 107.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 101.
+(Font)              scaled to size 5.77332pt on input line 107.
 [5
 
 ]
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 113.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 119.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 113.
+(Font)              scaled to size 13.85594pt on input line 119.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 113.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 119.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 113.
+(Font)              scaled to size 13.85594pt on input line 119.
 LaTeX Font Info:    Font shape `JT2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 137.
+(Font)              scaled to size 11.54663pt on input line 143.
 LaTeX Font Info:    Font shape `JY2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 137.
+(Font)              scaled to size 11.54663pt on input line 143.
  [6]
 File: top.eps Graphic file (type eps)
  <top.eps>
@@ -569,9 +569,9 @@ File: top05_arf.eps Graphic file (type eps)
 File: side05_arf.eps Graphic file (type eps)
  <side05_arf.eps>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 182.
+(Font)              scaled to size 9.6222pt on input line 188.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 182.
+(Font)              scaled to size 9.6222pt on input line 188.
 File: top20_arf.eps Graphic file (type eps)
  <top20_arf.eps>
 File: side20_arf.eps Graphic file (type eps)
@@ -581,7 +581,7 @@ File: top40_arf.eps Graphic file (type eps)
 <top40_arf.eps>
 File: side40_arf.eps Graphic file (type eps)
  <side40_arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 182--195
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 188--201
 [][][][] 
  []
 
@@ -598,7 +598,7 @@ File: top40_iarf.eps Graphic file (type eps)
 <top40_iarf.eps>
 File: side40_iarf.eps Graphic file (type eps)
  <side40_iarf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 205--218
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 211--224
 [][][][] 
  []
 
@@ -618,7 +618,7 @@ File: top40_narf.eps Graphic file (type eps)
 <top40_narf.eps>
 File: side40_narf.eps Graphic file (type eps)
  <side40_narf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 228--241
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 234--247
 [][][][] 
  []
 
@@ -641,7 +641,7 @@ File: top40_2arf.eps Graphic file (type eps)
 <top40_2arf.eps>
 File: side40_2arf.eps Graphic file (type eps)
  <side40_2arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 254--267
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 260--273
 [][][][] 
  []
 
@@ -661,7 +661,7 @@ File: top40_15rc.eps Graphic file (type eps)
 <top40_15rc.eps>
 File: side40_15rc.eps Graphic file (type eps)
  <side40_15rc.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 281--294
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 287--300
 [][][][] 
  []
 
@@ -681,7 +681,7 @@ File: top40_25rc.eps Graphic file (type eps)
 <top40_25rc.eps>
 File: side40_25rc.eps Graphic file (type eps)
  <side40_25rc.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 304--317
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 310--323
 [][][][] 
  []
 
@@ -701,7 +701,7 @@ File: top40_30rc.eps Graphic file (type eps)
 <top40_30rc.eps>
 File: side40_30rc.eps Graphic file (type eps)
  <side40_30rc.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 328--341
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 334--347
 [][][][] 
  []
 
@@ -721,7 +721,7 @@ File: top40_ci.eps Graphic file (type eps)
 File: side40_ci.eps Graphic file (type eps)
 
 <side40_ci.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 353--366
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 359--372
 [][][][] 
  []
 
@@ -767,4 +767,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  44i,12n,49p,10371b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mt.dvi (24 pages, 41376 bytes).
+Output written on mt.dvi (24 pages, 40672 bytes).

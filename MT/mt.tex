@@ -33,24 +33,28 @@ Division of Fundamental Sciences\\[3cm]
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \section{Introduction}
+%問題提起
 {\it Amoeba proteus}, a common ameba cell, migrates by stretching pseudopodia and its cell shape continuously changes.
-In contrast, keratocyte, a fish epidermal cell, migrates while maintaining its half-moon shape.
-Hence, the migration does not occur without causing shape change.
-However, keratocytes move forward without changing its shape. It is not clear why keratocytes form a half-moon shape, and migrate without changing its shape.
+In contrast, keratocyte, a fish epidermal cell, migrates while keeping its half-moon shape.
+Keratocytes in the initial state is a circular shape and deforms in a half-moon shape when moving.
+It is not clear why keratocytes form a half-moon shape and migrate without changing its shape.
 
-For example, humans walk by bending and floating the legs when moving from the spot. 
-Walking is formed by complicated combination of the structures of the leg joints, bones, muscles and the like.
-As with other organisms, if the form of the organism and its motor function are closely related, what is the effect of the half-moon shape formed by the migration of keratocytes on the motor function of keratocytes?
-Elucidating this problem is interesting to know the relationship between the form of organism and motor function.
+%いかに不思議か(問題点を具体化)
+Migrating cells including keratocytes perform cell migration by the action of cytoskeleton called actin molecule. 
+Actin polymerization (AP) is a phenomenon in which actin molecules overlap each other to form F-actin. 
+F-actin is shortened in length by depolymerization or lengthened by AP.
+F-actin that repeats elasticity pushes the cell membrane and deforms the cell.
+If the AP is too active, the cell membrane will swell up.
+Conversely, without an AP, the cell membrane will not be deformed.
+It can be seen that it is difficult to keep the shape of cells during cell migration even by paying attention to one element called AP.
 
-Inside the cell is the actin molecule. This is an element which corresponds to bones in human beings. The actin molecule undergoes various movements to change the shape of the cell.
-Hence, crescent-shaped morphogenesis is due to this actin molecule.
-In this study, we examine how the actin molecule maintains a crescent shape when it moves.
-
+%目的
 The porpose of this study is to clarify the relationship between keratocytes morphology and motor function in cell migration. Specifically, we will elucidate the intracellular mechanism that keeps the cell shape half-moon during cell migration.
 
-The structure of this paper is as follows. In Chapter 2, we explain the specific features of keratinocytes and the outline of cell migration mechanism. In Chapter 3, details of simulation experiment method will be described. Section 4 presents the results of simulation experiments and discusses the considerations. In the last chapter, we explain the improvements and future prospects of the facts and methods obtained from this survey.
+%本稿の構成
+The structure of this paper is as follows. In Chapter 2, we explain the specific features of keratocytes and the outline of cell migration mechanism. In Chapter 3, details of simulation experiment method will be described. Section 4 presents the results of simulation experiments and discusses the considerations. In the last chapter, we explain the improvements and future prospects of the facts and methods obtained from this survey.
 
+%第２章
 \chapter{Keratocytes}
 \section{Characteristics of Cell Migration of Keratocytes}
 \begin{figure}[tbp]
@@ -60,23 +64,25 @@ The structure of this paper is as follows. In Chapter 2, we explain the specific
 \label{fig:kera}
 \end{figure}
 
-A photograph of the actual keratocytes are shown in Figure \ref{fig:kera}. Keratocytes are migratory fish epidermal cells. 
-Keratocytes are about \SI{70}{\mu m} in size and are a cell present on the back side of the fish scales.
-When a fish bleeds due to trauma, it gathers to cover the wound. At this point, Keratcytes is doing the ameba movement.
-Ameba Movement of keratocytes  contrasts with the typical Ameba movement and moves straight forward while maintaining a shape like a half-moon shape during migrating.
-Migrating cells are cells that can freely move around in the same way as lymphocytes and the like. Keratocytes advances by about one body length in one minute. The physiological findings of cell migration will be introduced in the next section.
+%ケラトサイトの自己紹介
+Keratocytes is migratory fish epidermal cells, is about \SI{70}{\mu m} in size and present on the back side of the fish scales.
+When a fish bleeds due to trauma, they gather to cover the wound.
+Although the locomotion of keratocytes is one of amoeboid movements, however, it is different from typical amoeba movement and moves straight with keeping a half-moon shape.
+Migrating cells are cells that can freely move around in the same way as lymphocytes.
+Keratocytes advances by about one body length in one minute.
+The physiological findings of cell migration will be introduced in the next section.
 
-We introduce the findings of the cell migration mechanism revealed by studies using keratinocytes in the field of biophysics.
-Svitkina et al.\cite{svitkina1997analysis} showed that the forward translocation of the cell body and retrograde flow in the lamellipodia are both driven by contraction of an actin–myosin network in the lamellipodial/cell body transition zone.
+%参考文献
+Svitkina et al. \cite{svitkina1997analysis} showed that the forward translocation of the cell body and retrograde flow in the lamellipodia are both driven by contraction of an actin-myosin network in the lamellipodial/cell body transition zone.
 The importance of both actin polymerization (AP) and actin retrograde flow (ARF) in cell migration of migrating cells was suggested.
-Asano et al.\cite{asano2004keratocyte} showed that movement similar to keratocytes was observed when AmiB gene was deleted from ameba cells of cellular slime mold {\it Dictyostelium discoideum} which performs typical ameba movement.
+Asano et al. \cite{asano2004keratocyte} showed that movement similar to keratocytes was observed when AmiB gene was deleted from ameba cells of cellular slime mold {\it Dictyostelium discoideum} which performs typical ameba movement.
 Even in other ameboid cells, if some condition is satisfied, there is a possibility of maintaining a half-moon shape, which means that morphogenesis of keratocyte is not unique to keratocyte and is a physical mechanism causing cell migration.
 Therefore, this research strongly insists that the crescent shape morphogenesis is a physical factor such as AP and ARF.
-Nakata et al.\cite{nakata2016role} focused on pulling force against temperament and flow rate gradient of ARF, and reported that stress fiber (SF) plays an important role in morphological control of keratinocytes.
+Nakata et al. \cite{nakata2016role} focused on pulling force against temperament and flow rate gradient of ARF, and reported that stress fiber (SF) plays an important role in morphological control of keratinocytes.
 Focusing on the fact that the keratocytes of different fish are not in the same crescent shape, it was suggested that the factor is the velocity gradient of ARF.
-Swaminathan et al.\cite{swaminathan2017actin} focused on adhesion receptor integrins that bind cells and their environment.
+Swaminathan et al. \cite{swaminathan2017actin} focused on adhesion receptor integrins that bind cells and their environment.
 Suggesting that regurgitation of actin regulates the orientation of the integrin and may determine the propulsion direction of the cell. From the previous studies above, it is known that both AP and ARF play an important role in cell migration of keratocytes.
-Okimura et al.\cite{okimura2018rotation} showed that the rotation of these stress fibers plays the role of a “wheel” in crawling migration of keratocytes.
+Okimura et al. \cite{okimura2018rotation} showed that the rotation of these stress fibers plays the role of a “wheel” in crawling migration of keratocytes.
 Removal of the stress fibers decreased migration velocity and induced the collapse of the left-right balance of crawling migration.
 It is suggested that cell migration is not performed only by AP and ARF but SF located in the posterior part of the cell is also important.
 
@@ -371,7 +377,7 @@ Fig. \ref{fig:res3} shows the simulation results when using ARF reference points
 \section{Discussion}
 The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously. Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule.
 
-\chapter{Conclusion}
+\chapter{Conclusions and Future Work}
 \section{Morphology of Keratocytes and Its Motor Function}
 
 \section{Future Prospects}
