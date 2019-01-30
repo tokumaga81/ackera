@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  30 JAN 2019 10:52
+This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  30 JAN 2019 12:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -536,28 +536,28 @@ LaTeX Font Warning: Font shape `JY2/mc/m/sl' undefined
 [4]
 Chapter 3.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 107.
+(Font)              scaled to size 7.69775pt on input line 101.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 107.
+(Font)              scaled to size 7.69775pt on input line 101.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 107.
+(Font)              scaled to size 5.77332pt on input line 101.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 107.
+(Font)              scaled to size 5.77332pt on input line 101.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 113.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 13.85594pt on input line 113.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 113.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 13.85594pt on input line 113.
 [5
 
 ]
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 119.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 119.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 119.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 119.
 LaTeX Font Info:    Font shape `JT2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 143.
+(Font)              scaled to size 11.54663pt on input line 149.
 LaTeX Font Info:    Font shape `JY2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 143.
+(Font)              scaled to size 11.54663pt on input line 149.
  [6]
 File: top.eps Graphic file (type eps)
  <top.eps>
@@ -569,9 +569,9 @@ File: top05_arf.eps Graphic file (type eps)
 File: side05_arf.eps Graphic file (type eps)
  <side05_arf.eps>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 188.
+(Font)              scaled to size 9.6222pt on input line 195.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 188.
+(Font)              scaled to size 9.6222pt on input line 195.
 File: top20_arf.eps Graphic file (type eps)
  <top20_arf.eps>
 File: side20_arf.eps Graphic file (type eps)
@@ -581,7 +581,7 @@ File: top40_arf.eps Graphic file (type eps)
 <top40_arf.eps>
 File: side40_arf.eps Graphic file (type eps)
  <side40_arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 188--201
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 195--208
 [][][][] 
  []
 
@@ -598,7 +598,7 @@ File: top40_iarf.eps Graphic file (type eps)
 <top40_iarf.eps>
 File: side40_iarf.eps Graphic file (type eps)
  <side40_iarf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 211--224
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 218--231
 [][][][] 
  []
 
@@ -618,7 +618,7 @@ File: top40_narf.eps Graphic file (type eps)
 <top40_narf.eps>
 File: side40_narf.eps Graphic file (type eps)
  <side40_narf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 234--247
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 241--254
 [][][][] 
  []
 
@@ -641,7 +641,7 @@ File: top40_2arf.eps Graphic file (type eps)
 <top40_2arf.eps>
 File: side40_2arf.eps Graphic file (type eps)
  <side40_2arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 260--273
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 267--280
 [][][][] 
  []
 
@@ -661,7 +661,7 @@ File: top40_15rc.eps Graphic file (type eps)
 <top40_15rc.eps>
 File: side40_15rc.eps Graphic file (type eps)
  <side40_15rc.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 287--300
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 294--307
 [][][][] 
  []
 
@@ -681,7 +681,7 @@ File: top40_25rc.eps Graphic file (type eps)
 <top40_25rc.eps>
 File: side40_25rc.eps Graphic file (type eps)
  <side40_25rc.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 310--323
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 317--330
 [][][][] 
  []
 
@@ -701,7 +701,7 @@ File: top40_30rc.eps Graphic file (type eps)
 <top40_30rc.eps>
 File: side40_30rc.eps Graphic file (type eps)
  <side40_30rc.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 334--347
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 341--354
 [][][][] 
  []
 
@@ -721,7 +721,7 @@ File: top40_ci.eps Graphic file (type eps)
 File: side40_ci.eps Graphic file (type eps)
 
 <side40_ci.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 359--372
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 366--379
 [][][][] 
  []
 
@@ -765,6 +765,6 @@ Here is how much of TeX's memory you used:
  15797 multiletter control sequences out of 15000+600000
  24016 words of font info for 103 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 44i,12n,49p,10371b,599s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,9n,49p,10371b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mt.dvi (24 pages, 40672 bytes).
+Output written on mt.dvi (24 pages, 39932 bytes).

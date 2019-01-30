@@ -93,18 +93,12 @@ It is a common fact even in keratocytes that the cell membrane is deformed by ac
 
 
 \chapter{Simulation Methods}
-\section{Reduction in Calculation Volume}
-Calculating the distance between membrane molecules in all steps increases the computational complexity. Therefore, while calculating the cell membrane model, preserve the interparticle distance beforehand and refer to that information. The inter-particle distance in the initial state is $dx$. Particles with interparticle distance $x$ satisfying $x <dx$ are listed respectively. This method can be adopted because the position information adjacent does not change regardless of how much the interparticle distance changes.
-
-Next, we introduce the calculation method of actin molecule-membrane intermolecular distance. Even in this case, calculating the distance between all the particles in all the steps leads to a huge amount of calculation, so it must be devised. In the case of the membrane molecule and the actin molecule, both the distance and the position greatly change so that the index preservation method can not be used. Therefore, the whole cell is divided into areas. Area division is done in dice style, and membrane molecules are acted on by actin molecules belonging to the same area. Although the amount of calculation can be drastically reduced, even if the distance between particles is sufficiently close, there is a demerit that there is no influence on the membrane molecule if the respective belonging areas are different.
-
-
 \section{Simulation Methods of Cell Membrane Molecules}
 In the cell membrane model, each cell membrane molecule moves under the resultant of force and velocity from the actin molecule and resistance force proportional to force between the cell membrane molecules. The equation of motion of the cell membrane molecule is as follows.
 \begin{equation}
 m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^m_i +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
 \end{equation}
-where  $m$ is the mass, $\eta = 8.9\times 10^{-6} \si{kg.s^{-1}}$ is the viscous coefficient, and $\bm{x}_i$ is the position vector of the membrane molecule. The membrane molecule has the force  $\bm{F}^m_i$ received from the membrane molecule and the force  $\bm{F}^a_i$ received from the actin molecule. It is assumed that the force  $\bm{F}^m_i$ acting between the membrane molecules can be represented by elastic force:
+where  $m$ is the mass, $\eta = 8.9\times10^{-6}\si{~kg/s}$ is the viscous coefficient, and $\bm{x}_i$ is the position vector of the membrane molecule. The membrane molecule has the force  $\bm{F}^m_i$ received from the membrane molecule and the force  $\bm{F}^a_i$ received from the actin molecule. It is assumed that the force  $\bm{F}^m_i$ acting between the membrane molecules can be represented by elastic force:
 \begin{equation}
 \bm{F}^m_i = \sum_{i \in I_j}  -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
 \end{equation}
@@ -157,11 +151,6 @@ where $\gamma$ and $\delta$ are constants that determines the strength of the AR
 
 In the above equation, the denominator is squared taking into consideration the distance dependency between the particles. If we compare distance-dependent ARF and distance-independent ARF, the square of the denominator of the above equation is deleted.
 \section{Initial Condition and Relocation  Condition}
-The total number of actin is 3000, the number of membrane molecules is 2000. When updating the position of F-actin every step, deformation of the cell membrane can not catch up. Therefore, the position of the cell membrane molecule is updated each time, and the position of actin molecule is updated once every 10 times.
-
-The direction of polymerization is randomly determined. Some actins invade areas where they can not normally invade due to the progress of polymerization. For example, it is outside the cell membrane and in the nucleus. In such a case, relocation processing is applied to the actin. F-actin escaping from the cell membrane disappears and moves to a random place close to the cell membrane. The region to be repositioned is outside of the cell membrane and regions where the concentration of actin molecule is low.
-
-The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} and Fig. \ref{fig:side0}. The actin molecule is indicated by a green line, and the cell membrane is indicated by a white dot. This is the initial placement of actin molecules because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction. The membrane molecules are placed on the surface of the cylinder and not inside.
 \begin{figure}[tbp]
 \centering
 \includegraphics[scale=0.25]{top.eps}
@@ -174,6 +163,24 @@ The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} a
 \caption{Side view of keratocyte model at time $t=0$.}
 \label{fig:side0}
 \end{figure}
+The total number of actin is 3000, the number of membrane molecules is 2000. When updating the position of F-actin every step, deformation of the cell membrane can not catch up. Therefore, the position of the cell membrane molecule is updated each time, and the position of actin molecule is updated once every 10 times.
+
+The direction of polymerization is randomly determined. Some actins invade areas where they can not normally invade due to the progress of polymerization. For example, it is outside the cell membrane and in the nucleus. In such a case, relocation processing is applied to the actin. F-actin escaping from the cell membrane disappears and moves to a random place close to the cell membrane. The region to be repositioned is outside of the cell membrane and regions where the concentration of actin molecule is low.
+
+The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} and Fig. \ref{fig:side0}. The actin molecule is indicated by a green line, and the cell membrane is indicated by a white dot. This is the initial placement of actin molecules because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction. The membrane molecules are placed on the surface of the cylinder and not inside.
+
+\section{Reduction in Calculation Volume}
+%細胞膜のはなし
+Calculating the distance between membrane molecules in all steps increases the computational complexity.
+Therefore, when calculating the cell membrane model, the distance between the cell membrane molecules stored in advance was referred to.
+In the initial state, the index information of the adjacent cell membrane molecules was stored.
+This method can be adopted because the position information adjacent does not change regardless of how much the interparticle distance changes.
+
+%エリアわけ
+Likewise, if the distance between the cell membrane molecule and the actin molecule is calculated in all steps, the process becomes heavy.
+Unlike the case of intermolecular molecules, the index information of nearby molecules changes in the case of actin molecule and cell membrane molecules.
+
+
 
 \chapter{Results and Discussion}
 \section{Simulation Results}
