@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {1.1}Introduction}{1}
 \contentsline {chapter}{\numberline {2}Keratocytes}{3}
 \contentsline {section}{\numberline {2.1}Characteristics of Cell Migration of Keratocytes}{3}
-\contentsline {section}{\numberline {2.2}Molecular Mechanism of Cell Migration}{4}
+\contentsline {section}{\numberline {2.2}Molecular Mechanism of Cell Migration}{3}
 \contentsline {chapter}{\numberline {3}Simulation Methods}{5}
 \contentsline {section}{\numberline {3.1}Simulation Methods of Cell Membrane Molecules}{5}
 \contentsline {section}{\numberline {3.2}Simulation Methods of Actin Molecules}{5}
@@ -14,12 +14,10 @@
 \contentsline {chapter}{\numberline {4}Results and Discussion}{9}
 \contentsline {section}{\numberline {4.1}Simulation Results}{9}
 \contentsline {subsection}{\numberline {4.1.1}Role of Actin Retrograde Flow}{9}
-\contentsline {subsection}{\numberline {4.1.2}Position of Actin retrograde flow reference point}{10}
-\contentsline {subsection}{\numberline {4.1.3}Importance of Relocation Condition}{11}
-\contentsline {subsection}{\numberline {4.1.4}Effect of Initial Placement}{11}
-\contentsline {section}{\numberline {4.2}Discussion}{11}
-\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{17}
-\contentsline {section}{\numberline {5.1}Morphology of Keratocytes and Its Motor Function}{17}
-\contentsline {section}{\numberline {5.2}Future Prospects}{17}
-\contentsline {chapter}{Acknowledgements}{19}
-\contentsline {chapter}{Bibliography}{21}
+\contentsline {subsection}{\numberline {4.1.2}Effect of Initial Placement}{9}
+\contentsline {section}{\numberline {4.2}Discussion}{9}
+\contentsline {chapter}{\numberline {5}Conclusions and Future Work}{13}
+\contentsline {section}{\numberline {5.1}Half-Moon Shape for Keratocytes}{13}
+\contentsline {section}{\numberline {5.2}Future Work}{13}
+\contentsline {chapter}{Acknowledgements}{15}
+\contentsline {chapter}{Bibliography}{17}

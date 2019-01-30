@@ -34,9 +34,8 @@ Division of Fundamental Sciences\\[3cm]
 \setcounter{page}{1}
 \section{Introduction}
 %問題提起
-{\it Amoeba proteus}, a common ameba cell, migrates by stretching pseudopodia and its cell shape continuously changes.
-In contrast, keratocyte, a fish epidermal cell, migrates while keeping its half-moon shape.
-Keratocytes in the initial state is a circular shape and deforms in a half-moon shape when moving.
+{\it Amoeba proteus},  a common ameba cell, migrates by stretching pseudopodia with changing  its cell shape continuously.
+In contrast, keratocytes usually take a circular shape; however it deforms in a half-moon shape and migrates with keeping the shape.
 It is not clear why keratocytes form a half-moon shape and migrate without changing its shape.
 
 %いかに不思議か(問題点を具体化)
@@ -65,12 +64,10 @@ The structure of this paper is as follows. In Chapter 2, we explain the specific
 \end{figure}
 
 %ケラトサイトの自己紹介
-Keratocytes is migratory fish epidermal cells, is about \SI{70}{\mu m} in size and present on the back side of the fish scales.
-When a fish bleeds due to trauma, they gather to cover the wound.
-Although the locomotion of keratocytes is one of amoeboid movements, however, it is different from typical amoeba movement and moves straight with keeping a half-moon shape.
-Migrating cells are cells that can freely move around in the same way as lymphocytes.
-Keratocytes advances by about one body length in one minute.
-The physiological findings of cell migration will be introduced in the next section.
+A keratocytes, a migratory fish epidermal cell, is a wound healing cell about \SI{70}{\mu m}  in size.
+When a fish injures, keratocytes begin migration toward the injured position toward  the wound by the speed of about one body length in one minute.
+The locomotion of keratocytes is a kind of amoeboid movements;
+however, it is different from typical amoeba movement at the point that they moves  with keeping a half-moon shape. 
 
 %参考文献
 Svitkina et al. \cite{svitkina1997analysis} showed that the forward translocation of the cell body and retrograde flow in the lamellipodia are both driven by contraction of an actin-myosin network in the lamellipodial/cell body transition zone.
@@ -146,6 +143,7 @@ Since there is a possibility that the shape of the cell membrane may change at t
   {}
   \bm{B}_i \gets \bm{B}_i - \gamma \left( \frac{ \bm{B}_i - \bm{E}_1 }{{\| \bm{B}_i - \bm{E}_1 \|}^w} + \frac{ \bm{B}_i - \bm{E}_2}{{\| \bm{B}_i - \bm{E}_2 \|}^w} \right)& \\
    \bm{P}_i \gets \bm{P}_i - \delta \left( \frac{ \bm{P}_i - \bm{E}_1 }{{\| \bm{P}_i - \bm{E}_1 \|}^w} + \frac{ \bm{P}_i - \bm{E}_2}{{\| \bm{P}_i - \bm{E}_2 \|}^w}  \right) &
+   \label{eq:arf}
 \end{numcases}
 where $\gamma$ and $\delta$ are constants that determines the strength of the ARF.
 
@@ -185,210 +183,129 @@ For this reason, the simulation space was divided into areas in mesh form, and i
 \chapter{Results and Discussion}
 \section{Simulation Results}
 \subsection{Role of Actin Retrograde Flow}
-
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
+%SF、距離非依存
+\begin{figure}[tbp]
+ \subfloat[t=1.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_arf.eps} \\
-   \includegraphics[width=5cm]{side05_arf.eps}
+   \includegraphics[width=5cm]{top10_darf.eps} 
   \end{tabular}
  }%
- \subfloat[t=2.0]{%
+ \subfloat[t=3.5]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_arf.eps} \\
-   \includegraphics[width=5cm]{side20_arf.eps}
+   \includegraphics[width=5cm]{top35_arf.eps} 
   \end{tabular}
  }%
- \subfloat[t=4.0]{%
+ \subfloat[t=6.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_arf.eps} \\
-   \includegraphics[width=5cm]{side40_arf.eps}
+   \includegraphics[width=5cm]{top60_arf.eps} 
   \end{tabular}
  }%
- \caption{Simulation results. This is a picture of the keratocyte model taken at time $t = 0.5, 2.0, 4.0 [s]$. The top is the top view and the bottom is the side view pictures of the same time zone. A green line indicates a cell membrane, and a red dot indicates F-actin polymerized. Distance dependent ARF is used, and the setting value of relocation condition is 3.0\%.}
+ \caption{Simulation results. This is a picture of the keratocyte model taken at time $t = 1.0, 3.5, 6.0 [s]$. The top is the top view and the bottom is the side view pictures of the same time zone. A green line indicates a cell membrane, and a red dot indicates F-actin polymerized. Distance independent ARF is used, and the setting value of relocation condition is 2.5\%.}
  \label{fig:res0}
 \end{figure}
 
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
+%SF、距離依存
+
+\begin{figure}[tbp]
+ \subfloat[t=1.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_iarf.eps} \\
-   \includegraphics[width=5cm]{side05_iarf.eps}
+   \includegraphics[width=5cm]{top10_darf.eps} 
   \end{tabular}
  }%
- \subfloat[t=2.0]{%
+ \subfloat[t=3.5]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_iarf.eps} \\
-   \includegraphics[width=5cm]{side20_iarf.eps}
+   \includegraphics[width=5cm]{top35_darf.eps} 
   \end{tabular}
  }%
- \subfloat[t=4.0]{%
+ \subfloat[t=6.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_iarf.eps} \\
-   \includegraphics[width=5cm]{side40_iarf.eps}
+   \includegraphics[width=5cm]{top60_darf.eps} 
   \end{tabular}
  }%
- \caption{Simulation results for distance independent ARF.}
+ \caption{A simulation result of ARF when $w = 2$ in Equation \ref{eq:arf}.}
  \label{fig:res1}
 \end{figure}
 
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
+%RP、距離非依存
+\begin{figure}[tbp]
+ \subfloat[t=1.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_narf.eps} \\
-   \includegraphics[width=5cm]{side05_narf.eps}
+   \includegraphics[width=5cm]{top10_1arf.eps} 
   \end{tabular}
  }%
- \subfloat[t=2.0]{%
+ \subfloat[t=3.5]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_narf.eps} \\
-   \includegraphics[width=5cm]{side20_narf.eps}
+   \includegraphics[width=5cm]{top35_1arf.eps}
   \end{tabular}
  }%
- \subfloat[t=4.0]{%
+ \subfloat[t=6.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_narf.eps} \\
-   \includegraphics[width=5cm]{side40_narf.eps}
+   \includegraphics[width=5cm]{top60_1arf.eps} 
   \end{tabular}
  }%
- \caption{Simulation Results without ARF.}
+ \caption{Simulation results in the case of using ARF with reference to the membrane molecule at the end rather than SF.}
  \label{fig:res2}
 \end{figure}
 
-Experiments were carried out by distinguishing the ARF according to the distance from the distance between the actin molecule and the reference point $\bm{E}$ and the ARF which is distance independent. The results of simulation experiments are shown in Fig \ref{fig:res0}. Actin polymerization progressed as the time progressed, and the cell membrane was compressed. The cell membrane deformed reflecting the action of force from the inside. However, it was only in the region of cell membrane progression direction, the opposite side stuck to the substrate. There was a flaw in this simulation concerning deformation of the cell membrane. Regarding the actin molecule which is the cytoskeleton, it is successfully formed in a crescent shape, but the cell membrane in the posterior portion has not moved.
+%NON ARF
 
-\subsection{Position of Actin retrograde flow reference point}
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
+\begin{figure}[tbp]
+ \subfloat[t=1.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_2arf.eps} \\
-   \includegraphics[width=5cm]{side05_2arf.eps}
+   \includegraphics[width=5cm]{top10_narf.eps} 
   \end{tabular}
  }%
- \subfloat[t=2.0]{%
+ \subfloat[t=3.5]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_2arf.eps} \\
-   \includegraphics[width=5cm]{side20_2arf.eps}
+   \includegraphics[width=5cm]{top35_narf.eps}
   \end{tabular}
  }%
- \subfloat[t=4.0]{%
+ \subfloat[t=6.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_2arf.eps} \\
-   \includegraphics[width=5cm]{side40_2arf.eps}
+   \includegraphics[width=5cm]{top60_narf.eps} 
   \end{tabular}
  }%
- \caption{Simulation results using ARF with patterns with two reference points.}
+ \caption{Simulation Results without ARF.}
  \label{fig:res3}
 \end{figure}
 
-Fig. \ref{fig:res3} shows the simulation results when using ARF reference points $\bm{E}_1$ and $\bm{E}_2$ instead of $\bm{E}_0$.
-
-\subsection{Importance of Relocation Condition}
-
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_15rc.eps} \\
-   \includegraphics[width=5cm]{side05_15rc.eps}
-  \end{tabular}
- }%
- \subfloat[t=2.0]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_15rc.eps} \\
-   \includegraphics[width=5cm]{side20_15rc.eps}
-  \end{tabular}
- }%
- \subfloat[t=4.0]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_15rc.eps} \\
-   \includegraphics[width=5cm]{side40_15rc.eps}
-  \end{tabular}
- }%
- \caption{Simulation results for relocation condition of actin concentration 1.5\%.}
- \label{fig:res4}
-\end{figure}
-
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_25rc.eps} \\
-   \includegraphics[width=5cm]{side05_25rc.eps}
-  \end{tabular}
- }%
- \subfloat[t=2.0]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_25rc.eps} \\
-   \includegraphics[width=5cm]{side20_25rc.eps}
-  \end{tabular}
- }%
- \subfloat[t=4.0]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_25rc.eps} \\
-   \includegraphics[width=5cm]{side40_25rc.eps}
-  \end{tabular}
- }%
- \caption{Simulation results for relocation condition of actin concentration 2.5\%.}
- \label{fig:res5}
-\end{figure}
-
-
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_30rc.eps} \\
-   \includegraphics[width=5cm]{side05_30rc.eps}
-  \end{tabular}
- }%
- \subfloat[t=2.0]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_30rc.eps} \\
-   \includegraphics[width=5cm]{side20_30rc.eps}
-  \end{tabular}
- }%
- \subfloat[t=4.0]{%
-  \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_30rc.eps} \\
-   \includegraphics[width=5cm]{side40_30rc.eps}
-  \end{tabular}
- }%
- \caption{Simulation results for relocation condition of actin concentration 3.0\%.}
- \label{fig:res6}
-\end{figure}
+Fig.\ref{fig:res0} showed the simulation result with the ARF reference point being SF expressed by two points and ARF being distance independent type. The actin molecule aggregated in a half-moon shape with time. Fig.\ref{fig:res1} showed simulation results under the same condition as Fig.\ref{fig:res0} except that distance-dependent ARF is used. In Fig.\ref{fig:res0}, the actin molecule protruded from the cell membrane as a result of continuing AP. Fig.\ref{fig:res2} showed simulation results assuming that the ARF reference point is the last cell membrane molecule, not SF. Deformation occurred towards the center of the cell rather than pulling at two points. Fig.\ref{fig:res3} showed the simulation results when ARF is excluded. The actin molecule protruded from the cell membrane as in the case of Fig.\ref{fig:res1}. From the experimental results, the conditions under which the actin molecule is most stable are the conditions shown in Fig.\ref{fig:res0}. 
 
 \subsection{Effect of Initial Placement}
 
-\begin{figure}[h]
- \subfloat[t=0.5.]{%
+\begin{figure}[tbp]
+ \subfloat[t=1.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top05_ci.eps} \\
-   \includegraphics[width=5cm]{side05_ci.eps}
+   \includegraphics[width=5cm]{top10_ci.eps} 
   \end{tabular}
  }%
- \subfloat[t=2.0]{%
+ \subfloat[t=3.5]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top20_ci.eps} \\
-   \includegraphics[width=5cm]{side20_ci.eps}
+   \includegraphics[width=5cm]{top35_ci.eps} 
   \end{tabular}
  }%
- \subfloat[t=4.0]{%
+ \subfloat[t=6.0]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top40_ci.eps} \\
-   \includegraphics[width=5cm]{side40_ci.eps}
+   \includegraphics[width=5cm]{top60_ci.eps} 
   \end{tabular}
  }%
  \caption{Simulation results when the initial arrangement of actin molecules is circular.}
- \label{fig:res7}
+ \label{fig:res4}
 \end{figure}
 
 
+The initial arrangement of actin molecules was half donut-shaped, but simulations were carried out for other shapes (Fig.\ref{fig:res4}). Since it is not a half donut type, since the distribution of the actin molecule is not biased, the direction of cell movement was not determined. Moreover, since the effect of ARF affects actin molecule, the aggregation occurs near SF.
+
 \section{Discussion}
-The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously. Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule.
+The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously. Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule. However, as ARF continually pulls actin molecules, it eventually inhibits the effect on cell membranes. As can be seen from Fig.\ref{fig:res4}, in the case where ARF exists from a state in which the distribution of actin molecules is unbiased, a half-moon shape is not formed. The ARF is not constant, and it is presumed that the intensity of influence will change as time passes. As cell migration progresses SF is gradually formed and ARF is considered to occur. As can be seen from comparison between Fig.\ref{fig:res0} and Fig.\ref{fig:res2}, actin molecules aggregate in a half-moon shape when ARF occurs from SF. SF is an actomyosin bundle formed by depolymerized actin molecule accumulating in the posterior part and combining with myosin molecule. As SF does not exist in the initial state, it is presumed that ARF probably also does not exist at the initial stage of cell migration.
 
 \chapter{Conclusions and Future Work}
-\section{Morphology of Keratocytes and Its Motor Function}
+\section{Half-Moon Shape for Keratocytes}
+Actin molecules played a important role in migrating cells. The actin molecule is attracted in the direction opposite to the polymerization direction by ARF caused by SF while pushing the cell membrane while approaching the cell membrane while repeating polymerization and depolymerization. AP and ARF are intracellular mechanisms acting in opposite directions, respectively. However, if either mechanism is lacking, a half-moon shaped form is not formed. Cell migration is a complicated combination of these two elements.
 
-\section{Future Prospects}
-
+ARF changes the direction of polymerization when drawing actin molecules towards SF. It is presumed that the form formed differs depending on how much the angle changes at this time. In this study, it is assumed that both ends of SF are pulling actin molecules, but it is considered that the form formed is different under other conditions. Hence, the form that can be done when the conditions relating to the AP and the conditions relating to the ARF are combined with good compatibility is half-moon shaped.
+\section{Future Work}
+In cell membrane molecular simulation, we could not cope with the movement of actin molecule well. Even if the actin molecule polymerized at the front pushes the cell membrane, the displacement of the membrane molecule is slow to propagate to the back.
 \chapter*{Acknowledgements}
 We gratefully acknowledge the work of past and present members of our laboratory.
 
