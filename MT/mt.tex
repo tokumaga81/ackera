@@ -36,6 +36,7 @@ Division of Fundamental Sciences\\[3cm]
 %問題提起
 {\it Amoeba proteus},  a common ameba cell, migrates by stretching pseudopodia with changing  its cell shape continuously.
 In contrast, keratocytes usually take a circular shape; however it deforms in a half-moon shape and migrates with keeping the shape.
+In order to understand the cell migration mechanism of keratocytes, it is important to clarify why a half-moon shape is formed.
 It is not clear why keratocytes form a half-moon shape and migrate without changing its shape.
 
 %いかに不思議か(問題点を具体化)
@@ -44,14 +45,15 @@ Actin polymerization (AP) is a phenomenon in which actin molecules overlap each 
 F-actin is shortened in length by depolymerization or lengthened by AP.
 F-actin that repeats elasticity pushes the cell membrane and deforms the cell.
 If the AP is too active, the cell membrane will swell up.
-Conversely, without an AP, the cell membrane will not be deformed.
+
+It is reported that cell migration is promoted by a dense network formed by actin molecule as evidence that AP is important for cell deformation \cite{svitkina1997analysis}.
 It can be seen that it is difficult to keep the shape of cells during cell migration even by paying attention to one element called AP.
 
 %目的
-The porpose of this study is to clarify the relationship between keratocytes morphology and motor function in cell migration. Specifically, we will elucidate the intracellular mechanism that keeps the cell shape half-moon during cell migration.
+The purpose of this research is to clarify what kind of mechanism a half-moon shape is formed by physical simulation experiments considering intracellular mechanism.
 
 %本稿の構成
-The structure of this paper is as follows. In Chapter 2, we explain the specific features of keratocytes and the outline of cell migration mechanism. In Chapter 3, details of simulation experiment method will be described. Section 4 presents the results of simulation experiments and discusses the considerations. In the last chapter, we explain the improvements and future prospects of the facts and methods obtained from this survey.
+The structure of this paper is as follows. In Chapter 2, we introduce previous work on the molecular mechanism of cell migration of keratinocytes. In chapter 3 we will explain our method of simulation experiment. Section 4 shows the results of simulation experiments. In the last chapter, we will discuss conclusions and future prospects for the purpose.
 
 %第２章
 \chapter{Keratocytes}
@@ -70,18 +72,19 @@ The locomotion of keratocytes is a kind of amoeboid movements;
 however, it is different from typical amoeba movement at the point that they moves  with keeping a half-moon shape. 
 
 %参考文献
-Svitkina et al. \cite{svitkina1997analysis} showed that the forward translocation of the cell body and retrograde flow in the lamellipodia are both driven by contraction of an actin-myosin network in the lamellipodial/cell body transition zone.
-The importance of both actin polymerization (AP) and actin retrograde flow (ARF) in cell migration of migrating cells was suggested.
-Asano et al. \cite{asano2004keratocyte} showed that movement similar to keratocytes was observed when AmiB gene was deleted from ameba cells of cellular slime mold {\it Dictyostelium discoideum} which performs typical ameba movement.
-Even in other ameboid cells, if some condition is satisfied, there is a possibility of maintaining a half-moon shape, which means that morphogenesis of keratocyte is not unique to keratocyte and is a physical mechanism causing cell migration.
-Therefore, this research strongly insists that the crescent shape morphogenesis is a physical factor such as AP and ARF.
-Nakata et al. \cite{nakata2016role} focused on pulling force against temperament and flow rate gradient of ARF, and reported that stress fiber (SF) plays an important role in morphological control of keratinocytes.
-Focusing on the fact that the keratocytes of different fish are not in the same crescent shape, it was suggested that the factor is the velocity gradient of ARF.
-Swaminathan et al. \cite{swaminathan2017actin} focused on adhesion receptor integrins that bind cells and their environment.
-Suggesting that regurgitation of actin regulates the orientation of the integrin and may determine the propulsion direction of the cell. From the previous studies above, it is known that both AP and ARF play an important role in cell migration of keratocytes.
-Okimura et al. \cite{okimura2018rotation} showed that the rotation of these stress fibers plays the role of a “wheel” in crawling migration of keratocytes.
-Removal of the stress fibers decreased migration velocity and induced the collapse of the left-right balance of crawling migration.
-It is suggested that cell migration is not performed only by AP and ARF but SF located in the posterior part of the cell is also important.
+%アクチン分子
+The protruding events of cell migration are thought to be caused by actin polymerization (AP)\cite{svitkina1997analysis}.
+AP is that actin molecules which are cytoskeletons overlap to form fibrous actin (F-actin).
+%cell migration と actinの重合と脱重合の関連
+There is depolymerization in the opposite phenomenon of AP.
+The opposite of AP, the phenomenon that actin molecule separates from F-actin is called depolymerization.
+The actin molecule depolymerizes with AP and forms a dense network and pushes the cell membrane from the inside.
+%ARFとSFの紹介
+There are not only actin molecules but also myosin molecules in the cell membrane.
+When actin molecule and myosin molecule are bound, it becomes actomyosin, and a bundle of actomyosin is called a stress fiber (SF).
+The actin retrograde flow (ARF) that pulls the actin molecules back toward the SF has also been reported \cite{swaminathan2017actin}.
+%cell migrationとARFとSFの関連
+Although details on ARF are not clarified, it is thought that SF attracts forward actin molecule towards SF \cite{nakata2016role}.
 
 \section{Molecular Mechanism of Cell Migration}
 A cell has a structure called a cytoskeleton. The cytoskeleton is like bones for humans, but in contrast to static human bones, the cytoskeleton is dynamic and is an important organelle that maintains the shape of the cell. The main component of the cytoskeleton is the actin molecule. As the actin molecule polymerizes and depolymerizes, the shape of the cell membrane changes. The actin molecule is elongated by polymerization in the cell membrane but retreats in the direction opposite to the elongation direction by the bundle of actomyosin called stress fiber. This phenomenon is called actin retrograde flow, and it is not clear what kind of role it plays in cell migration. The cell membrane extruded by polymerization of the actin molecule becomes the pseudopodia and adheres to the substrate at the advancing position. Thereafter, the adhesion between the substrates of the rear cell membrane is released and dragged forward. By repeating this cycle, cell migration mechanism is formed.
@@ -297,15 +300,30 @@ Fig.\ref{fig:res0} showed the simulation result with the ARF reference point bei
 The initial arrangement of actin molecules was half donut-shaped, but simulations were carried out for other shapes (Fig.\ref{fig:res4}). Since it is not a half donut type, since the distribution of the actin molecule is not biased, the direction of cell movement was not determined. Moreover, since the effect of ARF affects actin molecule, the aggregation occurs near SF.
 
 \section{Discussion}
-The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously. Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule. However, as ARF continually pulls actin molecules, it eventually inhibits the effect on cell membranes. As can be seen from Fig.\ref{fig:res4}, in the case where ARF exists from a state in which the distribution of actin molecules is unbiased, a half-moon shape is not formed. The ARF is not constant, and it is presumed that the intensity of influence will change as time passes. As cell migration progresses SF is gradually formed and ARF is considered to occur. As can be seen from comparison between Fig.\ref{fig:res0} and Fig.\ref{fig:res2}, actin molecules aggregate in a half-moon shape when ARF occurs from SF. SF is an actomyosin bundle formed by depolymerized actin molecule accumulating in the posterior part and combining with myosin molecule. As SF does not exist in the initial state, it is presumed that ARF probably also does not exist at the initial stage of cell migration.
+The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously.
+Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. 
+This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule.
+However, as ARF continually pulls actin molecules, it eventually inhibits the effect on cell membranes.
+As can be seen from Fig.\ref{fig:res4}, in the case where ARF exists from a state in which the distribution of actin molecules is unbiased, a half-moon shape is not formed.
+The ARF is not constant, and it is presumed that the intensity of influence will change as time passes.
+As cell migration progresses SF is gradually formed and ARF is considered to occur.
+As can be seen from comparison between Fig.\ref{fig:res0} and Fig.\ref{fig:res2}, actin molecules aggregate in a half-moon shape when ARF occurs from SF.
+SF is an actomyosin bundle formed by depolymerized actin molecule accumulating in the posterior part and combining with myosin molecule.
+As SF does not exist in the initial state, it is presumed that ARF probably also does not exist at the initial stage of cell migration.
+
+If the actin molecule is located far away from the SF, there may be a mechanism that weakens or inhibit ARF.
+This is because if the strength of ARF is constant, the influence of AP does not pass well to the cell membrane.
 
 \chapter{Conclusions and Future Work}
 \section{Half-Moon Shape for Keratocytes}
 Actin molecules played a important role in migrating cells. The actin molecule is attracted in the direction opposite to the polymerization direction by ARF caused by SF while pushing the cell membrane while approaching the cell membrane while repeating polymerization and depolymerization. AP and ARF are intracellular mechanisms acting in opposite directions, respectively. However, if either mechanism is lacking, a half-moon shaped form is not formed. Cell migration is a complicated combination of these two elements.
 
-If the actin molecule goes to a position where SF is far away, there may be a mechanism that ARF weakens or inhibits ARF.
+ARF changes the direction of polymerization when drawing actin molecules towards SF.
+It is presumed that the form formed differs depending on how much the angle changes at this time.
+In this study, it is assumed that both ends of SF are pulling actin molecules, but it is considered that the form formed is different under other conditions.
+Therefore, the form formed when precondition is combined with AP condition and ARF condition is half moon shape.
 
-ARF changes the direction of polymerization when drawing actin molecules towards SF. It is presumed that the form formed differs depending on how much the angle changes at this time. In this study, it is assumed that both ends of SF are pulling actin molecules, but it is considered that the form formed is different under other conditions. Hence, the form that can be done when the conditions relating to the AP and the conditions relating to the ARF are exactly combined is a half-moon shape.
+
 \section{Future Work}
 In cell membrane molecular simulation, we could not cope with the movement of actin molecule well. Even if the actin molecule polymerized at the front pushes the cell membrane, the displacement of the membrane molecule is slow to propagate to the back.
 \chapter*{Acknowledgements}

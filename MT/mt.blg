@@ -5,15 +5,15 @@ The style file: junsrt.bst
 Database file #1: bibtexfile.bib.bib
 You've used 5 entries,
             2270 wiz_defined-function locations,
-            579 strings with 5479 characters,
-and the built_in function-call counts, 2325 in all, are:
-= -- 181
-> -- 92
+            579 strings with 5470 characters,
+and the built_in function-call counts, 2312 in all, are:
+= -- 182
+> -- 89
 < -- 15
-+ -- 34
-- -- 29
-* -- 153
-:= -- 281
++ -- 33
+- -- 28
+* -- 152
+:= -- 278
 add.period$ -- 15
 call.type$ -- 5
 change.case$ -- 5
@@ -21,8 +21,8 @@ chr.to.int$ -- 0
 cite$ -- 5
 duplicate$ -- 134
 empty$ -- 182
-format.name$ -- 58
-if$ -- 566
+format.name$ -- 56
+if$ -- 564
 int.to.chr$ -- 0
 int.to.str$ -- 5
 missing$ -- 5
@@ -44,4 +44,4 @@ warning$ -- 0
 while$ -- 18
 width$ -- 6
 write$ -- 57
-is.kanji.str$ -- 79
+is.kanji.str$ -- 78
