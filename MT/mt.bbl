@@ -8,19 +8,6 @@ Tatyana~M. Svitkina, Alexander~B. Verkhovsky, Kyle~M McQuade, and Gary~G
 \newblock {\em The Journal of Cell Biology}, Vol. 139, No.~2, pp. 397--415,
   1997.
 
-\bibitem{asano2004keratocyte}
-Yukako Asano, Takafumi Mizuno, Takahide Kon, Akira Nagasaki, Kazuo Sutoh, and
-  Taro~QP Uyeda.
-\newblock Keratocyte-like locomotion in amib-null dictyostelium cells.
-\newblock {\em Cell motility and the cytoskeleton}, Vol.~59, No.~1, pp. 17--27,
-  2004.
-
-\bibitem{nakata2016role}
-Takako Nakata, Chika Okimura, Takafumi Mizuno, and Yoshiaki Iwadate.
-\newblock The role of stress fibers in the shape determination mechanism of
-  fish keratocytes.
-\newblock {\em Biophysical Journal}, Vol. 110, No.~2, pp. 481--492, 2016.
-
 \bibitem{swaminathan2017actin}
 Vinay Swaminathan, Joseph~Mathew Kalappurakkal, Shalin~B Mehta, Pontus
   Nordenfelt, Travis~I Moore, Nobuyasu Koga, David~A Baker, Rudolf Oldenbourg,
@@ -30,10 +17,23 @@ Vinay Swaminathan, Joseph~Mathew Kalappurakkal, Shalin~B Mehta, Pontus
 \newblock {\em Proceedings of the National Academy of Sciences}, Vol. 114,
   No.~40, pp. 10648--10653, 2017.
 
+\bibitem{nakata2016role}
+Takako Nakata, Chika Okimura, Takafumi Mizuno, and Yoshiaki Iwadate.
+\newblock The role of stress fibers in the shape determination mechanism of
+  fish keratocytes.
+\newblock {\em Biophysical Journal}, Vol. 110, No.~2, pp. 481--492, 2016.
+
 \bibitem{okimura2018rotation}
 Chika Okimura, Atsushi Taniguchi, Shigenori Nonaka, and Yoshiaki Iwadate.
 \newblock Rotation of stress fibers as a single wheel in migrating fish
   keratocytes.
 \newblock {\em Scientific Reports}, Vol.~8, No.~1, p. 10615, 2018.
+
+\bibitem{asano2004keratocyte}
+Yukako Asano, Takafumi Mizuno, Takahide Kon, Akira Nagasaki, Kazuo Sutoh, and
+  Taro~QP Uyeda.
+\newblock Keratocyte-like locomotion in amib-null dictyostelium cells.
+\newblock {\em Cell motility and the cytoskeleton}, Vol.~59, No.~1, pp. 17--27,
+  2004.
 
 \end{thebibliography}

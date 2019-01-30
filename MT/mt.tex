@@ -86,7 +86,12 @@ The actin retrograde flow (ARF) that pulls the actin molecules back toward the S
 %cell migrationとARFとSFの関連
 Although details on ARF are not clarified, it is thought that SF attracts forward actin molecule towards SF \cite{nakata2016role}.
 The network of actin molecules moves by AP and ARF to promote cell membrane deformation.
+In addition, Okimura et.al reported that SF plays a role of wheels in cell migration \cite{okimura2018rotation}.
+In the cell migration when SF was removed, the migration speed decreased and the left and right balance disintegrated.
+This also indicates that SF is important for cell migration.
 
+It has been reported that morphogenesis of morphology was observed even after removing the nucleus \cite{asano2004keratocyte}.
+Hence, it was suggested that the cell migration of the keratocyte is due to a physical factor, not genetic information.
 
 
 \section{Molecular Mechanism of Cell Migration}
@@ -97,15 +102,21 @@ It is a common fact even in keratocytes that the cell membrane is deformed by ac
 
 \chapter{Simulation Methods}
 \section{Simulation Methods of Cell Membrane Molecules}
-In the cell membrane model, each cell membrane molecule moves under the resultant of force and velocity from the actin molecule and resistance force proportional to force between the cell membrane molecules. The equation of motion of the cell membrane molecule is as follows.
+%初期配置の話
+Cell membrane molecules were initially placed at regular intervals on the surface of a cylinder.
+The equation of motion of the cell membrane molecule is assumed as follows.
+At this time, adjacent index information is saved in order to reduce the calculation amount later.
 \begin{equation}
 m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^m_i +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
 \end{equation}
-where  $m$ is the mass, $\eta = 8.9\times10^{-6}\si{~kg/s}$ is the viscous coefficient, and $\bm{x}_i$ is the position vector of the membrane molecule. The membrane molecule has the force  $\bm{F}^m_i$ received from the membrane molecule and the force  $\bm{F}^a_i$ received from the actin molecule. It is assumed that the force  $\bm{F}^m_i$ acting between the membrane molecules can be represented by elastic force:
+where  $m$ is the mass, $\eta = 8.9\times10^{-6}\si{~kg/s}$ is the viscous coefficient, $\bm{F}^m_i$ is the elastic force received from the membrane molecule, $\bm{F}^m_a$ is the repulsive force received from the actin molecule, and $\bm{x}_i$ is the position vector of the membrane molecule.
+It is assumed that the force  $\bm{F}^m_i$ acting between the membrane molecules can be represented by elastic force:
 \begin{equation}
 \bm{F}^m_i = \sum_{i \in I_j}  -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
 \end{equation}
-where $k$ is the spring constant, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. Molecule  $i$ belongs to the set of index $I$ adjacent to molecule $j$. However, this natural length measures the distance between the membrane molecules in the initial state. The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force:
+where $k$ is the spring constant, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. Molecule  $i$ belongs to the set of index $I$ adjacent to molecule $j$.
+The natural length measures the distance between membrane molecules in the initial state.
+The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force:
 \begin{equation}
 \bm{F}^a_i = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
 \end{equation}
