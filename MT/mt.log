@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  31 JAN 2019 14:53
+This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  31 JAN 2019 16:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -491,8 +491,6 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 
  [1
 
-] [2
-
 ]
 Chapter 1.
 
@@ -503,70 +501,72 @@ LaTeX Font Warning: Font shape `JT2/mc/m/it' undefined
 LaTeX Font Warning: Font shape `JY2/mc/m/it' undefined
 (Font)              using `JY2/mc/m/n' instead on input line 36.
 
-[1] [2
+[1
 
 ]
 Chapter 2.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 60.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 54.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 16.62714pt on input line 60.
+(Font)              scaled to size 16.62714pt on input line 54.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 60.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 54.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 16.62714pt on input line 60.
+(Font)              scaled to size 16.62714pt on input line 54.
 File: kera.eps Graphic file (type eps)
-<kera.eps> [3]
+<kera.eps> [2
+
+]
 
 LaTeX Font Warning: Font shape `JT2/mc/m/sl' undefined
-(Font)              using `JT2/mc/m/n' instead on input line 103.
+(Font)              using `JT2/mc/m/n' instead on input line 97.
 
 
 LaTeX Font Warning: Font shape `JY2/mc/m/sl' undefined
-(Font)              using `JY2/mc/m/n' instead on input line 103.
+(Font)              using `JY2/mc/m/n' instead on input line 97.
 
-[4]
+[3]
 Chapter 3.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 114.
+(Font)              scaled to size 7.69775pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 7.69775pt on input line 114.
+(Font)              scaled to size 7.69775pt on input line 108.
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 114.
+(Font)              scaled to size 5.77332pt on input line 108.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 5.77332pt on input line 114.
+(Font)              scaled to size 5.77332pt on input line 108.
 LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 128.
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 122.
 LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 128.
+(Font)              scaled to size 13.85594pt on input line 122.
 LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <14.4> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 128.
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 122.
 LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 13.85594pt on input line 128.
-[5
+(Font)              scaled to size 13.85594pt on input line 122.
+[4
 
 ]
 LaTeX Font Info:    Font shape `JT2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 167.
+(Font)              scaled to size 11.54663pt on input line 165.
 LaTeX Font Info:    Font shape `JY2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 167.
- [6]
+(Font)              scaled to size 11.54663pt on input line 165.
+ [5]
 File: top.eps Graphic file (type eps)
  <top.eps>
 File: side.eps Graphic file (type eps)
- <side.eps> [7] [8]
+ <side.eps> [6] [7]
 Chapter 4.
 File: top10_darf.eps Graphic file (type eps)
 <top10_darf.eps>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 212.
+(Font)              scaled to size 9.6222pt on input line 208.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 212.
+(Font)              scaled to size 9.6222pt on input line 208.
 File: top35_arf.eps Graphic file (type eps)
  <top35_arf.eps>
 File: top60_arf.eps Graphic file (type eps)
  <top60_arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 212--223
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 208--219
 [][][][] 
  []
 
@@ -576,7 +576,7 @@ File: top35_darf.eps Graphic file (type eps)
  <top35_darf.eps>
 File: top60_darf.eps Graphic file (type eps)
  <top60_darf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 234--245
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 230--241
 [][][][] 
  []
 
@@ -586,7 +586,7 @@ File: top35_1arf.eps Graphic file (type eps)
  <top35_1arf.eps>
 File: top60_1arf.eps Graphic file (type eps)
  <top60_1arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 255--266
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 251--262
 [][][][] 
  []
 
@@ -596,7 +596,7 @@ File: top35_narf.eps Graphic file (type eps)
  <top35_narf.eps>
 File: top60_narf.eps Graphic file (type eps)
  <top60_narf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 277--288
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 273--284
 [][][][] 
  []
 
@@ -606,19 +606,17 @@ File: top35_ci.eps Graphic file (type eps)
  <top35_ci.eps>
 File: top60_ci.eps Graphic file (type eps)
  <top60_ci.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 301--312
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 297--308
 [][][][] 
  []
 
-[9
+[8
 
-] [10] [11] [12]
+] [9] [10] [11]
 Chapter 5.
-[13
+[12
 
-] [14
-
-] (./mt.bbl [15] [16
+] (./mt.bbl [13
 
 ]
 
@@ -633,18 +631,20 @@ LaTeX Font Info:    Font shape `JT2/gt/m/it' will be
 (Font)              scaled to size 11.54663pt on input line 17.
 LaTeX Font Info:    Font shape `JY2/gt/m/it' will be
 (Font)              scaled to size 11.54663pt on input line 17.
-) [17] (./mt.aux)
+) [14
+
+] (./mt.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 12239 strings out of 493649
- 255342 string characters out of 6149068
- 287722 words of memory out of 5000000
+ 12240 strings out of 493649
+ 255349 string characters out of 6149068
+ 287709 words of memory out of 5000000
  15761 multiletter control sequences out of 15000+600000
  24016 words of font info for 103 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  44i,9n,49p,10371b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mt.dvi (20 pages, 37828 bytes).
+Output written on mt.dvi (16 pages, 37784 bytes).

@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt, oneside]{book}
 \usepackage{bm}
 \usepackage{siunitx}
 \usepackage{cases}
@@ -34,19 +34,13 @@ Division of Fundamental Sciences\\[3cm]
 \setcounter{page}{1}
 %問題提起
 {\it Amoeba proteus},  a common ameba cell, migrates by stretching pseudopodia with changing  its cell shape continuously.
-In contrast, keratocytes usually take a circular shape; however it deforms in a half-moon shape and migrates with keeping the shape.
-In order to understand the cell migration mechanism of keratocytes, it is important to clarify why a half-moon shape is formed.
-It is not clear why keratocytes form a half-moon shape and migrate without changing its shape.
+In contrast, fish keratocytes usually show a circular shape; however, they change their shape to a half-moon shape when they begin migration. This phenomenon suggests that the deformation of the cell shape is a key feature to realize cell migration of keratocytes.
 
 %いかに不思議か(問題点を具体化)
-Migrating cells including keratocytes perform cell migration by the action of cytoskeleton called actin molecule. 
-Actin polymerization (AP) is a phenomenon in which actin molecules overlap each other to form F-actin. 
-F-actin is shortened in length by depolymerization or lengthened by AP.
-F-actin that repeats elasticity pushes the cell membrane and deforms the cell.
-If the AP is too active, the cell membrane will swell up.
-
-It is reported that cell migration is promoted by a dense network formed by actin molecule as evidence that AP is important for cell deformation \cite{svitkina1997analysis}.
-It can be seen that it is difficult to keep the shape of cells during cell migration even by paying attention to one element called AP.
+As evidence that AP is important for cell deformation, it has been reported that a dense network of actin molecules regulates cell deformation\cite{svitkina1997analysis}.
+Previous studies have reported that during cell migration actin molecules extend their head toward the cell membrane by actin polymerization (AP), which has been suggested as a source of the deformation of the cell membrane and the propulsive force of the cell.
+As evidence that AP is important for cell deformation, it has been reported that a dense network of actin molecules regulates cell deformation.
+The actin retrograde flow (ARF) that pulls the actin molecules back toward the stress fiber (SF), a bundle of actin fibers spreading from side to side of the rear part of the cell, has also been reported\cite{swaminathan2017actin}.
 
 %目的
 The purpose of this research is to clarify the mechanism that forms a half-moon shape by physical simulation experiments considering intracellular mechanism.
@@ -146,19 +140,23 @@ The actin polymerization and depolymerization was simulated by a probability  \[
 In this simulation, the space where a virtual cell was simulated was divided into $3600$ regions $(i = 1,...3600$).
 
 \subsection{Actin Retrograde Flow}
-Because ARF is often unknown, we simulate with some assumptions. Although the element that causes ARF is a stress fiber, since the cell model of this paper does not introduce a stress fiber, it substitutes the membrane molecule at the end of the cell membrane. Since it is not clear how much the effect on actin molecule also works, it was assumed that the closer to the membrane molecule the stronger the effect.
+Because the function and underlying mechanism of the ARF have not been known in detail, we simulated the ARF under some assumptions. The ARF is a movement of F-actins toward the  stress fiber which is a bundle of actin fibers aligning from side to side in the rear side of keratocytes. 
 
-The cell membrane molecule with the smallest x coordinate is the reference point $\bm{E}_0$. The calculation formula for implementing ARF is shown below.
-
+At first, we assumed the ARF as the retraction of the actin molecules toward the leftmost point of the cell, i.e., the position of the membrane particle with the smallest x coordinate, which we call the reference point. The retraction of the actin molecule by the ARF was expressed by the following equation:
 \begin{numcases}
   {}
   \bm{B}_i \gets \bm{B}_i - \alpha \frac{ \bm{B}_i - \bm{E}_0}{{\| \bm{B}_i - \bm{E}_0 \|}^w} & \\
    \bm{P}_i \gets \bm{P}_i - \beta \frac{ \bm{P}_i - \bm{E}_0}{{\| \bm{P}_i - \bm{E}_0 \|}^w} &
 \end{numcases}
-where the vector $\bm{B}_i$ is barbed-end, the vector $\bm{P}_i$ is pointed-end, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF. This equation means ARF which does not depend on distance when w = 1 and ARF depending on distance when w = 2.
+where $\bm{E}_0$ is the reference point, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF.
+$w$ is a parameter indicating the effect of distance between actin molecule and cell membrane molecule on retraction strength of the ARF.
+When $w=2$, the closer the intermolecular distance is, the stronger is pulled. When $w=1$, all actin molecules are equally pulled irrespective of the intermolecular distance.
 
-Since there is a possibility that the shape of the cell membrane may change at the position of the reference point $\bm{E}_0$, another reference points $\bm{E}_1$ and $\bm{E}_2$ are proposed. Hence, two pattern experiments are performed with one and two ARF reference points. As shown in the figure, the reference points A and B are positioned at 1/5 of the cell membrane. The position update formula of ARF when two reference points  $\bm{E}_1$ and $\bm{E}_2$ are used is shown below.
-
+Second, we assumed that another reference points $\bm{E}_1$ and $\bm{E}_2$ are proposed.
+Hence, two pattern experiments are performed with one and two ARF reference points.
+As shown in the figure, the reference points $\bm{E}_1$ and $\bm{E}_2$ are positioned at 1/5 of the cell membrane.
+The reference points  $\bm{E}_1$ and $\bm{E}_2$ are located 1/5 rearward of the cell membrane. ARF was expressed by contraction of actin molecule to the two points.
+In this case the retraction by the ARF was expressed as follows:
 \begin{numcases}
   {}
   \bm{B}_i \gets \bm{B}_i - \gamma \left( \frac{ \bm{B}_i - \bm{E}_1 }{{\| \bm{B}_i - \bm{E}_1 \|}^w} + \frac{ \bm{B}_i - \bm{E}_2}{{\| \bm{B}_i - \bm{E}_2 \|}^w} \right)& \\
@@ -166,8 +164,6 @@ Since there is a possibility that the shape of the cell membrane may change at t
    \label{eq:arf}
 \end{numcases}
 where $\gamma$ and $\delta$ are constants that determines the strength of the ARF.
-
-In the above equation, the denominator is squared taking into consideration the distance dependency between the particles. If we compare distance-dependent ARF and distance-independent ARF, the square of the denominator of the above equation is deleted.
 \section{Initial Condition and Relocation  Condition}
 \begin{figure}[tbp]
 \centering
@@ -333,13 +329,14 @@ This is because if the strength of ARF is constant, the influence of AP does not
 
 \chapter{Conclusion}
 \section{Conclusion}
-Actin molecules played a important role in migrating cells. The actin molecule is attracted in the direction opposite to the polymerization direction by ARF caused by SF while pushing the cell membrane while approaching the cell membrane while repeating polymerization and depolymerization. AP and ARF are intracellular mechanisms acting in opposite directions, respectively. However, if either mechanism is lacking, a half-moon shaped form is not formed. Cell migration is a complicated combination of these two elements.
+Actin molecules played an important role in migrating cells. The actin molecule is attracted in the direction opposite to the polymerization direction by ARF caused by SF while pushing the cell membrane while approaching the cell membrane while repeating polymerization and depolymerization. AP and ARF are intracellular mechanisms acting in opposite directions, respectively. However, if either mechanism is lacking, a half-moon shaped form is not formed. Cell migration is a complicated combination of these two elements.
 
 ARF changes the direction of polymerization when drawing actin molecules towards SF.
 It is presumed that the form formed differs depending on how much the angle changes at this time.
+It was suggested that the effect of aligning the orientation of the AP to the direction of the ARF is important for the formation of the half-moon shape and that the contraction effect of the actin molecule prevents excessive expansion of the cell membrane.
+
 In this study, it is assumed that both ends of SF are pulling actin molecules, but it is considered that the form formed is different under other conditions.
 Therefore, the form formed when precondition is combined with AP condition and ARF condition is half moon shape.
-
 
 \section{Future Works}
 In cell membrane molecular simulation, we could not cope with the movement of actin molecule well. Even if the actin molecule polymerized at the front pushes the cell membrane, the displacement of the membrane molecule is slow to propagate to the back.
