@@ -32,7 +32,6 @@ Division of Fundamental Sciences\\[3cm]
 \chapter{Introduction}
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\section{Introduction}
 %問題提起
 {\it Amoeba proteus},  a common ameba cell, migrates by stretching pseudopodia with changing  its cell shape continuously.
 In contrast, keratocytes usually take a circular shape; however it deforms in a half-moon shape and migrates with keeping the shape.
@@ -50,10 +49,11 @@ It is reported that cell migration is promoted by a dense network formed by acti
 It can be seen that it is difficult to keep the shape of cells during cell migration even by paying attention to one element called AP.
 
 %目的
-The purpose of this research is to clarify what kind of mechanism a half-moon shape is formed by physical simulation experiments considering intracellular mechanism.
+The purpose of this research is to clarify the mechanism that forms a half-moon shape by physical simulation experiments considering intracellular mechanism.
 
-%本稿の構成
-The structure of this paper is as follows. In Chapter 2, we introduce previous work on the molecular mechanism of cell migration of keratinocytes. In chapter 3 we will explain our method of simulation experiment. Section 4 shows the results of simulation experiments. In the last chapter, we will discuss conclusions and future prospects for the purpose.
+%本稿の構成                    
+The structure of this paper is as follows. In Chapter 2, we introduce previous work on the molecular mechanism of cell migration of keratinocytes. In chapter 3 we will explain our method of simulation experiments. Section 4 shows the results of simulation experiments. In the last chapter, we will discuss conclusions and future prospects for the purpose.
+
 
 %第２章
 \chapter{Keratocytes}
@@ -75,11 +75,11 @@ however, it is different from typical amoeba movement at the point that they mov
 %アクチン分子
 The protruding events of cell migration are thought to be caused by actin polymerization (AP)\cite{svitkina1997analysis}.
 AP is that actin molecules which are cytoskeletons overlap to form fibrous actin (F-actin).
-%cell migration と actinの重合と脱重合の関連
+cell migration と actinの重合と脱重合の関連
 There is depolymerization in the opposite phenomenon of AP.
 The opposite of AP, the phenomenon that actin molecule separates from F-actin is called depolymerization.
 The actin molecule depolymerizes with AP and forms a dense network and pushes the cell membrane from the inside.
-%ARFとSFの紹介
+ARFとSFの紹介
 There are not only actin molecules but also myosin molecules in the cell membrane.
 When actin molecule and myosin molecule are bound, it becomes actomyosin, and a bundle of actomyosin is called a stress fiber (SF).
 The actin retrograde flow (ARF) that pulls the actin molecules back toward the SF has also been reported \cite{swaminathan2017actin}.
@@ -101,7 +101,7 @@ It is a common fact even in keratocytes that the cell membrane is deformed by ac
 
 
 \chapter{Simulation Methods}
-\section{Simulation Methods of Cell Membrane Molecules}
+\section{Simulation Methods of Cell Membrane}
 %初期配置の話
 Cell membrane molecules were initially placed at regular intervals on the surface of a cylinder.
 The equation of motion of the cell membrane molecule is assumed as follows.
@@ -124,7 +124,7 @@ where $s$ is a constant that determines the strength of the repulsive force, and
 
 
 \section{Simulation Methods of Actin Molecules}
-\subsection{Actin Polymerazation}
+\subsection{Actin Polymerization}
 The polymerization of actin has polarity, the end where polymerization is carried out is called barbed-end, and the end which is not done is called pointed-end. Since polymerization is carried out well in a region where many actin molecules are present , the polymerization rate is proportional to the actin concentration in the vicinity.  The filament formed by actin polymerization is called F-actin. F-actin on the simulation is treated as a rod. F-actin is defined as the position vector at both ends of the rod.
 Here, the position vector of pointed-end of particle $i$ is $\bm{P}_i$, and the position vector of barbed-end of particle $i$ is $\bm{B}_i$.
 $\bm{P}_i$ and $\bm{B}_i$ are updated step by step to control polymerization and depolymerization.
@@ -184,7 +184,7 @@ The direction of polymerization is randomly determined. Some actins invade areas
 
 The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} and Fig. \ref{fig:side0}. The actin molecule is indicated by a green line, and the cell membrane is indicated by a white dot. This is the initial placement of actin molecules because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction. The membrane molecules are placed on the surface of the cylinder and not inside.
 
-\section{Reduction in Calculation Volume}
+\section{Reduction in Calculation Amount}
 %細胞膜のはなし
 Calculating the distance between membrane molecules in all steps increases the computational complexity.
 Therefore, when calculating the cell membrane model, the distance between the cell membrane molecules stored in advance was referred to.
@@ -288,7 +288,7 @@ For this reason, the simulation space was divided into areas in mesh form, and i
 
 Fig.\ref{fig:res0} showed the simulation result with the ARF reference point being SF expressed by two points and ARF being distance independent type. The actin molecule aggregated in a half-moon shape with time. Fig.\ref{fig:res1} showed simulation results under the same condition as Fig.\ref{fig:res0} except that distance-dependent ARF is used. In Fig.\ref{fig:res0}, the actin molecule protruded from the cell membrane as a result of continuing AP. Fig.\ref{fig:res2} showed simulation results assuming that the ARF reference point is the last cell membrane molecule, not SF. Deformation occurred towards the center of the cell rather than pulling at two points. Fig.\ref{fig:res3} showed the simulation results when ARF is excluded. The actin molecule protruded from the cell membrane as in the case of Fig.\ref{fig:res1}. From the experimental results, the conditions under which the actin molecule is most stable are the conditions shown in Fig.\ref{fig:res0}. 
 
-\subsection{Effect of Initial Placement}
+\subsection{Effect of Initial Distribution of Actin Molecules}
 
 \begin{figure}[tbp]
  \subfloat[t=1.0]{%
@@ -328,8 +328,8 @@ As SF does not exist in the initial state, it is presumed that ARF probably also
 If the actin molecule is located far away from the SF, there may be a mechanism that weakens or inhibit ARF.
 This is because if the strength of ARF is constant, the influence of AP does not pass well to the cell membrane.
 
-\chapter{Conclusions and Future Work}
-\section{Half-Moon Shape for Keratocytes}
+\chapter{Conclusion}
+\section{Conclusion}
 Actin molecules played a important role in migrating cells. The actin molecule is attracted in the direction opposite to the polymerization direction by ARF caused by SF while pushing the cell membrane while approaching the cell membrane while repeating polymerization and depolymerization. AP and ARF are intracellular mechanisms acting in opposite directions, respectively. However, if either mechanism is lacking, a half-moon shaped form is not formed. Cell migration is a complicated combination of these two elements.
 
 ARF changes the direction of polymerization when drawing actin molecules towards SF.
@@ -338,10 +338,10 @@ In this study, it is assumed that both ends of SF are pulling actin molecules, b
 Therefore, the form formed when precondition is combined with AP condition and ARF condition is half moon shape.
 
 
-\section{Future Work}
+\section{Future Works}
 In cell membrane molecular simulation, we could not cope with the movement of actin molecule well. Even if the actin molecule polymerized at the front pushes the cell membrane, the displacement of the membrane molecule is slow to propagate to the back.
 \chapter*{Acknowledgements}
-We gratefully acknowledge the work of past and present members of our laboratory.
+I would like to thank Prof. Nishii whose enormous support and insightful comments were invaluable during the course of my study. I also owe a very important debt to Prof. Urakami, Prof. Iwadate and the members of the laboratory whose comments made an enormous contribution to my work. 
 
 \addcontentsline{toc}{chapter}{Acknowledgements}
 \bibliography{bibtexfile.bib}

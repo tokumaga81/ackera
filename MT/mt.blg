@@ -5,7 +5,7 @@ The style file: junsrt.bst
 Database file #1: bibtexfile.bib.bib
 You've used 5 entries,
             2270 wiz_defined-function locations,
-            579 strings with 5470 characters,
+            579 strings with 5451 characters,
 and the built_in function-call counts, 2312 in all, are:
 = -- 182
 > -- 89
@@ -28,11 +28,11 @@ int.to.str$ -- 5
 missing$ -- 5
 newline$ -- 28
 num.names$ -- 5
-pop$ -- 21
+pop$ -- 22
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 120
+skip$ -- 119
 stack$ -- 0
 substring$ -- 146
 swap$ -- 64

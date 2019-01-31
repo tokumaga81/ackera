@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  31 JAN 2019 02:03
+This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  31 JAN 2019 13:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -495,26 +495,26 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 
 ]
 Chapter 1.
-LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JT2/gt/m/n' tried instead on input line 35.
-LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
-(Font)              scaled to size 16.62714pt on input line 35.
-LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <17.28> not available
-(Font)              Font shape `JY2/gt/m/n' tried instead on input line 35.
-LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
-(Font)              scaled to size 16.62714pt on input line 35.
 
 LaTeX Font Warning: Font shape `JT2/mc/m/it' undefined
-(Font)              using `JT2/mc/m/n' instead on input line 37.
+(Font)              using `JT2/mc/m/n' instead on input line 36.
 
 
 LaTeX Font Warning: Font shape `JY2/mc/m/it' undefined
-(Font)              using `JY2/mc/m/n' instead on input line 37.
+(Font)              using `JY2/mc/m/n' instead on input line 36.
 
 [1] [2
 
 ]
 Chapter 2.
+LaTeX Font Info:    Font shape `JT2/mc/bx/n' in size <17.28> not available
+(Font)              Font shape `JT2/gt/m/n' tried instead on input line 60.
+LaTeX Font Info:    Font shape `JT2/gt/m/n' will be
+(Font)              scaled to size 16.62714pt on input line 60.
+LaTeX Font Info:    Font shape `JY2/mc/bx/n' in size <17.28> not available
+(Font)              Font shape `JY2/gt/m/n' tried instead on input line 60.
+LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
+(Font)              scaled to size 16.62714pt on input line 60.
 File: kera.eps Graphic file (type eps)
 <kera.eps> [3]
 
@@ -647,4 +647,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  44i,9n,49p,10371b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mt.dvi (20 pages, 38124 bytes).
+Output written on mt.dvi (20 pages, 38052 bytes).
