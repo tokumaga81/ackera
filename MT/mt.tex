@@ -75,11 +75,11 @@ however, it is different from typical amoeba movement at the point that they mov
 %アクチン分子
 The protruding events of cell migration are thought to be caused by actin polymerization (AP)\cite{svitkina1997analysis}.
 AP is that actin molecules which are cytoskeletons overlap to form fibrous actin (F-actin).
-cell migration と actinの重合と脱重合の関連
+%cell migration と actinの重合と脱重合の関連
 There is depolymerization in the opposite phenomenon of AP.
 The opposite of AP, the phenomenon that actin molecule separates from F-actin is called depolymerization.
 The actin molecule depolymerizes with AP and forms a dense network and pushes the cell membrane from the inside.
-ARFとSFの紹介
+%ARFとSFの紹介
 There are not only actin molecules but also myosin molecules in the cell membrane.
 When actin molecule and myosin molecule are bound, it becomes actomyosin, and a bundle of actomyosin is called a stress fiber (SF).
 The actin retrograde flow (ARF) that pulls the actin molecules back toward the SF has also been reported \cite{swaminathan2017actin}.
@@ -103,44 +103,47 @@ It is a common fact even in keratocytes that the cell membrane is deformed by ac
 \chapter{Simulation Methods}
 \section{Simulation Methods of Cell Membrane}
 %初期配置の話
-Cell membrane molecules were initially placed at regular intervals on the surface of a cylinder.
+In the computer simulation of this study, the cell membrane was modeled by a network of simple particles interacting with each other and placed on a cylindrical surface as an initial condition.
+Each particle of the membrane was assumed to receive elastic force from neighboring particles and repulsive force from actin molecules.
 The equation of motion of the cell membrane molecule is assumed as follows.
-At this time, adjacent index information is saved in order to reduce the calculation amount later.
+
 \begin{equation}
 m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^m_i +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
 \end{equation}
-where  $m$ is the mass, $\eta = 8.9\times10^{-6}\si{~kg/s}$ is the viscous coefficient, $\bm{F}^m_i$ is the elastic force received from the membrane molecule, $\bm{F}^m_a$ is the repulsive force received from the actin molecule, and $\bm{x}_i$ is the position vector of the membrane molecule.
-It is assumed that the force  $\bm{F}^m_i$ acting between the membrane molecules can be represented by elastic force:
+
+where  $\bm{x}_i$ is the position vector of the membrane molecule, $m$ is the mass of the particle, $\eta=8.9\times10^{-6}\si{~kg/s}$ is the viscous coefficient, $\bm{F}^m_i$ and $\bm{F}^a_i$ is the force received from the neighboring particles and  the repulsive force from actin molecules.
+The force  $\bm{F}^m_i$ was assumed as an elastic force:
 \begin{equation}
 \bm{F}^m_i = \sum_{i \in I_j}  -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
 \end{equation}
-where $k$ is the spring constant, and $\bm{l}_{ij}$ is the natural length between the membrane molecules $i-j$. Molecule  $i$ belongs to the set of index $I$ adjacent to molecule $j$.
-The natural length measures the distance between membrane molecules in the initial state.
-The force  $\bm{F}^a_i$ that a membrane molecule receives from an actin molecule is assumed to be the repulsive force:
+where $k$ is a spring constant, $\bm{l}_{ij}$ is the natural length between the $i$-th and $j$-th membrane particles, and $I_j$ represents the set of particles that interacts with particle $j$.
+The natural length between particles were determined by the distance  at the initial state.
+The force $\bm{F}^a_i$ received from an actin particle was assumed to be a  repulsive force:
 \begin{equation}
 \bm{F}^a_i = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
 \end{equation}
-where $s$ is a constant that determines the strength of the repulsive force, and $D_2$ is a distance range to receive a force.
-
+where $s$ is a constant that determines the strength of the repulsive force, and $D_2$ is a distance range  the  force prepared to decrease the calculation amount.
 
 \section{Simulation Methods of Actin Molecules}
 \subsection{Actin Polymerization}
-The polymerization of actin has polarity, the end where polymerization is carried out is called barbed-end, and the end which is not done is called pointed-end. Since polymerization is carried out well in a region where many actin molecules are present , the polymerization rate is proportional to the actin concentration in the vicinity.  The filament formed by actin polymerization is called F-actin. F-actin on the simulation is treated as a rod. F-actin is defined as the position vector at both ends of the rod.
-Here, the position vector of pointed-end of particle $i$ is $\bm{P}_i$, and the position vector of barbed-end of particle $i$ is $\bm{B}_i$.
-$\bm{P}_i$ and $\bm{B}_i$ are updated step by step to control polymerization and depolymerization.
-
-As described above, the polymerization direction $\bm{L}_i$ is determined at the initial stage of cell migration.Therefore, the formula for updating the polymerization is \[\bm{B}_i \gets \bm{P}_i + \bm{L}_i\]. However, considering the surrounding actin concentration and time step, the formula can be rewritten as follows.
+An actin molecule has polarity: one end which elongates by  polymerization is called barbed-end, and the other end is called pointed-end.
+Since the frequency of polymerization is high in a region where actin molecules are dense \cite{svitkina1997analysis}, the polymerization rate was assumed to be  proportional to the actin concentration.
+The filament formed by actin polymerization is called F-actin.
+F-actin was expressed by a simple  rod in the simulation. 
+As an initial condition the length of each rod was zero and he direction of the actin polymerization $\bm{L}_i$ was  randomly determined.
+The elongation of the F-actin by the polymerization is modeled by
 \begin{equation}
 \bm{B}_i \gets \bm{P}_i + f^p(c)\bm{L}_i \cdot dt
 \end{equation}
-where $f^p(c) = 5.0 \cdot \exp{\frac{c}{10.0}}$ is a function that  increases exponentially with actin concentration $c$ and $dt$ is the time step.
-
-Regarding depolymerization, the update formula is as follows.
+where $\bm{B}_i$ and $\bm{P}_i$ are barbed end and pointed end of the F-actin, respectively, and $f^p(c) = 5.0 \cdot \exp{\frac{c}{10.0}}$ expresses the frequency of actin polymerization as a function of actin concentration $c$.
+$c$ measures for each region obtained by dividing the plane of the simulation space into a lattice shape.
+The frequency of depolymerization decreases in an actin dense area and the depolymerization was expressed  as follows.
 \begin{equation}
 \bm{P}_i \gets \bm{P}_i + f^d(c)\bm{L}_i \cdot dt
 \end{equation}
-where  $f^d(c) = \frac{5.0}{c}$ is a function inversely proportional to $c$. However, these formulas are not done every time, but are done with probability \[p_i(c) = c_i = \frac{a_i}{N}\] where $p_i(c)$ is the probability that depends on the concentration $c_i$ in region $i$, $a_i$ is the number of actin in region i, and $N$ is the total number of actin. In this simulation, the original space was divided into 3600 spaces($i=3600$).
-
+where $f^d(c) = \frac{5.0}{c}$ represents the frequency of depolymerization. 
+The actin polymerization and depolymerization was simulated by a probability  \[p_i(c) = c_i = \frac{a_i}{N}\] at each step, where $p_i(c)$ is the probability that depends on the concentration $c_i$ in $i$-th region, $a_i$ is the number of actin in $i$-th region, and $N$ is the total number of actin.
+In this simulation, the space where a virtual cell was simulated was divided into $3600$ regions $(i = 1,...3600$).
 
 \subsection{Actin Retrograde Flow}
 Because ARF is often unknown, we simulate with some assumptions. Although the element that causes ARF is a stress fiber, since the cell model of this paper does not introduce a stress fiber, it substitutes the membrane molecule at the end of the cell membrane. Since it is not clear how much the effect on actin molecule also works, it was assumed that the closer to the membrane molecule the stronger the effect.
