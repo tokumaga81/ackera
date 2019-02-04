@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.1.20)  4 FEB 2019 16:27
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.1.20)  5 FEB 2019 03:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -508,10 +508,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 Here is how much of TeX's memory you used:
  12054 strings out of 493653
  251185 string characters out of 6148874
- 281622 words of memory out of 5000000
+ 280622 words of memory out of 5000000
  15585 multiletter control sequences out of 15000+600000
  22525 words of font info for 85 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  44i,9n,49p,10374b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abst2.dvi (2 pages, 12340 bytes).
+Output written on abst2.dvi (2 pages, 11444 bytes).
