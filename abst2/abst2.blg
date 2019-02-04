@@ -3,45 +3,63 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: abst2.aux
 The style file: junsrt.bst
 Database file #1: bibtexfile.bib.bib
+You're missing a field name---line 8 of file bibtexfile.bib.bib
+ :  
+ :  % pages={397--415},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 41 of file bibtexfile.bib.bib
+ : 
+ : %  pages={10615},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+You're missing a field name---line 53 of file bibtexfile.bib.bib
+ :  
+ :  % pages={10648--10653},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty year in svitkina1997analysis
+Warning--empty year in swaminathan2017actin
 You've used 2 entries,
             2270 wiz_defined-function locations,
-            555 strings with 4761 characters,
-and the built_in function-call counts, 1066 in all, are:
-= -- 84
-> -- 44
-< -- 6
-+ -- 16
-- -- 14
-* -- 74
-:= -- 133
+            549 strings with 4415 characters,
+and the built_in function-call counts, 422 in all, are:
+= -- 22
+> -- 8
+< -- 4
++ -- 4
+- -- 2
+* -- 26
+:= -- 59
 add.period$ -- 6
 call.type$ -- 2
 change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 2
-duplicate$ -- 56
-empty$ -- 81
-format.name$ -- 28
-if$ -- 255
+cite$ -- 4
+duplicate$ -- 32
+empty$ -- 43
+format.name$ -- 4
+if$ -- 93
 int.to.chr$ -- 0
 int.to.str$ -- 2
 missing$ -- 2
 newline$ -- 13
 num.names$ -- 2
-pop$ -- 9
+pop$ -- 11
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 51
+skip$ -- 21
 stack$ -- 0
-substring$ -- 80
-swap$ -- 28
-text.length$ -- 6
+substring$ -- 0
+swap$ -- 6
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 8
+warning$ -- 2
+while$ -- 2
 width$ -- 3
-write$ -- 24
-is.kanji.str$ -- 34
+write$ -- 22
+is.kanji.str$ -- 20
+(There were 3 error messages)
