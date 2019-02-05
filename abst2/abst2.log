@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.1.20)  5 FEB 2019 15:30
+This is e-pTeX, Version 3.14159265-p3.7.1-161114-2.6 (utf8.euc) (TeX Live 2017) (preloaded format=platex 2018.1.20)  5 FEB 2019 16:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -479,46 +479,38 @@ File: top60_arf.eps Graphic file (type eps)
 Missing character: There is no ^^e3 in font cmr10!
 Missing character: There is no ^^82 in font cmr10!
 Missing character: There is no ^^99 in font cmr10!
-File: top60_1arf.eps Graphic file (type eps)
- <top60_1arf.eps>
-File: top60_darf.eps Graphic file (type eps)
- <top60_darf.eps>
-File: top60_narf.eps Graphic file (type eps)
-
-<top60_narf.eps>
-Overfull \hbox (26.29254pt too wide) in paragraph at lines 58--70
- [][][][] 
- []
-
-
-LaTeX Font Warning: Font shape `JT1/mc/m/sl' undefined
-(Font)              using `JT1/mc/m/n' instead on input line 80.
-
-
-LaTeX Font Warning: Font shape `JY1/mc/m/sl' undefined
-(Font)              using `JY1/mc/m/n' instead on input line 80.
-
-LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 80.
-LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 80.
+File: 1arf.eps Graphic file (type eps)
+ <1arf.eps>
+File: narf.eps Graphic file (type eps)
+ <narf.eps>
 Missing character: There is no ^^e2 in font cmr10!
 Missing character: There is no ^^85 in font cmr10!
 Missing character: There is no ^^a1 in font cmr10!
-[2] [3
 
-] (./abst2.aux)
+
+LaTeX Font Warning: Font shape `JT1/mc/m/sl' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 74.
+
+
+LaTeX Font Warning: Font shape `JY1/mc/m/sl' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 74.
+
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 74.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 74.
+[2] (./abst2.aux)
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 12061 strings out of 493653
- 251279 string characters out of 6148874
+ 12059 strings out of 493653
+ 251227 string characters out of 6148874
  281622 words of memory out of 5000000
- 15589 multiletter control sequences out of 15000+600000
+ 15588 multiletter control sequences out of 15000+600000
  22525 words of font info for 85 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  44i,9n,49p,10374b,430s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on abst2.dvi (3 pages, 13940 bytes).
+Output written on abst2.dvi (2 pages, 11484 bytes).
