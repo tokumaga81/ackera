@@ -1,7 +1,7 @@
 %AP
 @article{svitkina1997analysis,
   title={Analysis of the actin--myosin Ⅱ system in fish epidermal keratocytes: mechanism of cell body translocation},
-  author={Svitkina, Tatyana M. and Verkhovsky, Alexander B. and McQuade, Kyle M. and Borisy, Gary G.},
+  author={Svitkina, Tatyana M. et.al},
   journal={The Journal of Cell Biology},
   volume={139},
   number={2},
@@ -23,7 +23,7 @@
 %nuclrea
 @article{asano2004keratocyte,
   title={Keratocyte-like locomotion in ami{B}-null Dictyostelium cells},
-  author={Asano, Y. and Mizuno, T. and Kon, T. and Nagasaki, A. and Sutoh, K. and Uyeda, T. Q.},
+  author={Asano, Yukako and Mizuno, Takafumi and Kon, Takahide and Nagasaki, Akira and Sutoh, Kazuo and Uyeda, Taro QP},
   journal={Cell Motility and the Cytoskeleton},
   volume={59},
   number={1},
@@ -53,15 +53,4 @@
   pages={10648--10653},
   year={2017},
   publisher={National Acad Sciences}
-}
-
-%arf
-@article{nakashima2015molecular,
-  title={The molecular dynamics of crawling migration in microtubule-disrupted keratocytes},
-  author={Nakashima, Hitomi and Okimura, Chika and Iwadate, Yoshiaki},
-  journal={Biophysics and physicobiology},
-  volume={12},
-  pages={21--29},
-  year={2015},
-  publisher={The Biophysical Society of Japan}
 }

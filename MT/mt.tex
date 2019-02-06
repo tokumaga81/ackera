@@ -139,6 +139,10 @@ where $f^d(c) = \frac{5.0}{c}$ represents the frequency of depolymerization.
 The actin polymerization and depolymerization was simulated by a probability  \[p_i(c) = c_i = \frac{a_i}{N}\] at each step, where $p_i(c)$ is the probability that depends on the concentration $c_i$ in $i$-th region, $a_i$ is the number of actin in $i$-th region, and $N$ is the total number of actin.
 In this simulation, the space where a virtual cell was simulated was divided into $3600$ regions $(i = 1,...3600$).
 
+There is a possibility that the actin molecule protrudes from the cell membrane by polymerization in a random direction.
+The actin molecule in the region of low actin molecule density disappears and regenerates near the cell membrane.
+The new polymerization direction of the actin molecule is randomly determined.
+
 \subsection{Actin Retrograde Flow}
 Because the function and underlying mechanism of the ARF have not been known in detail, we simulated the ARF under some assumptions. The ARF is a movement of F-actins toward the  stress fiber which is a bundle of actin fibers aligning from side to side in the rear side of keratocytes. 
 
@@ -164,24 +168,29 @@ In this case the retraction by the ARF was expressed as follows:
    \label{eq:arf}
 \end{numcases}
 where $\gamma$ and $\delta$ are constants that determines the strength of the ARF.
-\section{Initial Condition and Relocation  Condition}
+
+\section{Initial Condition}
 \begin{figure}[tbp]
 \centering
-\includegraphics[scale=0.25]{top.eps}
-\caption{Top view of keratocyte model at time $t=0$.}
-\label{fig:top0}
+ \subfloat[]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{top.eps} 
+  \end{tabular}
+ }%
+ \subfloat[]{%
+  \begin{tabular}{c}
+   \includegraphics[width=5cm]{side.eps} 
+  \end{tabular}
+ }%
+  \caption{Initial state. (a)~Top view. Green lines and white dots show actin molecules and membrane particles, respectively. (b)~Side view.}
+ \label{fig:ini}
 \end{figure}
-\begin{figure}[tbp]
-\centering
-\includegraphics[scale=0.25]{side.eps}
-\caption{Side view of keratocyte model at time $t=0$.}
-\label{fig:side0}
-\end{figure}
-The total number of actin is 3000, the number of membrane molecules is 2000. When updating the position of F-actin every step, deformation of the cell membrane can not catch up. Therefore, the position of the cell membrane molecule is updated each time, and the position of actin molecule is updated once every 10 times.
+The number of actin molecules and membrane particles were 3000 and 2000, respectively, in the computer simulation.
+The positions of membrane particles were updated every step of the numerical computation and the positions of actin molecules were updated every 10 time steps.
 
-The direction of polymerization is randomly determined. Some actins invade areas where they can not normally invade due to the progress of polymerization. For example, it is outside the cell membrane and in the nucleus. In such a case, relocation processing is applied to the actin. F-actin escaping from the cell membrane disappears and moves to a random place close to the cell membrane. The region to be repositioned is outside of the cell membrane and regions where the concentration of actin molecule is low.
-
-The initial state in the simulation experiment is shown in Fig. \ref{fig:top0} and Fig. \ref{fig:side0}. The actin molecule is indicated by a green line, and the cell membrane is indicated by a white dot. This is the initial placement of actin molecules because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction. The membrane molecules are placed on the surface of the cylinder and not inside.
+Fig. \ref{fig:ini} shows the initial state of the virtual cell of  the computer simulation.
+Green lines and white dots show actin molecules and membrane particles, respectively.
+This is the initial placement of actin molecules because the nucleus is present in the center of the cell and the actin molecule is distributed a lot in the anterior direction. The membrane molecules are placed on the surface of the cylinder and not inside.
 
 \section{Reduction in Calculation Amount}
 %細胞膜のはなし
