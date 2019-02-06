@@ -309,22 +309,30 @@ Fig. \ref{fig:res0} showed the simulation result when two reference points of th
 In this case, the actin molecule aggregated in a half-moon shape.
 
 %距離依存との比較
-Fig.\ref{fig:res1} showed the simulation results under the same condition as Fig. \ref{fig:res0} except that distance-dependent ARF was  used (w=2).
+Fig. \ref{fig:res1} showed the simulation results under the same condition as Fig. \ref{fig:res0} except that distance-dependent ARF was  used (w=2).
 Since actin molecules that polymerize in the transverse direction close to SF are strongly pulled back, actin molecules aggregate vertically.
 As a result of the continuation of the AP, the actin molecule region continued to spread beyond the cell membrane.
 Since the AP in the lateral direction is indispensable for forming a half-moon shape, the condition of this ARF is inappropriate.
 
 %１点集中との比較
-Fig.\ref{fig:res2} showed simulation results assuming the case where there is one ARF reference point (eq. \ref{eq:arf1}).
+Fig. \ref{fig:res2} showed simulation results assuming the case where there is one ARF reference point (eq. \ref{eq:arf1}).
 The actin molecule migrated towards the center of the cell rather than when pulled from the two reference points and circular aggregation occurred.
 By this, the effect of AP in the lateral direction on the cell membrane was alleviated.
 As in the case where a distance-dependent ARF is used, in this situation the formation of a half-moon shape is not done.
 That is, the actin molecules aggregate in a U-shaped area due to the influence from two points at both ends of SF rather than from one point.
 
 %ARFの有無
-Fig.\ref{fig:res3} showed the simulation results when the effect of the ARF was ignored.
+Fig. \ref{fig:res3} showed the simulation results when the effect of the ARF was ignored.
 Since there is no ARF which is the orientation mechanism of AP, actin molecule continued polymerization in random directions and did not aggregate.
 Compared to the other results, it can be seen that the actin molecule elongation in all directions and stresses the cell membrane.
+
+%回転なし
+Fig. \ref{fig:res4} showed the simulation result when ignoring the orientation effect of ARF.
+It seems an agglutination form of actin molecule similar to Fig. \ref{fig:res0}, but when focusing on the head of actin molecule, it is found that it is polymerizing in various directions.
+Without the orientation effect of AP, this aggregate of actin molecules will expand in this shape.
+Furthermore, this aggregate stagnates on the spot because only ARF retraction works.
+It is understood that a mechanism for aligning the directions is necessary for cell migration.
+
 As indicated above, changing each condition associated with ARF affects the aggregated shape of the actin molecule.
 
 \subsection{Effect of Initial Distribution of Actin Molecules}
@@ -349,37 +357,76 @@ As indicated above, changing each condition associated with ARF affects the aggr
  \label{fig:res5}
 \end{figure}
 
-
-The initial arrangement of actin molecules was half donut-shaped, but simulations were carried out for other shapes (Fig.\ref{fig:res4}). Since it is not a half donut type, since the distribution of the actin molecule is not biased, the direction of cell movement was not determined. Moreover, since the effect of ARF affects actin molecule, the aggregation occurs near SF.
+In the simulation experiments in the previous section, it was assumed that the actin molecules were randomly distributed in a U-shaped region as an initial condition.
+Fig. \ref{fig:res5} shows the simulation results of actin molecules were distributed in a donut shape.
+The other simulation conditions were the same as those in Fig. \ref{fig:res0}.
+The actin molecule did not aggregate in a half-moon shape but aggregated around the SF.
+When ARF acts in the state where actin molecules are arranged in a donut shape, agglutination around the SF before the actin molecule forms a half moon shape ahead of the cell.
+In the state where the actin molecule is arranged in the U-shaped region, it can be explained that some mechanical stimulation is given to the donut-shaped state and the arrangement of actin molecules is biased.
+If the arrangement of actin molecules is biased into a U-shaped region, the propulsive direction of cell migration is determined.
+Hence, cell migration is impossible when actin molecules are arranged in a donut shape.
 
 \section{Discussion}
-The cell membrane molecule undergoes both the force from the actin molecule and the force of the nearby membrane molecule simultaneously.
-Therefore, when the actin molecule is excessively polymerized, the cell membrane can not be flexibly deformed, so it ruptures. 
-This result suggests that ARF alleviates the excessive load on the cell membrane by regressing actin molecule.
-However, as ARF continually pulls actin molecules, it eventually inhibits the effect on cell membranes.
-As can be seen from Fig.\ref{fig:res4}, in the case where ARF exists from a state in which the distribution of actin molecules is unbiased, a half-moon shape is not formed.
-The ARF is not constant, and it is presumed that the intensity of influence will change as time passes.
-As cell migration progresses SF is gradually formed and ARF is considered to occur.
-As can be seen from comparison between Fig.\ref{fig:res0} and Fig.\ref{fig:res2}, actin molecules aggregate in a half-moon shape when ARF occurs from SF.
-SF is an actomyosin bundle formed by depolymerized actin molecule accumulating in the posterior part and combining with myosin molecule.
-As SF does not exist in the initial state, it is presumed that ARF probably also does not exist at the initial stage of cell migration.
+%結果をまとめる
+If the ARF condition is $w=1$ (eq. \ref{eq:arf}), there is an orientation effect in the SF direction, and when the reference point is two points, the actin molecule aggregated in a half-moon shape (Fig. \ref{fig:res0}).
+Under the other conditions, the actin molecule did not aggregate in a half-moon shape.
 
-If the actin molecule is located far away from the SF, there may be a mechanism that weakens or inhibit ARF.
-This is because if the strength of ARF is constant, the influence of AP does not pass well to the cell membrane.
+%ひたすらAPするとただ細胞のサイズがでかくなるだけ
+The membrane particles receive force from actin molecules and neighboring membrane particles simultaneously.
+Cell membrane is deformed by the repulsive force by AP exceeding the binding force between cell membranes.
+As the AP becomes more active, the cell membrane deforms significantly.
+However, simply lengthening the actin molecule only increases the size of the cell.
+There are two problems of "deforming" and " keeping" of a half-moon form for cell migration of keratocyte by polymerization of actin molecule.
+%APを抑制するためのARF
+The presence of inhibiting the expansion of the aggregating region of actin molecule is the ARF.
+The ARF deforms the actin molecule in aggregated form from a U-shape shape to a half-moon shape by pulling back the actin molecule in the direction of SF.
+Even if we look at the simulation results in the absence of AP (Fig. \ref{fig:res3}), the importance of the ARF is obvious.
+%ARFも引き戻すだけではだめ
+However, it is impossible to form a half-moon shape simply by attracting the actin molecule backwards.
+Since actin molecules are pulled back while stretching in the same direction, they stop on the spot.
+Traction of the actin molecule contributes to maintaining the aggregated form of the actin molecule.
+
+%配向効果
+Changing the direction of AP by orientation effect gives the change of aggregation form of actin molecules.
+As the orientation of the AP changes while being pulled back, the arrangement of actin molecules changes.
+The fact that the orientation of the AP aligns in the direction of SF means that all actin molecules polymerize radially to the cell membrane.
+The condition that the actin molecule is pulled back independently of the distance also contributes to the formation of a half-moon shape.
+
+The above results indicate that ARF is orienting and retracting of actin molecular polymerization plays an important role in deforming and keeping the keratocyte in a half-moon shape.
+
+
+
 
 \chapter{Conclusion}
 \section{Conclusion}
-Actin molecules played an important role in migrating cells. The actin molecule is attracted in the direction opposite to the polymerization direction by ARF caused by SF while pushing the cell membrane while approaching the cell membrane while repeating polymerization and depolymerization. AP and ARF are intracellular mechanisms acting in opposite directions, respectively. However, if either mechanism is lacking, a half-moon shaped form is not formed. Cell migration is a complicated combination of these two elements.
+Actin molecules played an important role in migrating cells.
+The actin molecule is attracted in the direction opposite to the polymerization direction by ARF caused by SF while pushing the cell membrane while approaching the cell membrane while repeating polymerization and depolymerization.
+AP and ARF are intracellular mechanisms acting in opposite directions, respectively.
+However, if either mechanism is lacking, a half-moon shaped form is not formed.
+Cell migration is a complicated combination of these two elements.
 
-ARF changes the direction of polymerization when drawing actin molecules towards SF.
+The ARF changes the direction of polymerization when drawing actin molecules towards SF.
 It is presumed that the form formed differs depending on how much the angle changes at this time.
 It was suggested that the effect of aligning the orientation of the AP to the direction of the ARF is important for the formation of the half-moon shape and that the contraction effect of the actin molecule prevents excessive expansion of the cell membrane.
 
 In this study, it is assumed that both ends of SF are pulling actin molecules, but it is considered that the form formed is different under other conditions.
-Therefore, the form formed when precondition is combined with AP condition and ARF condition is half moon shape.
+Therefore, the form formed when precondition is combined with AP condition and the ARF condition is a half-moon shape.
 
 \section{Future Works}
-In cell membrane molecular simulation, we could not cope with the movement of actin molecule well. Even if the actin molecule polymerized at the front pushes the cell membrane, the displacement of the membrane molecule is slow to propagate to the back.
+%ARF条件
+Regarding ARF, many conditions remain to be tried.
+For example, when the force pulled back by time or the reference point changes, or the direction to be oriented differs from the position to be pulled back.
+In this cell model, it is possible to know the importance of ARF by trying various ARFs.
+There is room to investigate also when changing the strength and rigidity of the cell membrane.
+It is interesting to see experiments that carefully model the SF as well as AP and ARF, or what results are obtained when a completely new intracellular mechanism is introduced.
+
+%膜分子への不満
+In the cell membrane molecular simulation, it could not reflect well on the movement of actin molecule.
+Even if the actin molecule polymerized at the front pushes the cell membrane, the displacement of the membrane molecule is slow to propagate to the back.
+It is unknown whether the cause is a bug in the program or the condition that the model can not be found.
+It is also important how actin molecules aggregate, but the most important thing is how actin molecules transform cell membranes.
+
+
 \chapter*{Acknowledgements}
 I would like to thank Prof. Nishii whose enormous support and insightful comments were invaluable during the course of my study. I also owe a very important debt to Prof. Urakami, Prof. Iwadate and the members of the laboratory whose comments made an enormous contribution to my work. 
 
