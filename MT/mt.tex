@@ -139,7 +139,7 @@ where $f^d(c) = \frac{5.0}{c}$ represents the frequency of depolymerization.
 The actin polymerization and depolymerization was simulated by a probability  \[p_i(c) = c_i = \frac{a_i}{N}\] at each step, where $p_i(c)$ is the probability that depends on the concentration $c_i$ in $i$-th region, $a_i$ is the number of actin in $i$-th region, and $N$ is the total number of actin.
 In this simulation, the space where a virtual cell was simulated was divided into $3600$ regions $(i = 1,...3600$).
 
-There is a possibility that the actin molecule protrudes from the cell membrane by polymerization in a random direction.
+As actin molecules continue to polymerize in random directions, the actin molecule region continues to spread monotonically.
 The actin molecule in the region of low actin molecule density disappears and regenerates near the cell membrane.
 The new polymerization direction of the actin molecule is randomly determined.
 
@@ -151,6 +151,7 @@ At first, we assumed the ARF as the retraction of the actin molecules toward the
   {}
   \bm{B}_i \gets \bm{B}_i - \alpha \frac{ \bm{B}_i - \bm{E}_0}{{\| \bm{B}_i - \bm{E}_0 \|}^w} & \\
    \bm{P}_i \gets \bm{P}_i - \beta \frac{ \bm{P}_i - \bm{E}_0}{{\| \bm{P}_i - \bm{E}_0 \|}^w} &
+   \label{eq:arf1}
 \end{numcases}
 where $\bm{E}_0$ is the reference point, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF.
 $w$ is a parameter indicating the effect of distance between actin molecule and cell membrane molecule on retraction strength of the ARF.
@@ -192,19 +193,6 @@ Fig. \ref{fig:ini} shows the initial state of the virtual cell of  the computer 
 The initial arrangement of the actin molecule is a U-shaped area excluding the rear of the cell (Fig. \ref{fig:ini}).
 The membrane molecules are placed on the surface of the cylinder and not inside.
 
-\section{Reduction in Calculation Amount}
-%細胞膜のはなし
-Calculating the distance between membrane molecules in all steps increases the computational complexity.
-Therefore, when calculating the cell membrane model, the distance between the cell membrane molecules stored in advance was referred to.
-In the initial state, the index information of the adjacent cell membrane molecules was stored.
-This method can be adopted because the position information adjacent does not change regardless of how much the interparticle distance changes.
-
-%エリアわけ
-Likewise, if the distance between the cell membrane molecule and the actin molecule is calculated in all steps, the process becomes heavy.
-Unlike the case of intermolecular molecules, the index information of nearby molecules changes in the case of actin molecule and cell membrane molecules.
-For this reason, the simulation space was divided into areas in mesh form, and index information of molecules in the same area was saved.
-
-
 \chapter{Results and Discussion}
 \section{Simulation Results}
 \subsection{Role of Actin Retrograde Flow}
@@ -212,20 +200,20 @@ For this reason, the simulation space was divided into areas in mesh form, and i
 \begin{figure}[tbp]
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top10_darf.eps} 
+   \includegraphics[width=5cm]{10_arf.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top35_arf.eps} 
+   \includegraphics[width=5cm]{50_arf.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top60_arf.eps} 
+   \includegraphics[width=5cm]{90_arf.eps} 
   \end{tabular}
  }%
- \caption{Simulation results when the amplitude of the retraction by the ARF is independent of the distance. time $t = 1.0, 3.5, 6.0 [s]$. Green lines show the cell membrane, and red dots show F-actin.}
+ \caption{Simulation results when the amplitude of the retraction by the ARF is independent of the distance. time $t = 1.0, 6.0,11.0 [s]$. Green lines show the cell membrane, and red dots show F-actin.}
  \label{fig:res0}
 \end{figure}
 
@@ -233,17 +221,17 @@ For this reason, the simulation space was divided into areas in mesh form, and i
 \begin{figure}[tbp]
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top10_darf.eps} 
+   \includegraphics[width=5cm]{10_darf.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top35_darf.eps} 
+   \includegraphics[width=5cm]{50_darf.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top60_darf.eps} 
+   \includegraphics[width=5cm]{90_darf.eps} 
   \end{tabular}
  }%
  \caption{A simulation result of ARF when $w = 2$ in Equation \ref{eq:arf}.}
@@ -254,17 +242,17 @@ For this reason, the simulation space was divided into areas in mesh form, and i
 \begin{figure}[tbp]
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top10_1arf.eps} 
+   \includegraphics[width=5cm]{10_1arf.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top35_1arf.eps}
+   \includegraphics[width=5cm]{50_1arf.eps}
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top60_1arf.eps} 
+   \includegraphics[width=5cm]{90_1arf.eps} 
   \end{tabular}
  }%
  \caption{Simulation results when the reference point of the ARF is assumed as the leftmost membrane molecule of the cell.}
@@ -276,32 +264,42 @@ For this reason, the simulation space was divided into areas in mesh form, and i
 \begin{figure}[tbp]
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top10_narf.eps} 
+   \includegraphics[width=5cm]{10_narf.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top35_narf.eps}
+   \includegraphics[width=5cm]{50_narf.eps}
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top60_narf.eps} 
+   \includegraphics[width=5cm]{90_narf.eps} 
   \end{tabular}
  }%
  \caption{Simulation Results without ARF.}
  \label{fig:res3}
 \end{figure}
-
+%大元の結果
 Fig. \ref{fig:res0} showed the simulation result when two reference points of the ARF were prepared (eq. \ref{eq:arf}) and the effect of the ARF was independent of the distance (w=1).
 In this case, the actin molecule aggregated in a half-moon shape.
+
+%距離依存との比較
 Fig.\ref{fig:res1} showed the simulation results under the same condition as Fig. \ref{fig:res0} except that distance-dependent ARF was  used (w=2).
-In Fig. \ref{fig:res0}, the actin molecule protruded from the cell membrane as a result of continuing AP.
-Fig.\ref{fig:res2} showed simulation results assuming that the ARF reference point is the last cell membrane molecule, not SF.
-Deformation occurred towards the center of the cell rather than pulling at two points.
+Since actin molecules that polymerize in the transverse direction close to SF are strongly pulled back, actin molecules aggregate vertically.
+As a result of the continuation of the AP, the actin molecule region continued to spread beyond the cell membrane.
+Since the AP in the lateral direction is indispensable for forming a half-moon shape, the condition of this ARF is inappropriate.
+
+%１点集中との比較
+Fig.\ref{fig:res2} showed simulation results assuming the case where there is one ARF reference point (eq. \ref{eq:arf1}).
+The actin molecule migrated towards the center of the cell rather than when pulled from the two reference points and circular aggregation occurred.
+By this, the effect of AP in the lateral direction on the cell membrane was alleviated.
+As in the case where a distance-dependent ARF is used, in this situation the formation of a half-moon shape is not done.
+That is, the actin molecules aggregate in a U-shaped area due to the influence from two points at both ends of SF rather than from one point.
+
+%ARFの有無
 Fig.\ref{fig:res3} showed the simulation results when the effect of the ARF was ignored.
-The actin molecule protruded from the cell membrane as in the case of Fig. \ref{fig:res1}.
-From the experimental results, the conditions under which the actin molecule is most stable are the conditions shown in Fig. \ref{fig:res0}.
+Since there is no ARF which is the orientation mechanism of AP, actin molecule continued polymerization in random directions and did not aggregate.
 
 
 \subsection{Effect of Initial Distribution of Actin Molecules}
@@ -309,17 +307,17 @@ From the experimental results, the conditions under which the actin molecule is 
 \begin{figure}[tbp]
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top10_ci.eps} 
+   \includegraphics[width=5cm]{10_ci.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top35_ci.eps} 
+   \includegraphics[width=5cm]{50_ci.eps} 
   \end{tabular}
  }%
  \subfloat[]{%
   \begin{tabular}{c}
-   \includegraphics[width=5cm]{top60_ci.eps} 
+   \includegraphics[width=5cm]{90_ci.eps} 
   \end{tabular}
  }%
  \caption{Simulation results when actin molecules are distributed in a circular region as an initial condition.}

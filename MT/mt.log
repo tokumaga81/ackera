@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  6 FEB 2019 16:15
+This is e-upTeX, Version 3.14159265-p3.7.1-u1.22-161114-2.6 (utf8.uptex) (TeX Live 2017) (preloaded format=uplatex 2018.1.20)  6 FEB 2019 23:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -547,76 +547,76 @@ LaTeX Font Info:    Font shape `JY2/gt/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `JT2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 169.
+(Font)              scaled to size 11.54663pt on input line 170.
 LaTeX Font Info:    Font shape `JY2/mc/m/sl' will be
-(Font)              scaled to size 11.54663pt on input line 169.
+(Font)              scaled to size 11.54663pt on input line 170.
  [5]
 File: top.eps Graphic file (type eps)
  <top.eps>
 LaTeX Font Info:    Font shape `JT2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 179.
+(Font)              scaled to size 9.6222pt on input line 180.
 LaTeX Font Info:    Font shape `JY2/mc/m/n' will be
-(Font)              scaled to size 9.6222pt on input line 179.
+(Font)              scaled to size 9.6222pt on input line 180.
 File: side.eps Graphic file (type eps)
- <side.eps> [6] [7]
+ <side.eps> [6]
 Chapter 4.
-File: top10_darf.eps Graphic file (type eps)
-<top10_darf.eps>
-File: top35_arf.eps Graphic file (type eps)
- <top35_arf.eps>
-File: top60_arf.eps Graphic file (type eps)
- <top60_arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 217--228
+File: 10_arf.eps Graphic file (type eps)
+<10_arf.eps>
+File: 50_arf.eps Graphic file (type eps)
+ <50_arf.eps>
+File: 90_arf.eps Graphic file (type eps)
+ <90_arf.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 205--216
 [][][][] 
  []
 
-File: top10_darf.eps Graphic file (type eps)
-<top10_darf.eps>
-File: top35_darf.eps Graphic file (type eps)
- <top35_darf.eps>
-File: top60_darf.eps Graphic file (type eps)
- <top60_darf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 238--249
+File: 10_darf.eps Graphic file (type eps)
+<10_darf.eps>
+File: 50_darf.eps Graphic file (type eps)
+ <50_darf.eps>
+File: 90_darf.eps Graphic file (type eps)
+ <90_darf.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 226--237
 [][][][] 
  []
 
-File: top10_1arf.eps Graphic file (type eps)
-<top10_1arf.eps>
-File: top35_1arf.eps Graphic file (type eps)
- <top35_1arf.eps>
-File: top60_1arf.eps Graphic file (type eps)
- <top60_1arf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 259--270
+File: 10_1arf.eps Graphic file (type eps)
+<10_1arf.eps>
+File: 50_1arf.eps Graphic file (type eps)
+ <50_1arf.eps>
+File: 90_1arf.eps Graphic file (type eps)
+ <90_1arf.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 247--258
 [][][][] 
  []
 
-File: top10_narf.eps Graphic file (type eps)
-<top10_narf.eps>
-File: top35_narf.eps Graphic file (type eps)
- <top35_narf.eps>
-File: top60_narf.eps Graphic file (type eps)
- <top60_narf.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 281--292
+File: 10_narf.eps Graphic file (type eps)
+<10_narf.eps>
+File: 50_narf.eps Graphic file (type eps)
+ <50_narf.eps>
+File: 90_narf.eps Graphic file (type eps)
+ <90_narf.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 269--280
 [][][][] 
  []
 
-File: top10_ci.eps Graphic file (type eps)
-<top10_ci.eps>
-File: top35_ci.eps Graphic file (type eps)
- <top35_ci.eps>
-File: top60_ci.eps Graphic file (type eps)
- <top60_ci.eps>
-Overfull \hbox (2.5101pt too wide) in paragraph at lines 314--325
+File: 10_ci.eps Graphic file (type eps)
+<10_ci.eps>
+File: 50_ci.eps Graphic file (type eps)
+ <50_ci.eps>
+File: 90_ci.eps Graphic file (type eps)
+ <90_ci.eps>
+Overfull \hbox (2.5101pt too wide) in paragraph at lines 312--323
 [][][][] 
  []
 
-[8
+[7
 
-] [9] [10] [11]
+] [8] [9] [10]
 Chapter 5.
-[12
+[11
 
-] (./mt.bbl [13
+] (./mt.bbl [12
 
 ]
 
@@ -631,7 +631,7 @@ LaTeX Font Info:    Font shape `JT2/gt/m/it' will be
 (Font)              scaled to size 11.54663pt on input line 17.
 LaTeX Font Info:    Font shape `JY2/gt/m/it' will be
 (Font)              scaled to size 11.54663pt on input line 17.
-) [14
+) [13
 
 ] (./mt.aux)
 
@@ -639,12 +639,12 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 12239 strings out of 493649
- 255337 string characters out of 6149068
- 287709 words of memory out of 5000000
- 15760 multiletter control sequences out of 15000+600000
+ 12242 strings out of 493649
+ 255282 string characters out of 6149068
+ 288709 words of memory out of 5000000
+ 15762 multiletter control sequences out of 15000+600000
  24016 words of font info for 103 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  44i,9n,49p,10371b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on mt.dvi (16 pages, 37156 bytes).
+Output written on mt.dvi (15 pages, 36228 bytes).
