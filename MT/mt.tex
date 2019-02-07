@@ -40,7 +40,7 @@ In contrast, fish keratocytes usually show a circular shape; however, they chang
 As evidence that AP is important for cell deformation, it has been reported that a dense network of actin molecules regulates cell deformation\cite{svitkina1997analysis}.
 Previous studies have reported that during cell migration actin molecules extend their head toward the cell membrane by actin polymerization (AP), which has been suggested as a source of the deformation of the cell membrane and the propulsive force of the cell.
 As evidence that AP is important for cell deformation, it has been reported that a dense network of actin molecules regulates cell deformation.
-The actin retrograde flow (ARF) that pulls the actin molecules back toward the stress fiber (SF), a bundle of actin fibers spreading from side to side of the rear part of the cell, has also been reported\cite{swaminathan2017actin}.
+The actin retrograde flow (ARF) that pulls the actin molecules back toward the stress fiber (SF), a bundle of actin fibers spreading from side to side of the rear part of the cell, has also been reported\cite{nakashima2015molecular}.
 
 %目的
 The purpose of this research is to clarify the mechanism that forms a half-moon shape by physical simulation experiments considering intracellular mechanism.
@@ -73,6 +73,7 @@ AP is that actin molecules which are cytoskeletons overlap to form fibrous actin
 There is depolymerization in the opposite phenomenon of AP.
 The opposite of AP, the phenomenon that actin molecule separates from F-actin is called depolymerization.
 The actin molecule depolymerizes with AP and forms a dense network and pushes the cell membrane from the inside.
+It has been reported that polymerization  tends to occur in the region rich in actin molecule and depolymerization tends to occur in a small region \cite{yumura1998spatiotemporal}.
 %ARFとSFの紹介
 There are not only actin molecules but also myosin molecules in the cell membrane.
 When actin molecule and myosin molecule are bound, it becomes actomyosin, and a bundle of actomyosin is called a stress fiber (SF).
@@ -92,7 +93,6 @@ Hence, it was suggested that the cell migration of the keratocyte is due to a ph
 A cell has a structure called a cytoskeleton. The cytoskeleton is like bones for humans, but in contrast to static human bones, the cytoskeleton is dynamic and is an important organelle that maintains the shape of the cell. The main component of the cytoskeleton is the actin molecule. As the actin molecule polymerizes and depolymerizes, the shape of the cell membrane changes. The actin molecule is elongated by polymerization in the cell membrane but retreats in the direction opposite to the elongation direction by the bundle of actomyosin called stress fiber. This phenomenon is called actin retrograde flow, and it is not clear what kind of role it plays in cell migration. The cell membrane extruded by polymerization of the actin molecule becomes the pseudopodia and adheres to the substrate at the advancing position. Thereafter, the adhesion between the substrates of the rear cell membrane is released and dragged forward. By repeating this cycle, cell migration mechanism is formed.
 
 It is a common fact even in keratocytes that the cell membrane is deformed by actin molecule polymerization. In the simulation experiment described in the next chapter, we investigate how the cell membrane forms a half moon shape when actin molecule polymerization acts on the cell membrane.
-
 
 \chapter{Simulation Methods}
 \section{Simulation Methods of Cell Membrane}
@@ -121,7 +121,7 @@ where $s$ is a constant that determines the strength of the repulsive force, and
 \section{Simulation Methods of Actin Molecules}
 \subsection{Actin Polymerization}
 An actin molecule has polarity: one end which elongates by  polymerization is called barbed-end, and the other end is called pointed-end.
-Since the frequency of polymerization is high in a region where actin molecules are dense \cite{svitkina1997analysis}, the polymerization rate was assumed to be  proportional to the actin concentration.
+Since the frequency of polymerization is high in a region where actin molecules are dense \cite{yumura1998spatiotemporal}, the polymerization rate was assumed to be  proportional to the actin concentration.
 The filament formed by actin polymerization is called F-actin.
 F-actin was expressed by a simple  rod in the simulation. 
 As an initial condition the length of each rod was zero and he direction of the actin polymerization $\bm{L}_i$ was  randomly determined.

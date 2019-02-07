@@ -1,36 +1,46 @@
 \begin{thebibliography}{1}
 
 \bibitem{svitkina1997analysis}
-Tatyana~M. Svitkina, Alexander~B. Verkhovsky, Kyle~M. McQuade, and Gary~G.
-  Borisy.
+T.~M.~Svitkina et~al.
 \newblock Analysis of the actin--myosin Ⅱ system in fish epidermal
   keratocytes: mechanism of cell body translocation.
 \newblock {\em The Journal of Cell Biology}, Vol. 139, No.~2, pp. 397--415,
   1997.
 
+\bibitem{nakashima2015molecular}
+H.~Nakashima et~al.
+\newblock The molecular dynamics of crawling migration in microtubule-disrupted
+  keratocytes.
+\newblock {\em Biophysics and Physicobiology}, Vol.~12, pp. 21--29, 2015.
+
+\bibitem{yumura1998spatiotemporal}
+S.~Yumura et~al.
+\newblock Spatiotemporal dynamics of actin concentration during cytokinesis and
+  locomotion in dictyostelium.
+\newblock {\em Journal of Cell Science}, Vol. 111, No.~15, pp. 2097--2108,
+  1998.
+
 \bibitem{swaminathan2017actin}
-Vinay Swaminathan, Joseph~Mathew Kalappurakkal, Shalin~B Mehta, Pontus
-  Nordenfelt, Travis~I Moore, Nobuyasu Koga, David~A Baker, Rudolf Oldenbourg,
-  Tomomi Tani, and Satyajit Mayor.
+V.~Swaminathan et~al.
 \newblock Actin retrograde flow actively aligns and orients ligand-engaged
   integrins in focal adhesions.
 \newblock {\em Proceedings of the National Academy of Sciences}, Vol. 114,
   No.~40, pp. 10648--10653, 2017.
 
 \bibitem{nakata2016role}
-Takako Nakata, Chika Okimura, Takafumi Mizuno, and Yoshiaki Iwadate.
+T.~Nakata et~al.
 \newblock The role of stress fibers in the shape determination mechanism of
   fish keratocytes.
 \newblock {\em Biophysical Journal}, Vol. 110, No.~2, pp. 481--492, 2016.
 
 \bibitem{okimura2018rotation}
-Chika Okimura, Atsushi Taniguchi, Shigenori Nonaka, and Yoshiaki Iwadate.
+C.~Okimura et~al.
 \newblock Rotation of stress fibers as a single wheel in migrating fish
   keratocytes.
 \newblock {\em Scientific Reports}, Vol.~8, No.~1, p. 10615, 2018.
 
 \bibitem{asano2004keratocyte}
-Y.~Asano, T.~Mizuno, T.~Kon, A.~Nagasaki, K.~Sutoh, and T.~Q. Uyeda.
+Y.~Asano et~al.
 \newblock Keratocyte-like locomotion in ami{B}-null dictyostelium cells.
 \newblock {\em Cell Motility and the Cytoskeleton}, Vol.~59, No.~1, pp. 17--27,
   2004.

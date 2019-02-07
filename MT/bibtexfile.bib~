@@ -1,7 +1,19 @@
+%APcon
+@article{yumura1998spatiotemporal,
+  title={Spatiotemporal dynamics of actin concentration during cytokinesis and locomotion in Dictyostelium},
+  author={S. Yumura et al},
+  journal={Journal of Cell Science},
+  volume={111},
+  number={15},
+  pages={2097--2108},
+  year={1998},
+  publisher={The Company of Biologists Ltd}
+}
+
 %AP
 @article{svitkina1997analysis,
   title={Analysis of the actin--myosin Ⅱ system in fish epidermal keratocytes: mechanism of cell body translocation},
-  author={Svitkina, Tatyana M. and Verkhovsky, Alexander B. and McQuade, Kyle M. and Borisy, Gary G.},
+  author={T. M. Svitkina  et al.},
   journal={The Journal of Cell Biology},
   volume={139},
   number={2},
@@ -12,7 +24,7 @@
 %SF
 @article{nakata2016role,
   title={The role of stress fibers in the shape determination mechanism of fish keratocytes},
-  author={Nakata, Takako and Okimura, Chika and Mizuno, Takafumi and Iwadate, Yoshiaki},
+  author={T. Nakata et al.},
   journal={Biophysical Journal},
   volume={110},
   number={2},
@@ -23,7 +35,7 @@
 %nuclrea
 @article{asano2004keratocyte,
   title={Keratocyte-like locomotion in ami{B}-null Dictyostelium cells},
-  author={Asano, Y. and Mizuno, T. and Kon, T. and Nagasaki, A. and Sutoh, K. and Uyeda, T. Q.},
+  author={Y. Asano et al.},
   journal={Cell Motility and the Cytoskeleton},
   volume={59},
   number={1},
@@ -34,7 +46,7 @@
 %wheel
 @article{okimura2018rotation,
   title={Rotation of stress fibers as a single wheel in migrating fish keratocytes},
-  author={Okimura, Chika and Taniguchi, Atsushi and Nonaka, Shigenori and Iwadate, Yoshiaki},
+  author={C. Okimura et al.},
   journal={Scientific Reports},
   volume={8},
   number={1},
@@ -46,11 +58,22 @@
 %arf
 @article{swaminathan2017actin,
   title={Actin retrograde flow actively aligns and orients ligand-engaged integrins in focal adhesions},
-  author={Swaminathan, Vinay and Kalappurakkal, Joseph Mathew and Mehta, Shalin B and Nordenfelt, Pontus and Moore, Travis I and Koga, Nobuyasu and Baker, David A and Oldenbourg, Rudolf and Tani, Tomomi and Mayor, Satyajit},
+  author={V. Swaminathan et al.},
   journal={Proceedings of the National Academy of Sciences},
   volume={114},
   number={40},
   pages={10648--10653},
   year={2017},
   publisher={National Acad Sciences}
+}
+
+%arf
+@article{nakashima2015molecular,
+  title={The molecular dynamics of crawling migration in microtubule-disrupted keratocytes},
+  author={Nakashima, Hitomi and Okimura, Chika and Iwadate, Yoshiaki},
+  journal={Biophysics and Physicobiology},
+  volume={12},
+  pages={21--29},
+  year={2015},
+  publisher={The Biophysical Society of Japan}
 }
