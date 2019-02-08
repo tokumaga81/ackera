@@ -39,7 +39,7 @@ In contrast, fish keratocytes change their shape from a circular shape to a half
 This phenomenon suggests that the deformation of the cell shape is a key feature to realize cell migration of keratocytes.
 
 %いかに不思議か(問題点を具体化)
-Actin proteins compose cytoskelton of eukaryotic cells \cite{svitkina1997analysis}, and in keratoccytes actin molecules have been reported to extend their head toward the cell membrane by actin polymerization (AP), which has been suggested as a source of the deformation of the cell membrane and the propulsive force of the cell.
+Actin proteins compose cytoskelton of eukaryotic cells \cite{svitkina1997analysis}, and in keratocytes actin molecules have been reported to extend their head toward the cell membrane by actin polymerization (AP), which has been suggested as a source of the deformation of the cell membrane and the propulsive force of the cell.
 The actin retrograde flow (ARF) that pulls the actin molecules back toward the stress fiber (SF), a bundle of actin fibers spreading from side to side of the rear part of the cell, has also been reported \cite{nakashima2015molecular}.
 %目的
 The purpose of this research is to clarify the mechanism that forms a half-moon shape by physical simulation experiments considering intracellular mechanism.
@@ -61,40 +61,46 @@ Chapter 4 shows the simulation results, and the last chapter concludes this stud
 \end{figure}
 
 %ケラトサイトの自己紹介
-A keratocytes, a migratory fish epidermal cell, is a wound healing cell about \SI{70}{\mu m}  in size.
-When a fish injures, keratocytes begin migration toward the injured position toward  the wound by the speed of about one body length in one minute.
+A keratocyte, a migratory fish epidermal cell, is a wound healing cell about \SI{70}{\mu m}  in size.
+When a fish is injured, keratocytes begin migration toward the injured position toward  the wound by the speed of about one body length in one minute.
 The locomotion of keratocytes is a kind of amoeboid movements;
-however, it is different from typical amoeba movement at the point that they moves  with keeping a half-moon shape. 
+however, it is different from typical amoeba movement at the point that they move with keeping a half-moon shape. 
 
 %参考文献
 %アクチン分子
-The protruding events of cell migration are thought to be caused by actin polymerization (AP)\cite{svitkina1997analysis}.
-AP is that actin molecules which are cytoskeletons overlap to form fibrous actin (F-actin).
+The cell migration of keratocytes has been suggested to be caused by actin polymerization (AP)\cite{svitkina1997analysis}.
+AP is a phenomenon in which cytoskeletal actin molecules linearly bind to form filamentous actin (F-actin).
 %cell migration と actinの重合と脱重合の関連
-There is depolymerization in the opposite phenomenon of AP.
-The opposite of AP, the phenomenon that actin molecule separates from F-actin is called depolymerization.
-The actin molecule depolymerizes with AP and forms a dense network and pushes the cell membrane from the inside.
-It has been reported that polymerization  tends to occur in the region rich in actin molecule and depolymerization tends to occur in a small region \cite{yumura1998spatiotemporal}.
+AP occurs only at one end of F-actin, depolymerization occurs at the opposite end.
+The actin molecules polymerize to form a dense network and push the cell membrane from the inside.
+It has been reported that the actin molecules are polymerized more frequently in the higher density region of actin molecules and depolymerized less in a lower density region\cite{yumura1998spatiotemporal}.
 %ARFとSFの紹介
-There are not only actin molecules but also myosin molecules in the cell membrane.
-When actin molecule and myosin molecule are bound, it becomes actomyosin, and a bundle of actomyosin is called a stress fiber (SF).
-The actin retrograde flow (ARF) that pulls the actin molecules back toward the SF has also been reported \cite{swaminathan2017actin}.
+There is a stress fiber (SF) at the rear of the cell.
+SF is a bundle of actomyosin to which actin molecule and myosin molecule are bound.
+The actin retrograde flow (ARF) which pulls the actin molecules back toward the SF has also been reported \cite{swaminathan2017actin}.
 %cell migrationとARFとSFの関連
-Although details on ARF are not clarified, it is thought that SF attracts forward actin molecule towards SF \cite{nakata2016role}.
-The network of actin molecules moves by AP and ARF to promote cell membrane deformation.
-In addition, Okimura et.al reported that SF plays a role of wheels in cell migration \cite{okimura2018rotation}.
+Although details on ARF are not clarified, SF is considered to orient the polymerization direction in that direction when attracting actin molecules towards SF\cite{nakata2016role}.
+When SF was removed, the left and right balance of the cells collapsed and the moving speed decreased. This also indicates the importance of SF for cell migration.
+
 In the cell migration when SF was removed, the migration speed decreased and the left and right balance disintegrated.
 This also indicates that SF is important for cell migration.
-
+In addition, Okimura et.al reported that SF plays a role of wheels in cell migration \cite{okimura2018rotation}.
 It has been reported that morphogenesis of morphology was observed even after removing the nucleus \cite{asano2004keratocyte}.
-Hence, it was suggested that the cell migration of the keratocyte is due to a physical factor, not genetic information.
+Therefore, it was suggested that the cell migration of keratinocytes is not a nuclear part, and other parts where SF and F-actin exist are important.
 
 
 \section{Molecular Mechanism of Cell Migration}
-A cell has a structure called a cytoskeleton. The cytoskeleton is like bones for humans, but in contrast to static human bones, the cytoskeleton is dynamic and is an important organelle that maintains the shape of the cell. The main component of the cytoskeleton is the actin molecule. As the actin molecule polymerizes and depolymerizes, the shape of the cell membrane changes. The actin molecule is elongated by polymerization in the cell membrane but retreats in the direction opposite to the elongation direction by the bundle of actomyosin called stress fiber. This phenomenon is called actin retrograde flow, and it is not clear what kind of role it plays in cell migration. The cell membrane extruded by polymerization of the actin molecule becomes the pseudopodia and adheres to the substrate at the advancing position. Thereafter, the adhesion between the substrates of the rear cell membrane is released and dragged forward. By repeating this cycle, cell migration mechanism is formed.
-
-It is a common fact even in keratocytes that the cell membrane is deformed by actin molecule polymerization. In the simulation experiment described in the next chapter, we investigate how the cell membrane forms a half moon shape when actin molecule polymerization acts on the cell membrane.
-
+A cell has a structure called a cytoskeleton.
+The cytoskeleton is like bones of humans and forms a cell shape, however, it shows dynamic behavior  in contrast to the rigid nature of human bones.
+One of the  main components of the cytoskeleton is actin molecules.
+The polymerization and depolymerization of actin molecules change the cell shape.
+The actin molecule is elongated toward the cell membrane by polymerization and is retracted to the bundle of actomyosin called stress fiber which is formed in a rear part of a keratocyte.
+Such retraction of actin fibers is called actin retrograde flow; however, the role of the retrograde flow has not been known.
+The membrane of amoeboid cells extruded by the polymerization of actin molecules forms a pseudopodia which  adheres to the substrate under the pseudopodia.
+Thereafter, the adhesion to the substrates of the rear part of the cell is released and the cell is dragged forward.
+By repeating this cycle, cell migration is realized.
+The cell membrane of keratocytes is also deformed by actin molecule polymerization.
+By the simulation experiment described in the next chapter, we investigate how the cell membrane forms a half-moon shape by the actin molecule polymerization. 
 \chapter{Simulation Methods}
 \section{Simulation Methods of Cell Membrane}
 %初期配置の話
