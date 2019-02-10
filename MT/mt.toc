@@ -14,8 +14,8 @@
 \contentsline {subsection}{\numberline {4.1.1}Role of Actin Retrograde Flow}{7}
 \contentsline {subsection}{\numberline {4.1.2}Effect of Initial Distribution of Actin Molecules}{10}
 \contentsline {section}{\numberline {4.2}Discussion}{10}
-\contentsline {chapter}{\numberline {5}Conclusion}{11}
-\contentsline {section}{\numberline {5.1}Conclusion}{11}
-\contentsline {section}{\numberline {5.2}Future Works}{11}
-\contentsline {chapter}{Acknowledgements}{12}
-\contentsline {chapter}{Bibliography}{13}
+\contentsline {chapter}{\numberline {5}Conclusion}{12}
+\contentsline {section}{\numberline {5.1}Conclusion}{12}
+\contentsline {section}{\numberline {5.2}Future Works}{12}
+\contentsline {chapter}{Acknowledgements}{13}
+\contentsline {chapter}{Bibliography}{14}
