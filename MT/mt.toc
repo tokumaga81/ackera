@@ -9,13 +9,13 @@
 \contentsline {subsection}{\numberline {3.2.1}Actin Polymerization}{4}
 \contentsline {subsection}{\numberline {3.2.2}Actin Retrograde Flow}{5}
 \contentsline {section}{\numberline {3.3}Initial Condition}{6}
-\contentsline {chapter}{\numberline {4}Results and Discussion}{7}
-\contentsline {section}{\numberline {4.1}Simulation Results}{7}
-\contentsline {subsection}{\numberline {4.1.1}Role of Actin Retrograde Flow}{7}
-\contentsline {subsection}{\numberline {4.1.2}Effect of Initial Distribution of Actin Molecules}{10}
-\contentsline {section}{\numberline {4.2}Discussion}{10}
-\contentsline {chapter}{\numberline {5}Conclusion}{12}
-\contentsline {section}{\numberline {5.1}Conclusion}{12}
-\contentsline {section}{\numberline {5.2}Future Works}{12}
-\contentsline {chapter}{Acknowledgements}{13}
-\contentsline {chapter}{Bibliography}{14}
+\contentsline {chapter}{\numberline {4}Results and Discussion}{8}
+\contentsline {section}{\numberline {4.1}Simulation Results}{8}
+\contentsline {subsection}{\numberline {4.1.1}Role of Actin Retrograde Flow}{8}
+\contentsline {subsection}{\numberline {4.1.2}Effect of Initial Distribution of Actin Molecules}{11}
+\contentsline {section}{\numberline {4.2}Discussion}{11}
+\contentsline {chapter}{\numberline {5}Conclusion}{13}
+\contentsline {section}{\numberline {5.1}Conclusion}{13}
+\contentsline {section}{\numberline {5.2}Future Works}{13}
+\contentsline {chapter}{Acknowledgements}{14}
+\contentsline {chapter}{Bibliography}{15}

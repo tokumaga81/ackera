@@ -39,7 +39,7 @@ In contrast, fish keratocytes change their shape from a circular shape to a half
 This phenomenon suggests that the deformation of the cell shape is a key feature to realize cell migration of keratocytes.
 
 %いかに不思議か(問題点を具体化)
-Actin proteins compose cytoskelton of eukaryotic cells \cite{svitkina1997analysis}, and in keratocytes actin molecules have been reported to extend their head toward the cell membrane by actin polymerization (AP), which has been suggested as a source of the deformation of the cell membrane and the propulsive force of the cell.
+Actin proteins compose cytoskeleton of eukaryotic cells \cite{svitkina1997analysis}, and in keratocytes, actin molecules have been reported to extend their head toward the cell membrane by actin polymerization (AP), which has been suggested as a source of the deformation of the cell membrane and the propulsive force of the cell.
 The actin retrograde flow (ARF) that pulls the actin molecules back toward the stress fiber (SF), a bundle of actin fibers spreading from side to side of the rear part of the cell, has also been reported \cite{nakashima2015molecular}.
 %目的
 The purpose of this research is to clarify the mechanism that forms a half-moon shape by physical simulation experiments considering intracellular mechanism.
@@ -48,7 +48,7 @@ The purpose of this research is to clarify the mechanism that forms a half-moon 
 The structure of this paper is as follows.
 Chapter 2 introduces previous works on the molecular mechanism of cell migration of keratinocytes.
 Chapter 3 explains the  method of physical simulation experiments.
-Chapter 4 shows the simulation results, and the last chapter concludes this study and discusses future prospects of this study.
+Chapter 4 shows the simulation results, and the last chapter concludes this study and discusses the future prospects of this study.
 
 %第２章
 \chapter{Keratocytes}
@@ -106,79 +106,83 @@ By the simulation experiment described in the next chapter, we investigate how t
 %初期配置の話
 In the computer simulation of this study, the cell membrane was modeled by a network of simple particles interacting with each other and placed on a cylindrical surface as an initial condition.
 Each particle of the membrane was assumed to receive elastic force from neighboring particles and repulsive force from actin molecules.
-The equation of motion of the cell membrane molecule is assumed as follows.
+The equation of motion of the cell membrane molecule was assumed as follows.
 
 \begin{equation}
 m\frac{d^2\bm{x}_i}{dt^2} = \bm{F}^m_i +  \bm{F}^a_i - \eta \frac{d\bm{x}_i}{dt}
 \end{equation}
 
-where  $\bm{x}_i$ is the position vector of the membrane molecule, $m$ is the mass of the particle, $\eta=8.9\times10^{-6}\si{~kg/s}$ is the viscous coefficient, $\bm{F}^m_i$ and $\bm{F}^a_i$ is the force received from the neighboring particles and  the repulsive force from actin molecules.
+where  $\bm{x}_i$ is the position vector of the membrane molecule, $m$ is the mass of the particle, $\eta=8.9\times10^{-6}\si{~kg/s}$ is the viscous coefficient, $\bm{F}^m_i$ and $\bm{F}^a_i$ are the forces received from the neighboring particles and  the repulsive force from actin molecules.
 The force  $\bm{F}^m_i$ was assumed as an elastic force:
 \begin{equation}
 \bm{F}^m_i = \sum_{i \in I_j}  -k((\bm{x}_j -\bm{x}_i )-\bm{l}_{ij} )
 \end{equation}
-where $k$ is a spring constant, $\bm{l}_{ij}$ is the natural length between the $i$-th and $j$-th membrane particles, and $I_j$ represents the set of particles that interacts with particle $j$.
-The natural length between particles were determined by the distance  at the initial state.
+where $k$ is a spring constant, $\bm{l}_{ij}$ is the natural length between the $i$-th and $j$-th membrane particles, and $I_j$ represents the set of particles that interact with particle $j$.
+The natural length between particles was determined by the distance  at the initial state.
 The force $\bm{F}^a_i$ received from an actin particle was assumed to be a  repulsive force:
 \begin{equation}
 \bm{F}^a_i = \sum_{\{ \forall i | \| \bm{x}_j - \bm{B}_i \|<D_2\}} \frac{s}{\|\bm{x}_j -\bm{B}_i \|} \frac{\bm{x}_j -\bm{B}_i }{\|\bm{x}_j -\bm{B}_i \|}
 \end{equation}
-where $s$ is a constant that determines the strength of the repulsive force, and $D_2$ is a distance range  the  force prepared to decrease the calculation amount.
+where $s$ is a constant that determines the strength of the repulsive force, and $D_2$ is a distance range of the effect of the force prepared to decrease the calculation amount.
 
 \section{Simulation Methods of Actin Molecules}
 \subsection{Actin Polymerization}
-An actin molecule has polarity: one end which elongates by  polymerization is called barbed-end, and the other end is called pointed-end.
+An actin molecule has polarity: one end which elongates by the polymerization is called barbed-end, and the other end is called pointed-end.
 Since the frequency of polymerization is high in a region where actin molecules are dense \cite{yumura1998spatiotemporal}, the polymerization rate was assumed to be  proportional to the actin concentration.
 The filament formed by actin polymerization is called F-actin.
 F-actin was expressed by a simple  rod in the simulation. 
-As an initial condition the length of each rod was zero and he direction of the actin polymerization $\bm{L}_i$ was  randomly determined.
+As an initial condition,  the length of each rod was zero and the direction of the actin polymerization $\bm{L}_i$ was  randomly determined.
 The elongation of the F-actin by the polymerization is modeled by
 \begin{equation}
 \bm{B}_i \gets \bm{P}_i + f^p(c)\bm{L}_i \cdot dt
 \end{equation}
-where $\bm{B}_i$ and $\bm{P}_i$ are barbed end and pointed end of the F-actin, respectively, and $f^p(c) = 5.0 \cdot \exp{\frac{c}{10.0}}$ expresses the frequency of actin polymerization as a function of actin concentration $c$.
-$c$ measures for each region obtained by dividing the plane of the simulation space into a lattice shape.
+where $\bm{B}_i$ and $\bm{P}_i$ are the barbed end and pointed end of the F-actin, respectively, and $f^p(c) = 5.0~\exp{\frac{c}{10.0}}$ expresses the frequency of actin polymerization as a function of actin concentration $c$ which was computed for each region by dividing the simulation space into a grid.
 The frequency of depolymerization decreases in an actin dense area and the depolymerization was expressed  as follows.
 \begin{equation}
 \bm{P}_i \gets \bm{P}_i + f^d(c)\bm{L}_i \cdot dt
 \end{equation}
 where $f^d(c) = \frac{5.0}{c}$ represents the frequency of depolymerization. 
 The actin polymerization and depolymerization was simulated by a probability  \[p_i(c) = c_i = \frac{a_i}{N}\] at each step, where $p_i(c)$ is the probability that depends on the concentration $c_i$ in $i$-th region, $a_i$ is the number of actin in $i$-th region, and $N$ is the total number of actin.
-In this simulation, the space where a virtual cell was simulated was divided into $3600$ regions $(i = 1,...3600$).
+In this simulation, the simulation space was divided into $3,600$ regions $(i = 1,...3600$).
 
-As actin molecules continue to polymerize in random directions, the actin molecule region continues to spread monotonically.
-The actin molecule in the region of low actin molecule density disappears and regenerates near the cell membrane.
-The new polymerization direction of the actin molecule is randomly determined.
+The actin molecules in the region with  low density of actin molecules were assumed to disappear and the same number of new actin molecules were put near the cell membrane.
+The direction of polymerization of each actin was randomly determined at the initial state. 
 
 \subsection{Actin Retrograde Flow}
-Because the function and underlying mechanism of the ARF have not been known in detail, we simulated the ARF under some assumptions. The ARF is a movement of F-actins toward the  stress fiber which is a bundle of actin fibers aligning from side to side in the rear side of keratocytes. 
+The ARF is a movement of F-actins toward the stress fiber which is a bundle of actin fibers aligning from side to side in the rear side of a keratocyte. 
 
-At first, we assumed the ARF as the retraction of the actin molecules toward the leftmost point of the cell, i.e., the position of the membrane particle with the smallest x coordinate, which we call the reference point. The retraction of the actin molecule by the ARF was expressed by the following equation:
+We assumed the ARF as the retraction of the actin molecules toward the leftmost point of the cell in Fig.\ref{fig:ini}, i.e., the position of the membrane particle with the smallest $x$ coordinate which we call the reference point. The retraction of the actin molecules by the ARF was expressed by the following equation:
 \begin{numcases}
   {}
-  \bm{B}_i \gets \bm{B}_i - \alpha \frac{ \bm{B}_i - \bm{E}_0}{{\| \bm{B}_i - \bm{E}_0 \|}^w} & \\
-   \bm{P}_i \gets \bm{P}_i - \beta \frac{ \bm{P}_i - \bm{E}_0}{{\| \bm{P}_i - \bm{E}_0 \|}^w} &
+  \bm{B}_i \gets \bm{B}_i - \alpha \frac{ \bm{B}_i - \bm{E}_0}{{\| \bm{B}_i - \bm{E}_0 \|}^w}\cdot dt & \\
+   \bm{P}_i \gets \bm{P}_i - \beta \frac{ \bm{P}_i - \bm{E}_0}{{\| \bm{P}_i - \bm{E}_0 \|}^w}\cdot dt  &
    \label{eq:arf1}
 \end{numcases}
-where $\bm{E}_0$ is the reference point, and $\alpha$ and $\beta$ are constants that determines the strength of the ARF.
-$w$ is a parameter indicating the effect of distance between actin molecule and cell membrane molecule on retraction strength of the ARF.
-When $w=2$, the closer the intermolecular distance is, the stronger is pulled. When $w=1$, all actin molecules are equally pulled irrespective of the intermolecular distance.
+where $\bm{E}_0$ is the reference point, and $\alpha$ and $\beta$ are constants that determine the strength of the ARF.
+$w$ is a parameter indicating the effect of distance between the actin molecule and cell membrane molecule on the retraction strength of the ARF.
+When $w=2$, the closer the intermolecular distance is, the stronger the retraction is.
+When $w=1$, all actin molecules are equally pulled irrespective of the intermolecular distance.
+When $\alpha=\beta$, the orientation effect is ineffective, therefore, the actin molecule is retracted without changing the direction.
 
-When $\alpha<\beta$, the AP direction is adjusted by pulling back the pointed-end of F-actin stronger than barbed-end.
-When $\alpha=\beta$, the orientation effect is ineffective and it can be pulled back without changing the direction of AP.
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=6cm]{ind.eps}
+\caption{Location of the ARF reference point, $\bm{E}_0$, $\bm{E}_1$ and $\bm{E}_2$.}
+\label{fig:ind}
+\end{figure}
 
-Second, we assumed that another reference points $\bm{E}_1$ and $\bm{E}_2$ are proposed.
-Hence, two pattern experiments are performed with one and two ARF reference points.
-As shown in the figure, the reference points $\bm{E}_1$ and $\bm{E}_2$ are positioned at 1/5 of the cell membrane.
-The reference points  $\bm{E}_1$ and $\bm{E}_2$ are located 1/5 rearward of the cell membrane. ARF was expressed by contraction of actin molecule to the two points.
-In this case the retraction by the ARF was expressed as follows:
+We also investigated the case that two reference points $\bm{E}_1$ and $\bm{E}_2$ are prepared in order to express the retraction of actin molecules toward the SF.
+In this case, assuming that SF spreads linearly at a distance of 1/5 from the left end of the cell (Fig. \ref{fig:ind}) and the reference points $\bm{E}_1$ and $\bm{E}_2$ were put at both ends.
+The ARF was expressed by the retraction of actin molecules toward the direction of the sum of vectors from the actin molecules to the reference points:
+
 \begin{numcases}
   {}
-  \bm{B}_i \gets \bm{B}_i - \gamma \left( \frac{ \bm{B}_i - \bm{E}_1 }{{\| \bm{B}_i - \bm{E}_1 \|}^w} + \frac{ \bm{B}_i - \bm{E}_2}{{\| \bm{B}_i - \bm{E}_2 \|}^w} \right)& \\
-   \bm{P}_i \gets \bm{P}_i - \delta \left( \frac{ \bm{P}_i - \bm{E}_1 }{{\| \bm{P}_i - \bm{E}_1 \|}^w} + \frac{ \bm{P}_i - \bm{E}_2}{{\| \bm{P}_i - \bm{E}_2 \|}^w}  \right) &
+  \bm{B}_i \gets \bm{B}_i - \gamma \left( \frac{ \bm{B}_i - \bm{E}_1 }{{\| \bm{B}_i - \bm{E}_1 \|}^w} + \frac{ \bm{B}_i - \bm{E}_2}{{\| \bm{B}_i - \bm{E}_2 \|}^w} \right)\cdot dt & \\
+   \bm{P}_i \gets \bm{P}_i - \delta \left( \frac{ \bm{P}_i - \bm{E}_1 }{{\| \bm{P}_i - \bm{E}_1 \|}^w} + \frac{ \bm{P}_i - \bm{E}_2}{{\| \bm{P}_i - \bm{E}_2 \|}^w}  \right)\cdot dt  &
    \label{eq:arf}
 \end{numcases}
-where $\gamma$ and $\delta$ are constants that determines the strength of the ARF. As in eq. \ref{eq:arf1}, the orientation effect of ARF can be controlled by the magnitude relation of $\gamma$ and $\delta$.
+where $\gamma$ and $\delta$ are constants that determine the strength of the ARF.
+As in eq. \ref{eq:arf1}, the orientation effect of ARF can be controlled by the magnitude relation of $\gamma$ and $\delta$.
 Table \ref{ta:pra} shows the values of $\alpha, \beta, \gamma$ and $\delta$.
 
 \begin{table}[htb]
@@ -219,12 +223,12 @@ Table \ref{ta:pra} shows the values of $\alpha, \beta, \gamma$ and $\delta$.
   \caption{Initial state. (a)~Top view. Green lines and white dots show actin molecules and membrane particles, respectively. (b)~Side view.}
  \label{fig:ini}
 \end{figure}
-The number of actin molecules and membrane particles were 3000 and 2000, respectively, in the computer simulation.
-The positions of membrane particles were updated every step of the numerical computation and the positions of actin molecules were updated every 10 time steps.
+The number of actin molecules and membrane particles were 3,000 and 2,000, respectively, in the computer simulation.
+The positions of membrane particles were updated every step of the numerical computation and the positions of actin molecules were updated every 10 steps.
 
 Fig. \ref{fig:ini} shows the initial state of the virtual cell of  the computer simulation.
-The initial arrangement of the actin molecule is a U-shaped area excluding the rear of the cell (Fig. \ref{fig:ini}).
-The membrane molecules are placed on the surface of the cylinder and not inside.
+The actin molecule are in a U-shaped area excluding the rear of the cell (Fig. \ref{fig:ini}).
+The membrane molecules were placed on the surface of the cylinder.
 
 \chapter{Results and Discussion}
 \section{Simulation Results}
