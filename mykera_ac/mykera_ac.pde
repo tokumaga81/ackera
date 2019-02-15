@@ -15,7 +15,7 @@ float v0=pow(10.0, -3);//[m/s]
 float m_size =500.0; //[mm]
 float y_max =30.0;
 float dx=m_size/30.0;
-float dy=y_max/5.0;
+float dy=y_max/3.0;
 
 
 Map<Integer, ArrayList<Integer>> mme=new HashMap<Integer, ArrayList<Integer>>();
@@ -42,7 +42,7 @@ int maxai=310;
 float pm=400.0;
 float dpm=0.0;
 float m2=m_size/2.0;
-float at=0.5;
+float at=1.0;
 
 // diriables related to FILE output //
 PrintWriter mfile;
@@ -55,9 +55,9 @@ PrintWriter tfile;
 float dt=.001;
 
 // diriables on actin polymerization //
-int a_num=2000;
-float p_spe=25.0;
-float r_spe=25.0;
+int a_num=1000;
+float p_spe=5.0;
+float r_spe=10.0;
 //diriables on priparation
 float angy=-PI*1.5;
 float angx=0.0;
@@ -72,7 +72,8 @@ float[] d2=new float[10000];
 int str=0;
 int dly=0;
 ArrayList <Integer> ym = new ArrayList();
-
+ArrayList <Integer> fsp = new ArrayList();
+ArrayList <Integer> fsn = new ArrayList();
 void setup() {
   size(800, 800, OPENGL);
   mfile = createWriter("./data/maku.txt");
@@ -88,7 +89,7 @@ void draw() {
   preparation();
   kera.run();
   str++;
-  //if (str%10==0) saveFrame("./frame/#####.tif");
+  // if (str%10==0) saveFrame("./frame/#####.tif");
 }
 
 void preparation() {
@@ -138,6 +139,14 @@ int call(float x, float y, float z) {
   return j*N*N+u*N+i;
 }
 
+
+int ncall(float x, float z) {
+  int i=(int)x/(W/N);
+  int u=(int)(z+W/2)/(W/N);
+  return u*N+i;
+}
+
+
 float[] Sactin() {
   float ri=185.0;
   float ro=200.0;
@@ -149,7 +158,7 @@ float[] Sactin() {
 
   while ((ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] >=ro*ro|| (ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] <= ri*ri) {
     ans[0]=random(m3, m_size);
-    ans[1]=random(y_max/15, y_max*1/3);
+    ans[1]=random(y_max/4, y_max*(1/2));
     ans[2]=random(-2.0*m2*9.5/10, 2.0*m2*9.5/10);
   }
   return(ans);
@@ -160,11 +169,11 @@ float[] Ractin() {
   float dr =m_size*3/8;  
   float r1=230;
   float r2=170;
-  //  dr=0.0;
+  // dr=0.0;
 
   while ((ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] <= r2*r2|| (ans[0]-m2)*(ans[0]-m2) +ans[2]*ans[2] >= r1*r1) {
     ans[0]=random(dr, m_size);
-    ans[1]=random(y_max/15, y_max*1/3);
+    ans[1]=random(y_max/4, y_max*(1/2));
     ans[2]=random(-m_size*3/4, m_size*3/4);
   }
 
@@ -176,7 +185,7 @@ PVector dircounter() {
   PVector x=PVector.random3D().normalize();
   float j=abs(PVector.dot(x, cy));
 
-  while (j>0.2) {
+  while (j>0.15) {
     x=PVector.random3D().normalize();
     j=abs(PVector.dot(x, cy));
   }

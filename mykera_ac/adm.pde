@@ -24,8 +24,13 @@ class adm extends Kernel {
         maxi=m_list.indexOf(x0);
       }
       x0.update(m_list, m_list.indexOf(x0), a_list);
-      if (x0.pos.y>13.5&&x0.pos.y<16.5&x0.pos.x>(maxx-minx)/2.0) 
-        ym.add(m_list.indexOf(x0));
+      if (x0.pos.y>y_max*(1/4)&&x0.pos.y<y_max*(3/4)) {
+        if (x0.pos.x>(maxx-minx)/2.0)  ym.add(m_list.indexOf(x0));
+      }
+      if (x0.pos.x>(maxx-minx)*(0.85/5.0)&&x0.pos.x<(maxx-minx)*(1.15/5.0)) {
+        if (x0.pos.z>165) fsp.add(m_list.indexOf(x0));
+        if (x0.pos.z<-165) fsn.add(m_list.indexOf(x0));
+      }
     }
 
     //F-ACTIN-cal
@@ -54,9 +59,10 @@ class adm extends Kernel {
       x2.acn=0;
     }
     ym.clear();
-    if(t_total>at){
+    if (t_total>at) {
       saveFrame("./frame/#####.tif");
-      at*=2.0;
+      at+=4.0;
+      if (t_total>17.0) exit();
     }
   }
 
